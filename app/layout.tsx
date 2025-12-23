@@ -1,10 +1,21 @@
 import type { Metadata } from "next";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 
+const inter = Inter({ 
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+});
+
 export const metadata: Metadata = {
-  title: "Topgun Security | Digital Command Center",
-  description: "Elite security services with aero-tactical precision.",
+  title: "Topgun Security | Premium Security Services",
+  description: "Exzellenz im Objektschutz und professionelle Sicherheitsdienstleistungen.",
 };
 
 export default function RootLayout({
@@ -13,8 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">
+    <html lang="de">
+      <body className={`${inter.variable} ${playfair.variable} antialiased font-sans`}>
         <SmoothScroll>
           {children}
         </SmoothScroll>
