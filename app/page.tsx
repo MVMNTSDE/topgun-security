@@ -1,51 +1,109 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ServiceCard from "@/components/ServiceCard";
 import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Home() {
+  const narrativeRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Floating titles parallax
+      gsap.to(".floating-title-1", {
+        scrollTrigger: {
+          trigger: "body",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 1.5,
+        },
+        x: -200,
+      });
+
+      gsap.to(".floating-title-2", {
+        scrollTrigger: {
+          trigger: "body",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 1,
+        },
+        x: 100,
+      });
+
+      // Continuous Reveal pipeline
+      const reveals = gsap.utils.toArray<HTMLElement>(".reveal-up");
+      reveals.forEach((el) => {
+        gsap.to(el, {
+          scrollTrigger: {
+            trigger: el,
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 1.5,
+          ease: "expo.out",
+        });
+      });
+    }, narrativeRef);
+
+    return () => ctx.revert();
+  }, []);
+
   const services = [
     {
-      title: "Doorman & Concierge",
-      description: "Erstklassiger Empfangsdienst für renommierte Bürogebäude und Hotelanlagen. Wir vereinen Sicherheit mit Gastfreundschaft.",
+      title: "Executive Doorman",
+      description: "Repräsentative Sicherheit für erstklassige Standorte. Wir kombinieren Diskretion mit höchster Serviceorientierung.",
       icon: "users" as const,
     },
     {
-      title: "Objektschutz",
-      description: "Exklusiver Schutz Ihrer Sachwerte und Immobilien durch geschultes Fachpersonal. Lückenlose Bewachung auf höchstem Niveau.",
+      title: "Objektschutz+",
+      description: "Intelligente Bewachungskonzepte für Industrie und Residenzen. Sicherheit, die sich nahtlos in Ihren Alltag integriert.",
       icon: "shield" as const,
     },
     {
-      title: "Baubewachung",
-      description: "Präventive Sicherung von Bauprojekten gegen Diebstahl und unbefugten Zutritt. Mobile und stationäre Überwachungslösungen.",
+      title: "Safety Intelligence",
+      description: "Präventive Baustellen- und Projektabsicherung. Digitale Protokollierung und physische Präsenz in Perfektion.",
       icon: "hammer" as const,
     },
     {
-      title: "Revier-Kontrollen",
-      description: "Präzise Überprüfung Ihrer Objekte zu variierenden Zeiten. Höchste Prävention durch ständige Präsenz und modernste Protokollierung.",
+      title: "Revier-Elite",
+      description: "Regelmäßige Kontrollgänge mit militärischer Präzision und ziviler Diskretion. Höchste Abschreckung durch ständige Vigilanz.",
       icon: "map" as const,
     },
   ];
 
   return (
-    <main className="relative min-h-screen bg-white selection:bg-primary/20">
+    <main ref={narrativeRef} className="relative min-h-screen">
+      <div className="canvas-bg" />
       <Navbar />
       <Hero />
       
-      {/* Service Section */}
-      <section id="services" className="py-20 px-6 md:px-12 bg-white border-t border-black/5">
-        <div className="max-w-[1600px] mx-auto">
-          <div className="mb-32 max-w-4xl">
-            <span className="text-[10px] font-black tracking-[0.5em] text-primary uppercase block mb-8">
-              Unsere Expertise
+      {/* Narrative Layer 1: Competencies */}
+      <section id="services" className="relative py-40 px-6 md:px-12 z-20">
+        <span className="floating-title floating-title-1 top-[20%] left-0">
+          Kompetenz
+        </span>
+        
+        <div className="max-w-[1600px] mx-auto flex flex-col gap-32">
+          <div className="max-w-4xl reveal-up">
+            <span className="text-[10px] font-black tracking-[0.5em] text-primary uppercase block mb-10">
+              The Service Suite
             </span>
-            <h2 className="text-5xl md:text-8xl font-serif font-light tracking-tight leading-[1] text-black">
-              Maßgeschneiderte <span className="italic">Sicherheitslösungen</span> für exklusive Ansprüche.
+            <h2 className="text-6xl md:text-9xl font-serif font-light tracking-tight leading-[0.85] text-black">
+              Sicherheit,<br />
+              <span className="italic">neu definiert.</span>
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 reveal-up">
             {services.map((service) => (
               <ServiceCard 
                 key={service.title} 
@@ -56,106 +114,91 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust / About Section */}
-      <section id="about" className="py-48 px-6 bg-[#FAFAFA] border-y border-black/5">
-        <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
-          <div className="relative aspect-video bg-white border border-black/5 shadow-2xl p-4 group overflow-hidden">
-            <div className="absolute inset-0 bg-primary/5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-1000">
-               <span className="font-serif italic text-4xl text-black/10">The Gold Standard</span>
+      {/* Narrative Layer 2: Philosophy Overlap */}
+      <section id="about" className="relative py-60 px-6 z-20">
+        <span className="floating-title floating-title-2 top-[40%] right-0">
+          Prestige
+        </span>
+        
+        <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-7 reveal-up">
+            <div className="relative bleed-image aspect-[16/10] bg-[#FAFAFA] group overflow-hidden border border-black/5">
+              <div className="absolute inset-0 bg-primary/5 flex items-center justify-center">
+                 <span className="text-[10px] font-black tracking-[2em] uppercase text-black/5">Vigilance & Discretion</span>
+              </div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] border border-primary/20 scale-95 group-hover:scale-100 transition-transform duration-1000" />
             </div>
-            <div className="w-full h-full border border-black/5 bg-[#FDFDFD] flex items-center justify-center">
-               <span className="text-[10px] font-black tracking-[1em] uppercase text-black/10">Premium Security Presence</span>
-            </div>
-            {/* Corner accents */}
-            <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-primary/40" />
-            <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-primary/40" />
           </div>
           
-          <div className="max-w-xl">
-            <h2 className="text-5xl md:text-6xl font-serif font-light tracking-tight mb-12 leading-tight text-black">
-              Vertrauen durch <span className="italic text-primary">Präsenz</span> und Professionalität.
+          <div className="lg:col-span-5 lg:pl-12 reveal-up">
+            <h2 className="text-5xl md:text-7xl font-serif font-light tracking-tight mb-16 leading-tight text-black">
+              Unsere <span className="italic text-primary">Philosophie</span> der Stärke.
             </h2>
-            <p className="text-black/50 text-xl mb-16 leading-relaxed font-sans font-light">
-              Topgun Security definiert Objektschutz neu. Mit einem Fokus auf diskrete Effizienz und eine stabile Partnerschaft sichern wir Ihre Zukunft – heute.
+            <p className="text-black/50 text-2xl mb-20 leading-relaxed font-sans font-light">
+              Wir folgen keinem Standard. Wir setzen ihn. In einer Welt voller Variablen bieten wir die Konstante: Absolute Sicherheit durch exzellente Präsenz.
             </p>
-            <div className="grid grid-cols-2 gap-16 border-t border-black/10 pt-16">
-              <div>
-                <span className="block text-5xl font-serif italic text-black mb-4">100<span className="text-primary">%</span></span>
-                <span className="text-[10px] uppercase font-black tracking-[0.3em] text-black/30">Diskretion</span>
+            <div className="flex gap-20 border-t border-black/5 pt-16">
+              <div className="flex flex-col gap-4">
+                <span className="text-6xl font-serif italic text-black">01</span>
+                <span className="text-[10px] uppercase font-black tracking-[0.3em] text-black/30">Präzision</span>
               </div>
-              <div>
-                <span className="block text-5xl font-serif italic text-black mb-4">24<span className="text-primary">/</span>7</span>
-                <span className="text-[10px] uppercase font-black tracking-[0.3em] text-black/30">Vigilanz</span>
+              <div className="flex flex-col gap-4">
+                <span className="text-6xl font-serif italic text-black">02</span>
+                <span className="text-[10px] uppercase font-black tracking-[0.3em] text-black/30">Hingabe</span>
+              </div>
+              <div className="flex flex-col gap-4">
+                <span className="text-6xl font-serif italic text-black">03</span>
+                <span className="text-[10px] uppercase font-black tracking-[0.3em] text-black/30">Exzellenz</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-48 px-6 bg-white relative">
-        <div className="max-w-5xl mx-auto text-center mb-24">
-          <span className="text-[10px] font-black tracking-[0.5em] text-primary uppercase block mb-10">
-            Diskret Anfragen
-          </span>
-          <h2 className="text-5xl md:text-8xl font-serif font-light tracking-tight mb-10 text-black leading-[1]">
-             Ihr Sicherheitskonzept <span className="italic">startet hier.</span>
-          </h2>
-          <p className="text-black/40 text-xl max-w-2xl mx-auto font-sans font-light">
-            Teilen Sie uns Ihre Anforderungen mit. Wir erstellen Ihnen ein unverbindliches Angebot auf höchstem Niveau.
-          </p>
-        </div>
-        
-        <div className="max-w-4xl mx-auto">
-          <ContactForm />
+      {/* Narrative Layer 3: Direct Inquiry */}
+      <section id="contact" className="relative py-60 px-6 z-20 overflow-hidden">
+        <div className="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-32">
+          <div className="reveal-up">
+            <span className="text-[10px] font-black tracking-[0.5em] text-primary uppercase block mb-10">
+              Direct Channel
+            </span>
+            <h2 className="text-6xl md:text-9xl font-serif font-light tracking-tight mb-12 text-black leading-[0.9]">
+               Bereit für <span className="italic">Kontakt?</span>
+            </h2>
+          </div>
+          
+          <div className="reveal-up">
+            <div className="p-16 bg-[#FAFAFA] border border-black/5 shadow-2xl">
+              <ContactForm />
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-32 px-6 border-t border-black/5 bg-[#FAFAFA]">
-        <div className="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-24">
-          <div className="md:col-span-2">
-            <div className="flex items-center gap-5 mb-12">
-              <div className="relative w-10 h-10 flex items-center justify-center border border-primary/40">
-                 <span className="text-black font-serif italic text-lg -translate-y-[1px]">T</span>
-                 <span className="text-black font-serif italic text-lg translate-y-px ml-[-4px]">G</span>
+      {/* Minimal Footer Narrative */}
+      <footer className="relative py-20 px-6 z-20 border-t border-black/5 bg-white">
+        <div className="max-w-[1600px] mx-auto flex flex-col md:flex-row justify-between items-end gap-20">
+          <div className="flex flex-col gap-10">
+            <div className="flex items-center gap-5">
+              <div className="relative w-12 h-12 flex items-center justify-center border border-primary/30">
+                 <span className="text-black font-serif italic text-xl -translate-y-px">T</span>
+                 <span className="text-black font-serif italic text-xl translate-y-px ml-[-5px]">G</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-sm font-serif tracking-[0.2em] uppercase text-black leading-none">Topgun</span>
-                <span className="text-[8px] font-sans tracking-[0.4em] uppercase text-primary font-black">Security Group</span>
+                <span className="text-base font-serif tracking-[0.2em] uppercase text-black leading-none">Topgun</span>
+                <span className="text-[9px] font-sans tracking-[0.4em] uppercase text-primary font-black">Security Group</span>
               </div>
             </div>
-            <p className="text-black/40 text-sm max-w-sm leading-relaxed font-sans font-light">
-              Ihr Partner für exklusive Sicherheitsdienstleistungen in Deutschland. Spezialisiert auf diskreten Objektschutz und Premium-Empfangsdienste.
+            <p className="text-black/30 text-[10px] max-w-xs leading-relaxed font-black tracking-widest uppercase">
+              Germany&apos;s Elite Protection Standard. Established for Discretion.
             </p>
           </div>
           
-          <div>
-            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-primary mb-10">Services</h4>
-            <ul className="space-y-6 text-[10px] font-black uppercase tracking-[0.2em] text-black/40">
-              <li><Link href="#services" className="hover:text-black transition-colors">Leistungen</Link></li>
-              <li><Link href="#about" className="hover:text-black transition-colors">Philosophie</Link></li>
-              <li><Link href="#contact" className="hover:text-black transition-colors">Anfrage</Link></li>
-            </ul>
+          <div className="flex gap-20 text-[10px] font-black tracking-[0.3em] uppercase text-black/40">
+            <Link href="/imprint" className="hover:text-primary transition-colors">Impressum</Link>
+            <Link href="/privacy" className="hover:text-primary transition-colors">Datenschutz</Link>
+            <span className="text-black/10">© 2025</span>
           </div>
-
-          <div>
-            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-primary mb-10">Rechtliches</h4>
-            <ul className="space-y-6 text-[10px] font-black uppercase tracking-[0.2em] text-black/40">
-              <li><Link href="/imprint" className="hover:text-black transition-colors">Impressum</Link></li>
-              <li><Link href="/privacy" className="hover:text-black transition-colors">Datenschutz</Link></li>
-              <li><Link href="/terms" className="hover:text-black transition-colors">AGB</Link></li>
-            </ul>
-          </div>
-        </div>
-        
-        <div className="max-w-[1600px] mx-auto mt-32 pt-16 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-12">
-          <span className="text-[10px] text-black/20 font-black tracking-[0.4em] uppercase">
-            © 2025 Topgun Security Group. The Executive Standard.
-          </span>
-          <a href="mailto:verwaltung@topgun-security.de" className="text-[10px] text-black/40 hover:text-primary transition-colors font-black tracking-[0.2em] uppercase">
-            verwaltung@topgun-security.de
-          </a>
         </div>
       </footer>
     </main>

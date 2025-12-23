@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #D4AF37; /* Premium Gold */
-  --color-secondary: #FFFFFF; /* Pure White */
-  --color-accent: #000000; /* Pure Black */
+  --color-primary: #D4AF37; /* Gold */
+  --color-secondary: #FFFFFF;
+  --color-accent: #000000;
   --font-sans: var(--font-inter), system-ui, sans-serif;
   --font-serif: var(--font-playfair), serif;
 }
@@ -11,9 +11,9 @@
 :root {
   --background: #FFFFFF;
   --foreground: #000000;
-  --muted: #FAFAFA;
-  --border: rgba(0,0,0,0.06);
-  --selection: rgba(212, 175, 55, 0.2);
+  --muted: #FDFDFD;
+  --border: rgba(0,0,0,0.04);
+  --selection: rgba(212, 175, 55, 0.15);
 }
 
 * {
@@ -30,6 +30,17 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Base Canvas Background */
+.canvas-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: 
+    radial-gradient(circle at 0% 0%, rgba(212, 175, 55, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(0, 0, 0, 0.01) 0%, transparent 50%);
+  background-color: #FFFFFF;
+}
+
 h1, h2, h3, h4, .font-serif {
   font-family: var(--font-serif);
 }
@@ -42,21 +53,20 @@ h1, h2, h3, h4, .font-serif {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--background);
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #EEE;
-  border-radius: 10px;
+  background: #DDD;
 }
 
-/* Light Spotlight (Refined Inner Glow) */
+/* Spotlight Effect Utility */
 .spotlight {
   background: radial-gradient(
-    600px circle at var(--x) var(--y),
-    rgba(212, 175, 55, 0.03),
+    800px circle at var(--x) var(--y),
+    rgba(212, 175, 55, 0.04),
     transparent 40%
   );
   pointer-events: none;
@@ -65,23 +75,47 @@ h1, h2, h3, h4, .font-serif {
   z-index: 1;
 }
 
-/* Premium Card (Executive Light) */
+/* Narrative Elements */
+.floating-title {
+  position: absolute;
+  z-index: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0.03;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 20vw;
+  line-height: 1;
+}
+
+.bleed-image {
+  box-shadow: 0 50px 100px -20px rgba(0,0,0,0.1), 0 30px 60px -30px rgba(0,0,0,0.15);
+}
+
 .premium-card {
-  background: #FFFFFF;
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .premium-card:hover {
+  background: #FFFFFF;
   border-color: var(--color-primary);
-  transform: translateY(-8px);
-  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.08), 0 18px 36px -18px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 40px 80px -10px rgba(0, 0, 0, 0.05);
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #000 0%, #444 100%);
+  background: linear-gradient(to right, #000 0%, #666 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Animation Utilities */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
 }
