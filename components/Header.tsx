@@ -62,10 +62,10 @@ export function Header() {
   }, { scope: headerRef });
 
   const navLinks = [
-    { name: "Leistungen", href: "#services" },
-    { name: "Branchen", href: "#services" }, // Placeholder: In future pointing to /branchen
-    { name: "Über Uns", href: "#about" },
-    { name: "Kontakt", href: "#contact" },
+    { name: "Leistungen", href: "/leistungen" },
+    { name: "Branchen", href: "/branchen" }, 
+    { name: "Über Uns", href: "/unternehmen" }, // Updated to future-proof route
+    { name: "Kontakt", href: "/#contact" },
   ];
 
   return (
