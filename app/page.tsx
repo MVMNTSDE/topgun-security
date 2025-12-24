@@ -11,6 +11,7 @@ import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import BackgroundAudio from "@/components/BackgroundAudio";
+import Gallery from "@/components/Gallery";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -72,6 +73,7 @@ export default function Home() {
         <Hero />
         <Services />
         <About />
+        <Gallery />
         <Contact />
       </main>
       <Footer />

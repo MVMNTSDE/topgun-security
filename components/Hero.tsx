@@ -33,8 +33,19 @@ export default function Hero() {
     >
       {/* Heavy Corporate Backdrop */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-primary/40 z-10" />
-        <div className="bg-image absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-fixed bg-center" />
+        <div className="absolute inset-0 bg-primary/60 z-10" />
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover opacity-60"
+        >
+          <source src="/videos/security-bg.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* Fallback Image if video fails to load or while loading */}
+        <div className="bg-image absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-fixed bg-center -z-10" />
       </div>
 
       <div className="container-custom relative z-20">
