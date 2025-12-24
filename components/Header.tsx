@@ -43,19 +43,29 @@ export function Header() {
     });
 
     // Logo transformation
-    // Scale down the entire logo container
+    // 1. Fade out/Slide up the Text Logo
     tl.to(logoIconRef.current, {
-      height: "3rem", // Shrink height
-      width: "auto",
-      duration: 1
+      opacity: 0,
+      y: -20,
+      duration: 0.8,
+      ease: "power2.out"
     }, 0);
+
+    // 2. Fade in/Slide up the Full Logo
+    tl.to(".logo-full", {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power2.out"
+    }, 0.1);
 
   }, { scope: headerRef });
 
   const navLinks = [
-    { name: "Portfolio", href: "#services" },
-    { name: "Expertise", href: "#about" },
-    { name: "Erstberatung", href: "#contact" },
+    { name: "Leistungen", href: "#services" },
+    { name: "Branchen", href: "#services" }, // Placeholder: In future pointing to /branchen
+    { name: "Über Uns", href: "#about" },
+    { name: "Kontakt", href: "#contact" },
   ];
 
   return (
@@ -65,17 +75,33 @@ export function Header() {
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-between">
         {/* Dynamic Logo */}
-        <Link href="/" className="flex items-center gap-5 group">
-          <div ref={logoIconRef} className="relative h-16 w-auto aspect-video transition-transform origin-left">
-             <Image 
-               src="/images/logo-full.png" 
-               alt="Topgun Security GmbH Logo" 
-               fill
-               className="object-contain object-left"
-               priority
-             />
-          </div>
-          {/* Text is now part of the logo image, so we remove the separate text element */}
+        {/* Dynamic Logo Container */}
+        <Link href="/" className="relative h-16 w-48 group">
+           {/* Initial State: White Text Only */}
+           <div ref={logoIconRef} className="absolute inset-0 flex items-center">
+              <div className="relative h-12 w-full transition-transform origin-left">
+                <Image 
+                  src="/images/assets/logo-text-white.png" 
+                  alt="Topgun Security" 
+                  fill
+                  className="object-contain object-left"
+                  priority
+                />
+              </div>
+           </div>
+
+           {/* Scroll State: Full Logo (Standard) */}
+           <div className="logo-full absolute inset-0 flex items-center opacity-0 translate-y-4">
+              <div className="relative h-16 w-full">
+                <Image 
+                  src="/images/logo-full.png" 
+                  alt="Topgun Security" 
+                  fill
+                  className="object-contain object-left"
+                  priority
+                />
+              </div>
+           </div>
         </Link>
 
         {/* Corporate Desktop Nav */}
