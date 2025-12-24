@@ -29,7 +29,7 @@ export default function Hero() {
   return (
     <section 
       ref={containerRef}
-      className="relative min-h-[85vh] flex items-center pt-24 bg-primary overflow-hidden"
+      className="relative min-h-[90vh] flex items-center pt-32 md:pt-48 bg-primary overflow-hidden"
     >
       {/* Heavy Corporate Backdrop */}
       <div className="absolute inset-0 z-0">
@@ -42,11 +42,11 @@ export default function Hero() {
           <div className="hero-text inline-flex items-center gap-4 mb-8">
             <div className="hero-line h-1 bg-accent w-12" />
             <span className="text-xs font-black tracking-[0.5em] uppercase text-white/90">
-              Topgun Security-Sicherheit & Service GmbH
+              Topgun Security GmbH
             </span>
           </div>
           
-          <h1 className="hero-text text-white mb-10">
+          <h1 className="hero-text text-white mb-10 leading-none">
             INSTITUTIONELLE<br />
             <span className="text-accent underline decoration-4 underline-offset-8">SICHERHEIT</span> KÖLN<br />
             <span className="text-white/40 text-4xl">| NRW</span>

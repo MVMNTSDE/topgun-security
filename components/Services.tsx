@@ -9,27 +9,27 @@ const services = [
     icon: "shield" as const,
   },
   {
-    title: "Baustellenbewachung",
+    title: "Baustellen\u00ADbewachung",
     description: "Lückenlose Absicherung Ihrer Sachwerte vor Ort. Schutz vor Vandalismus, Diebstahl und unbefugtem Zutritt.",
     icon: "hammer" as const,
   },
   {
-    title: "Kaufhausdetektive",
+    title: "Kaufhaus\u00ADdetektive",
     description: "Prävention von Inventurdifferenzen durch hochqualifizierte Überwachung im Einzelhandel.",
     icon: "users" as const,
   },
   {
-    title: "Empfangsdienst",
+    title: "Empfangs\u00ADdienst",
     description: "Die professionelle Schnittstelle zwischen Ihrem Unternehmen und Ihren Gästen. Sicher und zuvorkommend.",
     icon: "shield" as const,
   },
   {
-    title: "Pfortendienst",
+    title: "Pforten\u00ADdienst",
     description: "Kontrollierter Personen- und Fahrzeugverkehr an Ihren Toren. Infrastrukturelle Sicherheit rund um die Uhr.",
     icon: "shield" as const,
   },
   {
-    title: "Revierkontrollen",
+    title: "Revier\u00ADkontrollen",
     description: "Systematische Überprüfung Ihrer Liegenschaften in definierten Intervallen zur effektiven Gefahrenabwehr.",
     icon: "map" as const,
   },
