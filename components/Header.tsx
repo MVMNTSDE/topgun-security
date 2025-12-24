@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -18,7 +19,6 @@ function cn(...inputs: ClassValue[]) {
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
-  const logoTextRef = useRef<HTMLDivElement>(null);
   const logoIconRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -33,29 +33,21 @@ export function Header() {
 
     // Glass effect and resize background
     tl.to(headerRef.current, {
-      backgroundColor: "rgba(255, 255, 255, 0.85)",
-      backdropFilter: "blur(12px)", 
+      backgroundColor: "rgba(255, 255, 255, 0.95)", // More opaque for contrast with dark logo if needed
+      backdropFilter: "blur(16px)", 
       borderBottomColor: "rgba(3, 2, 19, 0.05)",
-      paddingTop: "1rem",
-      paddingBottom: "1rem",
+      paddingTop: "0.75rem",
+      paddingBottom: "0.75rem",
       duration: 1,
       ease: "power2.out"
     });
 
     // Logo transformation
-    // Scale down the icon container
+    // Scale down the entire logo container
     tl.to(logoIconRef.current, {
-      scale: 0.8,
+      height: "3rem", // Shrink height
+      width: "auto",
       duration: 1
-    }, 0);
-
-    // Fade out and translate the text
-    tl.to(logoTextRef.current, {
-      opacity: 0,
-      width: 0,
-      x: -20,
-      duration: 1,
-      pointerEvents: "none"
     }, 0);
 
   }, { scope: headerRef });
@@ -69,20 +61,21 @@ export function Header() {
   return (
     <nav 
       ref={headerRef}
-      className="fixed top-0 left-0 w-full z-50 border-b border-transparent py-8 transition-colors"
+      className="fixed top-0 left-0 w-full z-50 border-b border-transparent py-6 transition-colors"
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-between">
         {/* Dynamic Logo */}
         <Link href="/" className="flex items-center gap-5 group">
-          <div ref={logoIconRef} className="w-12 h-12 bg-primary flex items-center justify-center shrink-0 transition-transform origin-left">
-             <span className="text-white font-serif italic text-2xl">T</span>
-             <span className="text-white font-serif italic text-2xl ml-[-8px] mt-1">G</span>
+          <div ref={logoIconRef} className="relative h-16 w-auto aspect-[16/9] transition-transform origin-left">
+             <Image 
+               src="/images/logo-full.png" 
+               alt="Topgun Security GmbH Logo" 
+               fill
+               className="object-contain object-left"
+               priority
+             />
           </div>
-          
-          <div ref={logoTextRef} className="flex flex-col overflow-hidden whitespace-nowrap origin-left">
-            <span className="text-xl font-black tracking-tighter uppercase text-primary leading-none group-hover:text-accent transition-colors">Topgun</span>
-            <span className="text-[10px] tracking-[0.5em] uppercase text-accent font-black">Security GmbH</span>
-          </div>
+          {/* Text is now part of the logo image, so we remove the separate text element */}
         </Link>
 
         {/* Corporate Desktop Nav */}
