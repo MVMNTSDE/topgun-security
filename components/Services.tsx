@@ -112,11 +112,11 @@ export default function Services() {
       <div className="container-custom relative z-20">
         <div className="mb-24 corp-reveal">
           <div className="div-line" />
-          <h2 className="text-primary">
+          <h2 className="text-white">
             CORE<br />
             <span className="text-accent">SERVICES</span>
           </h2>
-          <p className="text-corporate-body max-w-2xl mt-8">
+          <p className="text-white/60 text-lg leading-relaxed font-medium max-w-2xl mt-8">
             Topgun Security bietet ein modulares Ökosystem an Sicherheitsdienstleistungen für Köln und NRW. 
             <span className="block mt-2 text-sm italic opacity-70">
               Klicken Sie auf eine Kachel für Detailinformationen.

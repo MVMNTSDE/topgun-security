@@ -61,7 +61,19 @@ export function Header() {
       ease: "power2.out"
     }, 0.1);
 
-  }, { scope: headerRef });
+    // 3. Animate Nav Links Color (Only on Home where they start white)
+    if (pathname === "/") {
+      tl.to(".nav-link", {
+        color: "rgba(3, 2, 19, 0.4)", // text-primary/40
+        duration: 0.8,
+        ease: "power2.out"
+      }, 0);
+      
+      // Also animate the mobile toggle button if needed, but it's usually separate.
+      // The desktop nav is the concern here.
+    }
+
+  }, { scope: headerRef, dependencies: [pathname] });
 
   const navLinks = [
     { name: "Leistungen", href: "/leistungen" },
@@ -112,7 +124,10 @@ export function Header() {
             <Link 
               key={link.name} 
               href={link.href}
-              className="text-[11px] font-black tracking-[0.3em] uppercase text-primary/40 hover:text-accent transition-all duration-500"
+              className={cn(
+                "nav-link text-[11px] font-black tracking-[0.3em] uppercase transition-all duration-500 hover:text-accent",
+                pathname === "/" ? "text-white/80" : "text-primary/40"
+              )}
             >
               {link.name}
             </Link>
