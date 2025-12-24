@@ -145,7 +145,7 @@
   }
 
   .corp-card {
-    @apply bg-white border border-primary/5 p-12 transition-all duration-700;
+    @apply bg-white border border-primary/5 p-8 md:p-12 transition-all duration-700;
   }
 
   .corp-card:hover {

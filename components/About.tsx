@@ -5,9 +5,9 @@ import { useState } from "react";
 import { CertificateModal } from "./CertificateModal";
 
 const steps = [
-  { id: "01", title: "IDENTIFIKATION", text: "Klinische Analyse Ihrer Sicherheitsmatrix. Wir erkennen Variablen, bevor sie zu Risiken werden." },
-  { id: "02", title: "INTERVENTION", text: "Implementierung hocheffizienter Schutzmechanismen. Sofortige Reaktion auf infrastrukturelle Erfordernisse." },
-  { id: "03", title: "OPTIMIERUNG", text: "Permanente Justierung der Sicherheitsarchitektur. Wir wachsen mit Ihren Anforderungen." }
+  { id: "01", title: "IDENTIFIKATION", text: "Detaillierte Analyse Ihrer Sicherheitsbedürfnisse. Wir erkennen potenzielle Risiken, bevor sie entstehen." },
+  { id: "02", title: "INTERVENTION", text: "Implementierung maßgeschneiderter Schutzkonzepte. Schnelle und professionelle Reaktion auf jede Situation." },
+  { id: "03", title: "OPTIMIERUNG", text: "Kontinuierliche Anpassung Ihrer Sicherheitsstrategie. Wir wachsen mit Ihren Herausforderungen." }
 ];
 
 const sectors = [
@@ -110,71 +110,75 @@ export function About() {
                 <h2 className="text-primary uppercase tracking-tighter">Zertifizierte<br /><span className="text-accent italic">Compliance</span></h2>
                 <p className="text-corporate-body text-primary! mt-12 mb-16 leading-relaxed max-w-xl">
                   Für Einkaufabteilungen und Sicherheitsverantwortliche garantieren wir volle Audit-Readiness. Die Topgun Security ist seit Anfang des Jahres nach 
+                  {" "}
                   <button 
                     className="font-bold underline decoration-accent underline-offset-4 cursor-pointer hover:text-accent transition-colors ml-1 inline-block" 
                     onClick={() => setActiveCert('din')}
                   >
                     DIN 77200
-                  </button> und 
+                  </button>
+                  {" "}
+                  und
+                  {" "}
                   <button 
                     className="font-bold underline decoration-accent underline-offset-4 cursor-pointer hover:text-accent transition-colors ml-1 inline-block" 
                     onClick={() => setActiveCert('iso')}
                   >
                     ISO 9001
-                  </button> zertifiziert.
+                  </button>
+                  {" "}
+                  zertifiziert.
                 </p>
                 <div className="flex flex-col gap-6">
                    <div className="bg-muted p-8 border-l-4 border-accent">
                       <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary/30 mb-2 block">Operative Kapazitäten</span>
-                      <p className="text-primary font-bold text-lg">13 Mitarbeiter (Bewacher Register) + 3 Sachkundige Experten (§34a GewO)</p>
+                      <p className="text-primary font-bold text-lg">
+                        Qualifiziertes Personal im Bewacherregister sowie erfahrene Sachkunde-Experten (§34a GewO) für flexible Skalierung.
+                      </p>
                    </div>
                 </div>
              </div>
 
              <div className="corp-reveal pt-12">
-                <div className="flex gap-8 mb-12">
-                  <button 
-                    className="bg-white p-4 shadow-sm border border-primary/5 cursor-pointer hover:border-accent hover:shadow-lg transition-all duration-300 group"
-                    onClick={() => setActiveCert('iso')}
-                    title="View ISO 9001 Certificate"
-                  >
-                    <Image src="/certificates/iso9001.png" alt="ISO 9001 Zertifikat" width={80} height={80} className="h-20 w-auto group-hover:scale-105 transition-transform duration-300" />
-                  </button>
-                  <button 
-                    className="bg-white p-4 shadow-sm border border-primary/5 cursor-pointer hover:border-accent hover:shadow-lg transition-all duration-300 group"
-                    onClick={() => setActiveCert('din')}
-                    title="View DIN 77200 Certificate"
-                  >
-                    <Image src="/certificates/din77200.png" alt="DIN 77200 Zertifikat" width={80} height={80} className="h-20 w-auto group-hover:scale-105 transition-transform duration-300" />
-                  </button>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                    <button 
-                     className="border border-primary/10 p-10 cursor-pointer hover:border-accent/30 transition-colors text-left w-full"
+                     className="border border-primary/10 p-8 cursor-pointer hover:border-accent hover:shadow-lg transition-all duration-300 text-left w-full group bg-white flex flex-col h-full"
                      onClick={() => setActiveCert('din')}
-                     title="View DIN 77200 Details"
+                     title="DIN 77200 Zertifikat einsehen"
                    >
-                      <div className="w-12 h-1 bg-accent mb-8" />
-                      <div className="flex items-center justify-between mb-4">
-                        <h4 className="text-primary font-black text-sm tracking-widest uppercase">DIN 77200</h4>
-                        <span className="text-accent text-[10px] font-bold uppercase tracking-widest border border-accent/20 px-2 py-1 rounded-sm">View</span>
+                      <div className="flex justify-between items-start mb-6 w-full">
+                         <div className="w-12 h-1 bg-accent" />
+                         <Image src="/certificates/din77200.png" alt="DIN 77200 Badge" width={60} height={60} className="w-14 h-auto opacity-80 group-hover:opacity-100 transition-opacity" />
                       </div>
-                      <p className="text-primary/40 text-[10px] font-bold leading-relaxed uppercase tracking-widest">Geprüfte Servicequalität in der Sicherheitswirtschaft.</p>
+                      
+                      <h4 className="text-primary font-black text-sm tracking-widest uppercase mb-2">DIN 77200</h4>
+                      <div className="text-accent text-[10px] font-bold uppercase tracking-widest mb-4 opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-2 group-hover:translate-x-0">Zertifikat ansehen</div>
+                      
+                      <p className="text-primary/60 text-xs leading-relaxed font-medium mt-auto">
+                        Geprüfte Servicequalität in der Sicherheitswirtschaft.
+                      </p>
                    </button>
+
                    <button 
-                     className="border border-primary/10 p-10 cursor-pointer hover:border-primary/30 transition-colors text-left w-full"
+                     className="border border-primary/10 p-8 cursor-pointer hover:border-primary hover:shadow-lg transition-all duration-300 text-left w-full group bg-white flex flex-col h-full"
                      onClick={() => setActiveCert('iso')}
-                     title="View ISO 9001 Details"
+                     title="ISO 9001 Zertifikat einsehen"
                    >
-                      <div className="w-12 h-1 bg-primary mb-8" />
-                      <div className="flex items-center justify-between mb-4">
-                         <h4 className="text-primary font-black text-sm tracking-widest uppercase">ISO 9001</h4>
-                         <span className="text-primary/40 text-[10px] font-bold uppercase tracking-widest border border-primary/10 px-2 py-1 rounded-sm group-hover:text-primary transition-colors">View</span>
+                      <div className="flex justify-between items-start mb-6 w-full">
+                         <div className="w-12 h-1 bg-primary" />
+                         <Image src="/certificates/iso9001.png" alt="ISO 9001 Badge" width={60} height={60} className="w-14 h-auto opacity-80 group-hover:opacity-100 transition-opacity" />
                       </div>
-                      <p className="text-primary/40 text-[10px] font-bold leading-relaxed uppercase tracking-widest">Internationales Qualitätsmanagement für höchste Standards.</p>
+                      
+                      <h4 className="text-primary font-black text-sm tracking-widest uppercase mb-2">ISO 9001</h4>
+                      <div className="text-primary text-[10px] font-bold uppercase tracking-widest mb-4 opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-2 group-hover:translate-x-0">Zertifikat ansehen</div>
+
+                      <p className="text-primary/60 text-xs leading-relaxed font-medium mt-auto">
+                        Internationales Qualitätsmanagement für höchste Standards.
+                      </p>
                    </button>
                 </div>
-                <p className="text-corporate-body text-primary/60! text-sm italic mt-20 leading-relaxed border-t border-primary/5 pt-12">
+
+                <p className="text-corporate-body text-primary/60! text-sm italic mt-16 leading-relaxed border-t border-primary/5 pt-8">
                   &ldquo;Gerne würden wir mit Ihnen prüfen, ob sich eine Zusammenarbeit anbietet. Wir freuen uns auf die Möglichkeit, eine erfolgreiche Partnerschaft aufzubauen.&rdquo;
                 </p>
              </div>

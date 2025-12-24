@@ -24,11 +24,11 @@ export default function ServiceCard({ title, description, icon }: ServiceCardPro
         {icons[icon]}
       </div>
       
-      <h3 className="text-primary group-hover:text-accent transition-colors duration-300">
+      <h3 className="text-primary group-hover:text-accent transition-colors duration-300 font-extrabold text-[1.4rem] lg:text-3xl break-words hyphens-auto mb-6">
         {title}
       </h3>
       
-      <p className="text-primary/60 text-base leading-relaxed mb-12 grow">
+      <p className="text-primary/60 text-sm md:text-base leading-relaxed mb-10 md:mb-12 grow">
         {description}
       </p>
 

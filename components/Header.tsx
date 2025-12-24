@@ -44,7 +44,7 @@ export function Header() {
           </div>
           <div className="flex flex-col">
             <span className="text-xl font-black tracking-tighter uppercase text-primary leading-none">Topgun</span>
-            <span className="text-[10px] tracking-[0.5em] uppercase text-accent font-black">Security Group</span>
+            <span className="text-[10px] tracking-[0.5em] uppercase text-accent font-black">Security GmbH</span>
           </div>
         </Link>
 

@@ -14,7 +14,7 @@ export function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-black tracking-tighter uppercase text-white leading-none">Topgun</span>
-                <span className="text-[10px] tracking-[0.5em] uppercase text-accent font-black">Security Group</span>
+                <span className="text-[10px] tracking-[0.5em] uppercase text-accent font-black">Security GmbH</span>
               </div>
             </Link>
             <p className="text-white/30 text-[10px] font-black tracking-[0.4em] uppercase max-w-sm leading-relaxed">
