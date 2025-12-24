@@ -78,7 +78,7 @@ export default function PartnerPage() {
                 <p className="text-gray-600 mb-6 grow">
                     Schlüsseldienste, Glaser, Elektriker. Nach einem Einbruch oder Vandalismus brauchen unsere Kunden schnelle Hilfe.
                     <br/><br/>
-                    <strong>Das Angebot:</strong> Aufnahme in unsere "Notfall-Liste" für priorisierte Auftragsvergabe.
+                    <strong>Das Angebot:</strong> Aufnahme in unsere &quot;Notfall-Liste&quot; für priorisierte Auftragsvergabe.
                 </p>
                  <div className="mt-auto">
                     <span className="text-xs font-bold uppercase tracking-widest text-accent">Netzwerk</span>
@@ -97,7 +97,7 @@ export default function PartnerPage() {
                         <div className="mt-1 text-accent"><Handshake size={20}/></div>
                         <div>
                             <strong className="text-primary block">Keine Provisionen</strong>
-                            <span className="text-gray-600 text-sm">Wir arbeiten nicht gegen "Tip-Gebühr". Wir empfehlen Partner, weil sie gut sind. Das gleiche erwarten wir von Ihnen.</span>
+                            <span className="text-gray-600 text-sm">Wir arbeiten nicht gegen &quot;Tip-Gebühr&quot;. Wir empfehlen Partner, weil sie gut sind. Das gleiche erwarten wir von Ihnen.</span>
                         </div>
                     </li>
                      <li className="flex items-start gap-4">

@@ -1,6 +1,6 @@
 import { ServicePageLayout } from "@/components/ServicePageLayout";
 import { TrustBadge } from "@/components/TrustBadge";
-import { Truck, PackageCheck, AlertTriangle, Lock, Divide, ShieldAlert } from "lucide-react";
+import { Truck, PackageCheck, Lock, ShieldAlert } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -49,14 +49,14 @@ export default function LogistikPage() {
           Sicherheit in der Logistik bedeutet mehr als nur Zäune. Es geht um die Integrität der gesamten Kette. Unsere Sicherheitsmitarbeiter sind darin geschult, Anomalien zu erkennen: Das falsche Kennzeichen, das abweichende Gewicht, die beschädigte Plombe.
         </p>
         <p className="text-gray-700">
-           Wir setzen auf "Vier-Augen-Prinzipien" und digitale Unterstützung. Jeder LKW, der Ihr Gelände befährt oder verlässt, wird systemisch erfasst. So schließen wir die Lücke zwischen digitaler Warehouse-Verwaltung und physischer Realität.
+           Wir setzen auf &quot;Vier-Augen-Prinzipien&quot; und digitale Unterstützung. Jeder LKW, der Ihr Gelände befährt oder verlässt, wird systemisch erfasst. So schließen wir die Lücke zwischen digitaler Warehouse-Verwaltung und physischer Realität.
         </p>
       </div>
 
       {/* 3. Typische Einsatzszenarien */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
         <div className="bg-gray-50 p-8 rounded-lg border border-gray-100">
-            <h3 className="text-2xl font-bold text-primary mb-4">Das "Safety-Gate"</h3>
+            <h3 className="text-2xl font-bold text-primary mb-4">Das &quot;Safety-Gate&quot;</h3>
             <p className="text-sm text-gray-600 mb-4">Die erste und letzte Verteidigungslinie Ihres Logistikzentrums.</p>
             <ul className="space-y-3 list-disc pl-5 text-gray-700 marker:text-accent">
                 <li><strong>Fahrzeugkontrolle:</strong> Abgleich von Kennzeichen und Frachtpapieren.</li>

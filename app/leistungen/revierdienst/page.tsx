@@ -1,8 +1,7 @@
 import { ServicePageLayout } from "@/components/ServicePageLayout";
 import { TrustBadge } from "@/components/TrustBadge";
-import { Car, Clock, MapPin, Siren, Radio, QrCode } from "lucide-react";
+import { Car, Siren, Radio, QrCode } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 export const metadata = {
   title: "Revierdienst & Mobile Sicherheit | Topgun Security",
@@ -63,8 +62,8 @@ export default function RevierdienstPage() {
             <p className="text-sm text-gray-600 mb-4">Der sichere Start und das sichere Ende Ihres Arbeitstages.</p>
             <ul className="space-y-3 list-disc pl-5 text-gray-700 marker:text-accent">
                 <li><strong>Morgens:</strong> Aufschluss des Gebäudes, Deaktivierung der EMA, Licht an.</li>
-                <li><strong>Abends:</strong> Rundgang ("Licht aus, Fenster zu"), Aktivierung der Alarmanlage, Verschluss der Tore.</li>
-                <li><strong>Vorteil:</strong> Kein Mitarbeiter muss "als Letzter" allein im Dunkeln gehen.</li>
+                <li><strong>Abends:</strong> Rundgang (&quot;Licht aus, Fenster zu&quot;), Aktivierung der Alarmanlage, Verschluss der Tore.</li>
+                <li><strong>Vorteil:</strong> Kein Mitarbeiter muss &quot;als Letzter&quot; allein im Dunkeln gehen.</li>
             </ul>
         </div>
         <div className="bg-gray-50 p-8 rounded-lg border border-gray-100">

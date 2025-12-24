@@ -1,8 +1,7 @@
 import { ServicePageLayout } from "@/components/ServicePageLayout";
 import { TrustBadge } from "@/components/TrustBadge";
-import { UserCheck, Shield, Phone, Coffee, Users, FileCheck } from "lucide-react";
+import { UserCheck, Shield, Phone, Coffee, Users } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 export const metadata = {
   title: "Empfangsdienst & Pfortendienst Köln | Topgun Security",
@@ -28,7 +27,7 @@ export default function EmpfangsdienstPage() {
             </p>
         </div>
         <p className="text-lg leading-relaxed text-gray-700 mb-6">
-          Empfangsdienst ist mehr als nur "Hallo" sagen. Es geht um die intelligente Steuerung von Besucherströmen, die diskrete Überprüfung von Zugangsberechtigungen und das Management in Notfallsituationen. Topgun Security stellt Ihnen Personal zur Verfügung, das sich nahtlos in Ihre Corporate Identity einfügt – mehrsprachig, eloquent und bestens geschult.
+          Empfangsdienst ist mehr als nur &quot;Hallo&quot; sagen. Es geht um die intelligente Steuerung von Besucherströmen, die diskrete Überprüfung von Zugangsberechtigungen und das Management in Notfallsituationen. Topgun Security stellt Ihnen Personal zur Verfügung, das sich nahtlos in Ihre Corporate Identity einfügt – mehrsprachig, eloquent und bestens geschult.
         </p>
       </div>
 
@@ -46,7 +45,7 @@ export default function EmpfangsdienstPage() {
       <div className="mb-16">
         <h2 className="text-3xl font-bold text-primary mb-6">Doorman & Concierge: Die Sicherheits-Hosts</h2>
         <p className="text-gray-700 mb-6">
-          Oft sind Sicherheitsmitarbeiter die ersten Personen, die ein Besucher sieht. Ein ungepflegtes Erscheinungsbild oder schroffer Tonfall fallen auf Ihr Unternehmen zurück. Wir setzen daher im Empfangsbereich auf "Security Hosts".
+          Oft sind Sicherheitsmitarbeiter die ersten Personen, die ein Besucher sieht. Ein ungepflegtes Erscheinungsbild oder schroffer Tonfall fallen auf Ihr Unternehmen zurück. Wir setzen daher im Empfangsbereich auf &quot;Security Hosts&quot;.
         </p>
         <p className="text-gray-700">
            Unser Personal trägt auf Wunsch Business-Kleidung statt Uniform. Die Sicherheitsausrüstung (Funk, Melder) wird diskret getragen. So gewähren wir Schutz, ohne dass sich Ihre Gäste wie in einer Hochsicherheitszone fühlen.

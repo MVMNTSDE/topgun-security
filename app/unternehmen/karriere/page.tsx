@@ -1,8 +1,5 @@
 import { ServicePageLayout } from "@/components/ServicePageLayout";
-import { TrustBadge } from "@/components/TrustBadge";
-import { Users, Star, Heart, GraduationCap, Clock, BadgeEuro } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
+import { Heart, GraduationCap, Clock, BadgeEuro } from "lucide-react";
 
 export const metadata = {
   title: "Karriere & Jobs | Topgun Security",

@@ -76,10 +76,10 @@ export function Header() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-between">
         {/* Dynamic Logo */}
         {/* Dynamic Logo Container */}
-        <Link href="/" className="relative h-16 w-48 group">
-           {/* Initial State: White Text Only */}
+        <Link href="/" className="relative h-20 w-64 md:w-80 group">
+           {/* Initial State: White Text Only - LARGER */}
            <div ref={logoIconRef} className="absolute inset-0 flex items-center">
-              <div className="relative h-12 w-full transition-transform origin-left">
+              <div className="relative h-16 w-full transition-transform origin-left">
                 <Image 
                   src="/images/assets/logo-text-white.png" 
                   alt="Topgun Security" 
@@ -92,7 +92,7 @@ export function Header() {
 
            {/* Scroll State: Full Logo (Standard) */}
            <div className="logo-full absolute inset-0 flex items-center opacity-0 translate-y-4">
-              <div className="relative h-16 w-full">
+              <div className="relative h-20 w-full">
                 <Image 
                   src="/images/logo-full.png" 
                   alt="Topgun Security" 

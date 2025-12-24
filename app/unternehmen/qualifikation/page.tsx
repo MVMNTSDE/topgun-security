@@ -1,6 +1,6 @@
 import { ServicePageLayout } from "@/components/ServicePageLayout";
-import { TrustBadge } from "@/components/TrustBadge";
-import { Award, BookOpen, GraduationCap, FileCheck, Shield } from "lucide-react";
+
+import { BookOpen, GraduationCap, FileCheck, Shield } from "lucide-react";
 
 export const metadata = {
   title: "Qualifikation & Zertifikate | Topgun Security",

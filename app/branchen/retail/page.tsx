@@ -1,8 +1,7 @@
 import { ServicePageLayout } from "@/components/ServicePageLayout";
 import { TrustBadge } from "@/components/TrustBadge";
-import { ShoppingBag, Eye, UserCheck, ShieldCheck, BadgeEuro, CreditCard } from "lucide-react";
+import { ShoppingBag, Eye, UserCheck, BadgeEuro, CreditCard } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 export const metadata = {
   title: "Einzelhandelssicherheit (Retail Security) | Topgun Security",
@@ -52,7 +51,7 @@ export default function RetailPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
             <div className="bg-gray-50 p-6 rounded border border-gray-100">
                 <h4 className="font-bold text-accent text-lg mb-2">1. Die Prävention (Doorman)</h4>
-                <p className="text-sm text-gray-600">Steht sichtbar am Eingang. Begrüßt Kunden, schreckt Täter ab ("Hard Target"). Sorgt für subjektives Sicherheitsgefühl.</p>
+                <p className="text-sm text-gray-600">Steht sichtbar am Eingang. Begrüßt Kunden, schreckt Täter ab (&quot;Hard Target&quot;). Sorgt für subjektives Sicherheitsgefühl.</p>
             </div>
              <div className="bg-gray-50 p-6 rounded border border-gray-100">
                 <h4 className="font-bold text-accent text-lg mb-2">2. Die Intervention (Detektiv)</h4>
@@ -95,7 +94,7 @@ export default function RetailPage() {
             
             <div>
                  <p className="text-gray-700 mb-4">
-                    Die "Inventurdifferenz" ist oft nur ein schönes Wort für Diebstahl. Im Schnitt verlieren Einzelhändler 1-2% ihres Umsatzes an Inventurdifferenzen.
+                    Die &quot;Inventurdifferenz&quot; ist oft nur ein schönes Wort für Diebstahl. Im Schnitt verlieren Einzelhändler 1-2% ihres Umsatzes an Inventurdifferenzen.
                  </p>
                  <p className="text-gray-700 font-bold mb-4">
                     Rechenbeispiel: Bei 5 Mio. € Jahresumsatz sind das 50.000 € - 100.000 € Verlust. 

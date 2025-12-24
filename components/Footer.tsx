@@ -7,15 +7,15 @@ export function Footer() {
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-24 mb-40">
           <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="flex items-center gap-5 mb-12">
-              <div className="w-14 h-14 bg-white flex items-center justify-center shrink-0">
-                 <span className="text-primary font-serif italic text-3xl">T</span>
-                 <span className="text-primary font-serif italic text-3xl ml-[-10px] mt-1">G</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-2xl font-black tracking-tighter uppercase text-white leading-none">Topgun</span>
-                <span className="text-[10px] tracking-[0.5em] uppercase text-accent font-black">Security GmbH</span>
-              </div>
+            <Link href="/" className="block mb-12">
+               <div className="relative h-24 w-64">
+                 <Image 
+                   src="/images/assets/logo-full-white.png" 
+                   alt="Topgun Security" 
+                   fill
+                   className="object-contain object-left"
+                 />
+               </div>
             </Link>
             <p className="text-white/30 text-[10px] font-black tracking-[0.4em] uppercase max-w-sm leading-relaxed">
               INSTITUTIONELLER PARTNER FÜR KÖLN & NRW. PROFESSIONELLER SCHUTZ SEIT 2013.

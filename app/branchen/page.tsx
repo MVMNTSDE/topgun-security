@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ServicePageLayout } from "@/components/ServicePageLayout";
-import { Building2, ShoppingBag, Truck, Construction, Briefcase, Landmark } from "lucide-react";
+import { Building2, ShoppingBag, Truck, Construction, Briefcase, Factory } from "lucide-react";
 
 export const metadata = {
   title: "Branchenlösungen | Topgun Security",
@@ -53,7 +53,7 @@ const industriesList = [
   }
 ];
 
-import { Factory } from "lucide-react"; // Import missing icon
+
 
 export default function BranchenOverviewPage() {
   return (
@@ -90,14 +90,14 @@ export default function BranchenOverviewPage() {
                <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors" />
             </div>
             
-            <div className="p-8 flex flex-col flex-grow">
+            <div className="p-8 flex flex-col grow">
                <div className="mb-4 text-accent group-hover:translate-x-1 transition-transform">
                  <industry.icon size={32} />
                </div>
                <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">
                  {industry.title}
                </h3>
-               <p className="text-gray-600 text-sm mb-6 flex-grow">
+               <p className="text-gray-600 text-sm mb-6 grow">
                  {industry.description}
                </p>
                <span className="text-xs font-bold uppercase tracking-widest text-primary/40 group-hover:text-primary transition-colors mt-auto">

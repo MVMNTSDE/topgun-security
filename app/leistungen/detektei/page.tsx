@@ -1,6 +1,6 @@
 import { ServicePageLayout } from "@/components/ServicePageLayout";
 import { TrustBadge } from "@/components/TrustBadge";
-import { Search, EyeOff, Scale, UserX, FileText, ShoppingBag } from "lucide-react";
+import { EyeOff, Scale, UserX, FileText } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -46,7 +46,7 @@ export default function DetekteiPage() {
       <div className="mb-16">
         <h2 className="text-3xl font-bold text-primary mb-6">Psychologie der Tat</h2>
         <p className="text-gray-700 mb-6">
-          Ladendiebstahl ist selten spontan. Profis arbeiten mit Ablenkung, präparierten Taschen ("Klau-Fix") und Teamwork. Unsere Detektive sind geschult, diese Indikatoren frühzeitig zu erkennen (Profiling).
+          Ladendiebstahl ist selten spontan. Profis arbeiten mit Ablenkung, präparierten Taschen (&quot;Klau-Fix&quot;) und Teamwork. Unsere Detektive sind geschult, diese Indikatoren frühzeitig zu erkennen (Profiling).
         </p>
         <p className="text-gray-700 font-medium">
            Entscheidend ist der Zugriff: Er muss erfolgen, wenn die Diebstahlsabsicht und die Zueignung zweifelsfrei bewiesen sind (Verlassen der Kassenzone). Zu frühes Eingreifen führt zu Schadensersatzforderungen, zu spätes zum Verlust der Ware.
@@ -60,7 +60,7 @@ export default function DetekteiPage() {
             <p className="text-sm text-gray-600 mb-4">Der Klassiker im Einzelhandel.</p>
             <ul className="space-y-3 list-disc pl-5 text-gray-700 marker:text-accent">
                 <li><strong>Observation:</strong> Überwachung verdächtiger Personen über Kameras oder auf der Fläche.</li>
-                <li><strong>Stellung:</strong> Diskretes Ansprechen nach der Kasse ("Büro-Situation").</li>
+                <li><strong>Stellung:</strong> Diskretes Ansprechen nach der Kasse (&quot;Büro-Situation&quot;).</li>
                 <li><strong>Abwicklung:</strong> Personalienaufnahme, Hausverbot, Strafanzeige, Fangprämie.</li>
             </ul>
         </div>
@@ -69,7 +69,7 @@ export default function DetekteiPage() {
             <p className="text-sm text-gray-600 mb-4">Wenn das Vertrauen missbraucht wird.</p>
              <ul className="space-y-3 list-disc pl-5 text-gray-700 marker:text-accent">
                 <li><strong>Testkäufe:</strong> Überprüfung der korrekten Kassierung (Bon-Pflicht).</li>
-                <li><strong>Einschleusung:</strong> Verdeckte Ermittler arbeiten als "Kollegen" mit.</li>
+                <li><strong>Einschleusung:</strong> Verdeckte Ermittler arbeiten als &quot;Kollegen&quot; mit.</li>
                 <li><strong>Video-Analyse:</strong> Auswertung von Kassendaten in Kombination mit Videomaterial (Storno-Betrug).</li>
             </ul>
         </div>
@@ -104,7 +104,7 @@ export default function DetekteiPage() {
             </div>
             <div className="md:w-1/2">
                  <p className="text-gray-700 mb-4">
-                    Ein guter Detektiv finanziert sich oft selbst. Allein die präventive Wirkung ("Hier wird aufgepasst") und die eingetriebenen Fangprämien (Bearbeitungsgebühren) decken einen Teil der Kosten.
+                    Ein guter Detektiv finanziert sich oft selbst. Allein die präventive Wirkung (&quot;Hier wird aufgepasst&quot;) und die eingetriebenen Fangprämien (Bearbeitungsgebühren) decken einen Teil der Kosten.
                  </p>
                  <p className="text-gray-700 font-bold">
                     Doch der wahre Wert liegt in der Sendung des Signals: Bei uns wird nicht geklaut.

@@ -61,27 +61,18 @@ export default function Services() {
         {services.map((service, index) => (
            <div 
              key={`bg-${index}`}
-             className="absolute inset-0 transition-opacity duration-700 ease-in-out"
-             style={{ 
-               opacity: hoveredService === index ? 1 : 0,
-               zIndex: hoveredService === index ? 10 : 0
-             }}
+             className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${hoveredService === index ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
            >
              {/* Abstract Technical Backgrounds based on index */}
-             <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900" />
+             <div className="absolute inset-0 bg-linear-to-br from-gray-900 via-black to-gray-900" />
              
              {/* Pattern Overlay */}
-             <div className="absolute inset-0 opacity-20" 
-                  style={{ 
-                    backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)',
-                    backgroundSize: '40px 40px' 
-                  }} 
-             />
+             <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_2px_2px,rgba(255,255,255,0.15)_1px,transparent_0)] bg-size-[40px_40px]" />
 
              {/* Animated Elements based on service type */}
              {index % 3 === 0 && ( // Premium / Doorman Style
                 <div className="absolute inset-0 overflow-hidden">
-                   <div className="absolute -inset-[100%] top-[-50%] animate-[spin_60s_linear_infinite] opacity-30">
+                   <div className="absolute -inset-full top-[-50%] animate-[spin_60s_linear_infinite] opacity-30">
                       <div className="w-full h-full bg-[conic-gradient(from_0deg,transparent_0deg,rgba(215,160,34,0.1)_180deg,transparent_360deg)]" />
                    </div>
                 </div>
@@ -89,9 +80,7 @@ export default function Services() {
 
              {index % 3 === 1 && ( // Industrial / Construction Style (Grid Scan)
                 <div className="absolute inset-0 overflow-hidden">
-                   <div className="absolute w-full h-1 bg-accent/20 top-0 animate-[scan_4s_ease-in-out_infinite]" 
-                        style={{ boxShadow: '0 0 15px rgba(215, 160, 34, 0.5)' }} 
-                   />
+                   <div className="absolute w-full h-1 bg-accent/20 top-0 animate-[scan_4s_ease-in-out_infinite] shadow-[0_0_15px_rgba(215,160,34,0.5)]" />
                 </div>
              )}
              
@@ -103,19 +92,14 @@ export default function Services() {
              )}
 
              {/* Gradient Overlay for Text Readability */}
-             <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent" />
+             <div className="absolute inset-0 bg-linear-to-t from-gray-900 via-gray-900/50 to-transparent" />
            </div>
         ))}
          
          {/* Default Background State (when nothing hovered) */}
-         <div className={`absolute inset-0 transition-opacity duration-700 ${hoveredService !== null ? 'opacity-0' : 'opacity-100'}`}>
+         <div className={`absolute inset-0 transition-opacity duration-700 ${hoveredService === null ? 'opacity-100' : 'opacity-0'}`}>
             <div className="absolute inset-0 bg-neutral-950" />
-            <div className="absolute inset-0 opacity-10" 
-                 style={{ 
-                    backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)',
-                    backgroundSize: '50px 50px' 
-                 }} 
-            />
+            <div className="absolute inset-0 opacity-10 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-size-[50px_50px]" />
             {/* Subtle generic animation */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] animate-pulse" />
          </div>
@@ -149,6 +133,8 @@ export default function Services() {
                   setSelectedService(service);
                 }
               }}
+              aria-label={`View details for ${service.title}`}
+              title={`Details anzeigen`}
             >
               <ServiceCard {...service} />
             </button>
@@ -158,15 +144,11 @@ export default function Services() {
 
       {/* Detail Modal */}
       {selectedService && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-          <div 
-            className="absolute inset-0 bg-primary/90 backdrop-blur-sm cursor-pointer" 
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <button 
+            type="button"
+            className="absolute inset-0 bg-primary/90 backdrop-blur-sm cursor-pointer w-full h-full border-none p-0 m-0 block" 
             onClick={() => setSelectedService(null)}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') setSelectedService(null);
-            }}
             aria-label="Close modal"
           />
           <div className="relative bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl animate-in fade-in zoom-in-95 duration-300 border border-primary/10">

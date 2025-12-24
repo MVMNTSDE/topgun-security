@@ -1,7 +1,5 @@
 import { ServicePageLayout } from "@/components/ServicePageLayout";
-import { TrustBadge } from "@/components/TrustBadge";
 import { ShieldCheck, Award, HeartHandshake, Users, Target, Scale } from "lucide-react";
-import Image from "next/image";
 
 export const metadata = {
   title: "Über Topgun Security | Verantwortung & Werte",

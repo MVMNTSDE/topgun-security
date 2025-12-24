@@ -1,8 +1,7 @@
 import { ServicePageLayout } from "@/components/ServicePageLayout";
 import { TrustBadge } from "@/components/TrustBadge";
-import { Factory, Truck, Siren, ClipboardCheck, FireExtinguisher, Users } from "lucide-react";
+import { Factory, Truck, ClipboardCheck, FireExtinguisher, Users } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 export const metadata = {
   title: "Werkschutz & Industriesicherheit Köln | Topgun Security",
@@ -49,7 +48,7 @@ export default function WerkschutzPage() {
           Der Werkschutz unterscheidet sich vom klassischen Objektschutz durch die Komplexität der Aufgaben und die Tiefe der Integration in den Betriebsablauf.
         </p>
         <p className="text-gray-700 mb-6">
-          Es geht nicht primär um das "Bewachen einer leeren Hülle" bei Nacht, sondern um das Management von Strömen: Warenströme, Personenströme und Informationsströme. Ein qualifizierter Werkschutzmitarbeiter muss in der Lage sein, eine Gefahrenmeldeanlage (BMA/EMA) genauso sicher zu bedienen wie ein LKW-Leitsystem oder ein elektronisches Schlüsseldepot.
+          Es geht nicht primär um das &quot;Bewachen einer leeren Hülle&quot; bei Nacht, sondern um das Management von Strömen: Warenströme, Personenströme und Informationsströme. Ein qualifizierter Werkschutzmitarbeiter muss in der Lage sein, eine Gefahrenmeldeanlage (BMA/EMA) genauso sicher zu bedienen wie ein LKW-Leitsystem oder ein elektronisches Schlüsseldepot.
         </p>
         <p className="text-gray-700">
            Bei Topgun Security setzen wir auf eine strikte Trennung von Außenhautsicherung (Perimeter) und innerbetrieblicher Prozesssüberwachung. Dies garantiert, dass unbefugte Dritte das Gelände gar nicht erst betreten, während der operative Betrieb im Inneren reibungsfrei weiterläuft.
@@ -175,7 +174,7 @@ export default function WerkschutzPage() {
             </div>
             <div className="p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
                 <h4 className="font-bold text-primary mb-2">Inventurdifferenzen</h4>
-                <p className="text-sm text-gray-600">Reduziert "Schwund" von Rohstoffen und Werkzeugen durch strenge Ausgangskontrollen.</p>
+                <p className="text-sm text-gray-600">Reduziert &quot;Schwund&quot; von Rohstoffen und Werkzeugen durch strenge Ausgangskontrollen.</p>
             </div>
              <div className="p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
                 <h4 className="font-bold text-primary mb-2">Versicherungsprämien</h4>
