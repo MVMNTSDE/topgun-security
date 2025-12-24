@@ -53,7 +53,7 @@ export function About() {
            <div className="mb-24 corp-reveal">
               <div className="div-line" />
               <h2 className="text-primary">EXPERTISE NACH<br /><span className="text-accent">SEKTOREN</span></h2>
-              <p className="text-corporate-body !text-primary/60 mt-8 max-w-xl">
+              <p className="text-corporate-body text-primary/60! mt-8 max-w-xl">
                  Wir verstehen die spezifischen Anforderungen komplexer Branchen. Unsere Lösungen sind für Entscheider konzipiert, die keine Kompromisse bei der Sicherheit eingehen.
               </p>
            </div>
