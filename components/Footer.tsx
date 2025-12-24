@@ -26,7 +26,8 @@ export function Footer() {
             <span className="text-[10px] font-black tracking-[0.6em] uppercase text-accent mb-12 block">Directory</span>
             <ul className="space-y-6 text-[10px] font-bold tracking-[0.3em] uppercase text-white/40">
               <li><Link href="#services" className="hover:text-white transition-colors">Portfolio</Link></li>
-              <li><Link href="#about" className="hover:text-white transition-colors">Sektoren</Link></li>
+              <li><Link href="/branchen" className="hover:text-white transition-colors">Sektoren</Link></li>
+              <li><Link href="/partner" className="hover:text-white transition-colors">Partner</Link></li>
               <li><Link href="/imprint" className="hover:text-white transition-colors">Infrastruktur</Link></li>
               <li><Link href="#contact" className="hover:text-white transition-colors">Kontakt</Link></li>
             </ul>
