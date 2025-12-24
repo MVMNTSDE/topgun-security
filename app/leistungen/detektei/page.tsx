@@ -84,7 +84,7 @@ export default function DetekteiPage() {
              <div>
                 <h3 className="text-2xl font-bold text-red-900 mb-2">Rechtssicherheit ist oberstes Gebot</h3>
                 <p className="text-red-800/80">
-                   Ein falsch beschuldigter Kunde ist ein PR-Desaster. Unsere Detektive arbeiten streng nach §127 StPO (Vorläufige Festnahme) und wahren die Verhältnismäßigkeit. Wir schützen Ihren Ruf genauso wie Ihre Ware.
+                   Ein falsch beschuldigter Kunde ist ein PR-Desaster. Unsere Detektive arbeiten streng nach <a href="https://www.gesetze-im-internet.de/stpo/__127.html" target="_blank" rel="noopener noreferrer" className="underline font-bold hover:text-red-950">§127 StPO (Vorläufige Festnahme)</a> und wahren die Verhältnismäßigkeit. Wir schützen Ihren Ruf genauso wie Ihre Ware.
                 </p>
              </div>
           </div>

@@ -34,7 +34,7 @@ export default function QualifikationPage() {
                <div>
                    <h3 className="text-xl font-bold text-primary mb-2">Sachkundeprüfung §34a GewO</h3>
                    <p className="text-gray-600 text-sm">
-                       Der gesetzliche Mindeststandard ist für uns der Anfang. Unsere Führungskräfte und der Großteil des operativen Personals haben die Voll-Prüfung der IHK abgelegt (nicht nur die Unterrichtung).
+                       Der gesetzliche Mindeststandard ist für uns der Anfang. Unsere Führungskräfte und der Großteil des operativen Personals haben die Voll-Prüfung der <a href="https://www.ihk.de/koeln/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-bold">IHK</a> abgelegt (nicht nur die Unterrichtung).
                    </p>
                </div>
           </div>

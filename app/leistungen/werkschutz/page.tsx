@@ -179,7 +179,7 @@ export default function WerkschutzPage() {
             </div>
              <div className="p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
                 <h4 className="font-bold text-primary mb-2">Versicherungsprämien</h4>
-                <p className="text-sm text-gray-600">Professioneller Werkschutz (VdS-konform) kann zu reduzierten Versicherungsbeiträgen führen.</p>
+                <p className="text-sm text-gray-600">Professioneller Werkschutz (<a href="https://vds.de/kompetenzen/security" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">VdS-konform</a>) kann zu reduzierten Versicherungsbeiträgen führen.</p>
             </div>
         </div>
       </div>

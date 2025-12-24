@@ -28,7 +28,7 @@ export default function BauPage() {
             </p>
         </div>
         <p className="text-lg leading-relaxed text-gray-700 mb-6">
-          Topgun Security bietet baustellenspezifische Sicherheitskonzepte für Hochbau, Tiefbau und Infrastrukturprojekte. Wir verstehen die rauen Bedingungen einer Baustelle und passen uns an den Baufortschritt an – von der "Grünen Wiese" bis zur Schlüsselübergabe.
+          Topgun Security bietet baustellenspezifische Sicherheitskonzepte für Hochbau, Tiefbau und Infrastrukturprojekte. Wir verstehen die rauen Bedingungen einer Baustelle und arbeiten streng nach den Vorschriften der <a href="https://www.bgbau.de/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-bold">BG BAU</a> – von der "Grünen Wiese" bis zur Schlüsselübergabe.
         </p>
       </div>
 

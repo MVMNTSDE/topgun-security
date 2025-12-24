@@ -81,7 +81,7 @@ export default function LogistikPage() {
       <div className="mb-20">
          <h2 className="text-3xl font-bold text-primary mb-8">TAPA-Kriterien als Maßstab</h2>
          <p className="text-gray-700 mb-6">
-            Wir orientieren uns bei unseren Sicherheitskonzepten an den strengen Vorgaben der TAPA (Transported Asset Protection Association). Auch wenn Sie (noch) nicht zertifiziert sind, arbeiten wir nach diesen Standards, um Ihr Risiko zu minimieren.
+            Wir orientieren uns bei unseren Sicherheitskonzepten an den strengen Vorgaben der <a href="https://tapa-global.org/?lang=de" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-bold">TAPA (Transported Asset Protection Association)</a>. Auch wenn Sie (noch) nicht zertifiziert sind, arbeiten wir nach diesen Standards, um Ihr Risiko zu minimieren.
          </p>
          <div className="bg-primary text-white p-8 rounded-lg">
              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
