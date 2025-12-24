@@ -4,11 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { CertificateModal } from "./CertificateModal";
 
-const steps = [
-  { id: "01", title: "IDENTIFIKATION", text: "Detaillierte Analyse Ihrer Sicherheitsbedürfnisse. Wir erkennen potenzielle Risiken, bevor sie entstehen." },
-  { id: "02", title: "INTERVENTION", text: "Implementierung maßgeschneiderter Schutzkonzepte. Schnelle und professionelle Reaktion auf jede Situation." },
-  { id: "03", title: "OPTIMIERUNG", text: "Kontinuierliche Anpassung Ihrer Sicherheitsstrategie. Wir wachsen mit Ihren Herausforderungen." }
-];
+
 
 const sectors = [
   "Architektur Büros",
@@ -55,26 +51,44 @@ export function About() {
       )}
 
       {/* 2. Operational Logic (Infotainment Sequence) */}
-      <section className="bg-primary py-48 overflow-hidden text-white">
-        <div className="container-custom">
+      <section className="bg-primary py-48 overflow-hidden text-white relative">
+        <div className="container-custom relative z-10">
           <div className="mb-24 corp-reveal">
             <div className="div-line" />
             <h2 className="text-white">OPERATIONAL<br /><span className="text-accent underline decoration-4 underline-offset-8">LOGICS</span></h2>
-            <p className="text-white/40 text-[10px] font-black tracking-[0.6em] uppercase mt-10">THE TOPGUN SEQUENCE</p>
+            <p className="text-white/40 text-[10px] font-black tracking-[0.6em] uppercase mt-10">THE TOPGUN STRATEGY</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {steps.map((step) => (
-              <div key={step.id} className="corp-reveal group">
-                <div className="border border-white/5 p-12 hover:border-accent/50 transition-all duration-700 bg-white/5">
-                  <span className="text-accent font-black text-xs block mb-8 tracking-[0.5em]">{step.id}</span>
-                  <h3 className="text-white text-xl tracking-tighter mb-6 uppercase">{step.title}</h3>
-                  <p className="text-white/40 text-sm leading-relaxed font-medium">
-                    {step.text}
-                  </p>
-                </div>
+            <div className="corp-reveal group">
+              <div className="bg-white/5 border border-white/5 p-12 hover:border-accent/50 transition-all duration-700 h-full">
+                 <span className="text-accent font-black text-xs block mb-8 tracking-[0.5em]">PHASE 01</span>
+                 <h3 className="text-white text-2xl tracking-tighter mb-6 uppercase">Identifikation</h3>
+                 <p className="text-white/60 text-sm leading-relaxed font-medium">
+                   Wir beginnen nicht mit einem Angebot, sondern mit dem Zuhören. Jedes Mandat startet mit einer schonungslosen Analyse Ihrer Ist-Situation. Wir identifizieren Sicherheitslücken, die Ihnen vielleicht noch gar nicht bewusst sind.
+                 </p>
               </div>
-            ))}
+            </div>
+            
+            <div className="corp-reveal group">
+              <div className="bg-white/5 border border-white/5 p-12 hover:border-accent/50 transition-all duration-700 h-full">
+                 <span className="text-accent font-black text-xs block mb-8 tracking-[0.5em]">PHASE 02</span>
+                 <h3 className="text-white text-2xl tracking-tighter mb-6 uppercase">Intervention</h3>
+                 <p className="text-white/60 text-sm leading-relaxed font-medium">
+                   Unser Schutz ist proaktiv, nicht reaktiv. Wir implementieren Maßnahmen, die diskret im Hintergrund laufen, aber im Ernstfall sofort greifen. Präsenz, wo nötig. Unsichtbarkeit, wo möglich.
+                 </p>
+              </div>
+            </div>
+
+            <div className="corp-reveal group">
+              <div className="bg-white/5 border border-white/5 p-12 hover:border-accent/50 transition-all duration-700 h-full">
+                 <span className="text-accent font-black text-xs block mb-8 tracking-[0.5em]">PHASE 03</span>
+                 <h3 className="text-white text-2xl tracking-tighter mb-6 uppercase">Evolution</h3>
+                 <p className="text-white/60 text-sm leading-relaxed font-medium">
+                   Sicherheit ist kein statischer Zustand. Wir auditieren unsere eigene Leistung kontinuierlich und passen Strategien dynamisch an neue Bedrohungslagen an. Ihr Schutz wächst mit Ihrem Erfolg.
+                 </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -85,16 +99,22 @@ export function About() {
            <div className="mb-24 corp-reveal">
               <div className="div-line" />
               <h2 className="text-primary">EXPERTISE NACH<br /><span className="text-accent">SEKTOREN</span></h2>
-              <p className="text-corporate-body text-primary/60! mt-8 max-w-xl">
-                 Wir verstehen die spezifischen Anforderungen komplexer Branchen. Unsere Lösungen sind für Entscheider konzipiert, die keine Kompromisse bei der Sicherheit eingehen.
+              <p className="text-corporate-body text-primary/60 mt-8 max-w-xl">
+                 Klicken Sie auf eine Branche, um Referenz-Berichte zu laden. Wir verstehen die Nuancen jedes Sektors im Detail.
               </p>
            </div>
            
            <div className="grid grid-cols-2 lg:grid-cols-5 gap-px bg-primary/10 border border-primary/10">
               {sectors.map((sector) => (
-                 <div key={sector} className="bg-white p-10 corp-reveal group hover:bg-primary transition-colors duration-500">
-                    <span className="text-[10px] font-black tracking-widest uppercase text-primary/30 group-hover:text-accent mb-4 block">Sector</span>
-                    <h4 className="text-primary font-black text-sm tracking-tight group-hover:text-white leading-tight">{sector}</h4>
+                 <div key={sector} className="bg-white p-10 corp-reveal group hover:bg-primary transition-colors duration-500 cursor-pointer relative overflow-hidden">
+                    <div className="relative z-10">
+                      <span className="text-[10px] font-black tracking-widest uppercase text-primary/30 group-hover:text-accent mb-4 block">Sector</span>
+                      <h4 className="text-primary font-black text-sm tracking-tight group-hover:text-white leading-tight">{sector}</h4>
+                    </div>
+                    {/* Hover flourish */}
+                    <div className="absolute -bottom-10 -right-10 text-[10rem] text-accent/5 font-black leading-none group-hover:text-accent/10 transition-colors pointer-events-none">
+                      +
+                    </div>
                  </div>
               ))}
            </div>
