@@ -27,7 +27,7 @@ const servicesList = [
     title: "Baustellenbewachung",
     description: "Schutz vor Diebstahl und Vandalismus in jeder Bauphase.",
     icon: Hammer,
-    href: "/leistungen/baustellenschutz", // Future page
+    href: "/branchen/bau", // Served by the Construction Industry page
     image: "/images/gallery/img-3.png",
   },
   {
