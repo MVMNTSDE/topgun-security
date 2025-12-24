@@ -11,22 +11,22 @@ export default function ImprintPage() {
           <div>
             <h2 className="text-xl font-bold text-foreground mb-4">Angaben gemäß § 5 TMG</h2>
             <p>
-              Topgun Security Group<br />
-              Beispielstraße 123<br />
-              12345 Berlin
+              Topgun Security-Sicherheit & Service GmbH<br />
+              Muldestr. 22<br />
+              51371 Leverkusen
             </p>
           </div>
 
           <div>
             <h2 className="text-xl font-bold text-foreground mb-4">Vertreten durch</h2>
-            <p>Max Mustermann (Geschäftsführer)</p>
+            <p>Ferhad Dilmaghani (Geschäftsführer)</p>
           </div>
 
           <div>
             <h2 className="text-xl font-bold text-foreground mb-4">Kontakt</h2>
             <p>
-              Telefon: +49 (0) 123 456789<br />
-              E-Mail: verwaltung@topgun-security.de
+              Telefon: 0221 95285529<br />
+              E-Mail: info@topgunsecurity.de
             </p>
           </div>
 
@@ -34,8 +34,8 @@ export default function ImprintPage() {
             <h2 className="text-xl font-bold text-foreground mb-4">Registereintrag</h2>
             <p>
               Eintragung im Handelsregister.<br />
-              Registergericht: Amtsgericht Berlin<br />
-              Registernummer: HRB 123456
+              Registergericht: Amtsgericht Köln<br />
+              Registernummer: HRB 109820
             </p>
           </div>
 
@@ -49,7 +49,7 @@ export default function ImprintPage() {
 
           <div>
             <h2 className="text-xl font-bold text-foreground mb-4">Redaktionell verantwortlich</h2>
-            <p>Max Mustermann</p>
+            <p>Ferhad Dilmaghani</p>
           </div>
 
           <div className="pt-10 border-t border-border">
