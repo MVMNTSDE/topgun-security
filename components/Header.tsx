@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -17,6 +18,7 @@ function cn(...inputs: ClassValue[]) {
 }
 
 export function Header() {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
   const logoIconRef = useRef<HTMLDivElement>(null);
@@ -76,12 +78,12 @@ export function Header() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-between">
         {/* Dynamic Logo */}
         {/* Dynamic Logo Container */}
-        <Link href="/" className="relative h-20 w-64 md:w-80 group">
-           {/* Initial State: White Text Only - LARGER */}
+        <Link href="/" className="relative h-24 w-80 md:w-96 group">
+           {/* Initial State: Dynamic Text Logo (White on Home, Black on others) */}
            <div ref={logoIconRef} className="absolute inset-0 flex items-center">
-              <div className="relative h-16 w-full transition-transform origin-left">
+              <div className="relative h-20 w-full transition-transform origin-left">
                 <Image 
-                  src="/images/assets/logo-text-white.png" 
+                  src={pathname === "/" ? "/images/assets/logo-text-white.png" : "/images/logo-text.png"}
                   alt="Topgun Security" 
                   fill
                   className="object-contain object-left"
@@ -92,7 +94,7 @@ export function Header() {
 
            {/* Scroll State: Full Logo (Standard) */}
            <div className="logo-full absolute inset-0 flex items-center opacity-0 translate-y-4">
-              <div className="relative h-20 w-full">
+              <div className="relative h-24 w-full">
                 <Image 
                   src="/images/logo-full.png" 
                   alt="Topgun Security" 
