@@ -57,27 +57,68 @@ export default function Services() {
   return (
     <section id="services" className="relative bg-white py-24 md:py-32 overflow-hidden">
       {/* Dynamic Background Layer */}
-      <div className="absolute inset-0 z-0 pointer-events-none bg-primary/80">
+      <div className="absolute inset-0 z-0 pointer-events-none bg-black">
         {services.map((service, index) => (
            <div 
              key={`bg-${index}`}
              className="absolute inset-0 transition-opacity duration-700 ease-in-out"
              style={{ 
-               opacity: hoveredService === index ? 0.3 : 0,
+               opacity: hoveredService === index ? 1 : 0,
                zIndex: hoveredService === index ? 10 : 0
              }}
            >
-             <Image 
-               src={service.image} 
-               alt="" 
-               fill 
-               className="object-cover grayscale" // Grayscale for "Personal in Szene" vibe without color clash
-               priority={index < 2}
+             {/* Abstract Technical Backgrounds based on index */}
+             <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900" />
+             
+             {/* Pattern Overlay */}
+             <div className="absolute inset-0 opacity-20" 
+                  style={{ 
+                    backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)',
+                    backgroundSize: '40px 40px' 
+                  }} 
              />
-             <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+
+             {/* Animated Elements based on service type */}
+             {index % 3 === 0 && ( // Premium / Doorman Style
+                <div className="absolute inset-0 overflow-hidden">
+                   <div className="absolute -inset-[100%] top-[-50%] animate-[spin_60s_linear_infinite] opacity-30">
+                      <div className="w-full h-full bg-[conic-gradient(from_0deg,transparent_0deg,rgba(215,160,34,0.1)_180deg,transparent_360deg)]" />
+                   </div>
+                </div>
+             )}
+
+             {index % 3 === 1 && ( // Industrial / Construction Style (Grid Scan)
+                <div className="absolute inset-0 overflow-hidden">
+                   <div className="absolute w-full h-1 bg-accent/20 top-0 animate-[scan_4s_ease-in-out_infinite]" 
+                        style={{ boxShadow: '0 0 15px rgba(215, 160, 34, 0.5)' }} 
+                   />
+                </div>
+             )}
+             
+             {index % 3 === 2 && ( // Retail / Detective Style (Pulse)
+                <div className="absolute inset-0 flex items-center justify-center">
+                   <div className="w-[800px] h-[800px] border border-white/5 rounded-full animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite]" />
+                   <div className="absolute w-[600px] h-[600px] border border-white/5 rounded-full animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite_delay-700]" />
+                </div>
+             )}
+
+             {/* Gradient Overlay for Text Readability */}
+             <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent" />
            </div>
         ))}
-        {/* Default neutral background if needed, or just white from section */}
+         
+         {/* Default Background State (when nothing hovered) */}
+         <div className={`absolute inset-0 transition-opacity duration-700 ${hoveredService !== null ? 'opacity-0' : 'opacity-100'}`}>
+            <div className="absolute inset-0 bg-neutral-950" />
+            <div className="absolute inset-0 opacity-10" 
+                 style={{ 
+                    backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)',
+                    backgroundSize: '50px 50px' 
+                 }} 
+            />
+            {/* Subtle generic animation */}
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] animate-pulse" />
+         </div>
       </div>
 
       <div className="container-custom relative z-20">
