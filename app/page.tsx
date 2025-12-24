@@ -12,6 +12,7 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import BackgroundAudio from "@/components/BackgroundAudio";
 import CampaignQuiz from "@/components/CampaignQuiz";
+import NewCustomerCTA from "@/components/NewCustomerCTA";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -75,6 +76,7 @@ export default function Home() {
         <About />
         <CampaignQuiz />
         <Contact />
+        <NewCustomerCTA />
       </main>
       <Footer />
       <BackgroundAudio />

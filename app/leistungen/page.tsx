@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NewCustomerCTA from "@/components/NewCustomerCTA";
 import Image from "next/image";
 import { ServicePageLayout } from "@/components/ServicePageLayout";
 import { Shield, Factory, Building2, Hammer, Users, Truck } from "lucide-react";
@@ -106,14 +107,8 @@ export default function LeistungenOverviewPage() {
         ))}
       </div>
 
-       <div className="mt-20 p-8 bg-gray-50 border border-gray-200 rounded-lg text-center">
-          <h3 className="text-xl font-bold text-primary mb-4">Nicht das Richtige gefunden?</h3>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Wir entwickeln auch Sonderlösungen für spezifische Anforderungen (z.B. Event-Sicherheit, Personenschutz oder individuelle Beratungen).
-          </p>
-          <Link href="/#contact" className="btn-primary">
-            Individuelle Anfrage stellen
-          </Link>
+       <div className="mt-20">
+           <NewCustomerCTA />
        </div>
     </ServicePageLayout>
   );

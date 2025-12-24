@@ -1,7 +1,8 @@
 import { ServicePageLayout } from "@/components/ServicePageLayout";
-import { Handshake, Building, Hammer, ShieldCheck, Mail } from "lucide-react";
-import Link from "next/link";
+import { Handshake, Building, Hammer, ShieldCheck } from "lucide-react";
+
 import Image from "next/image";
+import PartnerContactForm from "@/components/PartnerContactForm";
 
 export const metadata = {
   title: "Partner werden | Topgun Security Netzwerk",
@@ -127,19 +128,9 @@ export default function PartnerPage() {
          </div>
       </div>
 
-      {/* 4. CTA */}
-       <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-primary mb-6">Werden Sie Partner</h2>
-            <p className="text-gray-600 mb-8">
-                Lassen Sie uns bei einem Kaffee besprechen, wie wir uns gegenseitig unterstützen können. Unverbindlich und auf Augenhöhe.
-            </p>
-            <Link 
-                href="/#contact" 
-                className="inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded font-bold uppercase tracking-wider hover:bg-primary/90 transition-colors"
-            >
-                <Mail size={20} />
-                Partneranfrage stellen
-            </Link>
+       {/* 4. Partner Kontakt Formular */}
+       <div id="partner-contact" className="max-w-4xl mx-auto">
+            <PartnerContactForm />
        </div>
 
     </ServicePageLayout>
