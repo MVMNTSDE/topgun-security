@@ -28,28 +28,28 @@ const servicesList = [
     title: "Baustellenbewachung",
     description: "Schutz vor Diebstahl und Vandalismus in jeder Bauphase.",
     icon: Hammer,
-    href: "/branchen/bau", // Served by the Construction Industry page
+    href: "/branchen/bau", 
     image: "/images/gallery/img-3.png",
   },
   {
     title: "Empfangsdienste",
     description: "Repräsentative Sicherheit für Ihr Foyer und den Empfang.",
     icon: Shield,
-    href: "/leistungen/empfangsdienst", // Future page
+    href: "/leistungen/empfangsdienst",
     image: "/images/gallery/img-4.png",
   },
   {
     title: "Revierdienst",
     description: "Mobile Kontrollen und Alarmverfolgung für weitläufige Areale.",
     icon: Truck,
-    href: "/leistungen/revierdienst", // Future page
+    href: "/leistungen/revierdienst",
     image: "/images/gallery/img-5.png",
   },
   {
      title: "Detektei & Retail",
      description: "Verdeckte Ermittlungen und Doorman-Services für den Einzelhandel.",
      icon: Users,
-     href: "/leistungen/detektei", // Future page
+     href: "/leistungen/detektei",
      image: "/images/gallery/img-1.png",
   }
 ];
