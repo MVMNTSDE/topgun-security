@@ -66,7 +66,7 @@ export function Header() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-between">
         {/* Dynamic Logo */}
         <Link href="/" className="flex items-center gap-5 group">
-          <div ref={logoIconRef} className="relative h-16 w-auto aspect-[16/9] transition-transform origin-left">
+          <div ref={logoIconRef} className="relative h-16 w-auto aspect-video transition-transform origin-left">
              <Image 
                src="/images/logo-full.png" 
                alt="Topgun Security GmbH Logo" 
