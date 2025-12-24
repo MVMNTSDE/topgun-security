@@ -55,10 +55,7 @@ export default function ImprintPage() {
             <div className="corp-card border-t-4 border-t-accent pt-12">
               <h2 className="text-lg font-black text-primary mb-6 uppercase tracking-tight">EU-Streitschlichtung</h2>
               <p>
-                Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
-                <a href="https://ec.europa.eu/consumers/odr/" className="text-accent hover:underline font-bold ml-1">
-                  https://ec.europa.eu/consumers/odr/
-                </a>.
+                Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" className="text-accent hover:underline font-bold ml-1">https://ec.europa.eu/consumers/odr/</a>.
                 Unsere E-Mail-Adresse finden Sie oben im Impressum.
               </p>
             </div>
