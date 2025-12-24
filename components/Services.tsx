@@ -1,56 +1,60 @@
 import { useState } from "react";
-import Image from "next/image";
-import { X } from "lucide-react";
+import Link from "next/link";
 import ServiceCard from "./ServiceCard";
 
 const services = [
   {
     title: "Doorman",
     description: "Repräsentative Sicherheit an Ihren Eingängen. Wir kombinieren hocheffiziente Kontrolle mit diskreter Präsenz.",
-    longDescription: "Unser Doorman-Service ist mehr als nur Zugangskontrolle. Er ist die Visitenkarte Ihres Hauses. Unser Personal ist darauf geschult, Sicherheit mit höchster Gastfreundschaft zu verbinden. Von der VIP-Begrüßung bis zur diskreten Abweisung ungebetener Gäste – wir sorgen für ein sicheres und exklusives Ambiente in Hotels, luxuriösen Boutiquen und Unternehmenszentralen.",
+    longDescription: "", // Legacy field removed
     icon: "shield" as const,
-    image: "/images/gallery/img-1.png", // Using gallery image as placeholder
+    image: "/images/gallery/img-1.png",
+    href: "/leistungen/empfangsdienst"
   },
   {
     title: "Baustellen\u00ADbewachung",
     description: "Lückenlose Absicherung Ihrer Sachwerte vor Ort. Schutz vor Vandalismus, Diebstahl und unbefugtem Zutritt.",
-    longDescription: "Baustellen sind komplexe und gefährdete Areale. Wir sichern Ihre Werte durch eine Kombination aus physischer Präsenz und moderner Überwachungstechnik. Zutrittskontrollen, Patrouillen und Diebstahlschutz sorgen dafür, dass Ihr Projekt im Zeitplan bleibt und teure Materialverluste vermieden werden.",
+    longDescription: "",
     icon: "hammer" as const,
     image: "/images/gallery/img-2.png",
+    href: "/branchen/bau"
   },
   {
     title: "Kaufhaus\u00ADdetektive",
     description: "Prävention von Inventurdifferenzen durch hochqualifizierte Überwachung im Einzelhandel.",
-    longDescription: "Inventurdifferenzen mindern Ihren Gewinn drastisch. Unsere Detektive arbeiten verdeckt und hocheffizient. Durch psychologische Schulung erkennen sie verdächtiges Verhalten frühzeitig und greifen rechtssicher ein. Wir schützen Ihre Ware, ohne das Einkaufserlebnis Ihrer ehrlichen Kunden zu stören.",
+    longDescription: "",
     icon: "users" as const,
     image: "/images/gallery/img-3.png",
+    href: "/leistungen/detektei"
   },
   {
     title: "Empfangs\u00ADdienst",
     description: "Die professionelle Schnittstelle zwischen Ihrem Unternehmen und Ihren Gästen. Sicher und zuvorkommend.",
-    longDescription: "Der erste Eindruck zählt. Unser Empfangsdienst managt Besucherströme, bedient Telefonzentralen und übernimmt administrative Sicherheitsaufgaben. Wir integrieren uns nahtlos in Ihre Corporate Identity und gewährleisten, dass Sicherheit und Service Hand in Hand gehen.",
+    longDescription: "",
     icon: "shield" as const,
     image: "/images/gallery/img-4.png",
+    href: "/leistungen/empfangsdienst"
   },
   {
     title: "Pforten\u00ADdienst",
     description: "Kontrollierter Personen- und Fahrzeugverkehr an Ihren Toren. Infrastrukturelle Sicherheit rund um die Uhr.",
-    longDescription: "An der Pforte wird entschieden, wer Ihr Gelände betritt. Wir steuern den Lieferverkehr, führen LKW-Kontrollen durch und dokumentieren alle Bewegungen lückenlos. Unsere Mitarbeiter sind geschult im Umgang mit Werksausweisen, Gefahrenmeldeanlagen und Notfallprotokollen.",
+    longDescription: "",
     icon: "shield" as const,
     image: "/images/gallery/img-5.png",
+    href: "/leistungen/werkschutz"
   },
   {
     title: "Revier\u00ADkontrollen",
     description: "Systematische Überprüfung Ihrer Liegenschaften in definierten Intervallen zur effektiven Gefahrenabwehr.",
-    longDescription: "Mobile Sicherheit für weitläufige Areale. Unsere Revierfahrer führen unvorhersehbare Kontrollfahrten durch, überprüfen Verschlusssicherheit und intervenieren bei Alarmen. Kosteneffizienter Schutz für Industriegebiete, Wohnanlagen und öffentliche Einrichtungen.",
+    longDescription: "",
     icon: "map" as const,
-    image: "/images/gallery/img-1.png", // Reuse img-1 or add a 6th if available
+    image: "/images/gallery/img-1.png",
+    href: "/leistungen/revierdienst"
   },
 ];
 
 export default function Services() {
   const [hoveredService, setHoveredService] = useState<number | null>(null);
-  const [selectedService, setSelectedService] = useState<typeof services[0] | null>(null);
 
   // Background fade logic handled via CSS opacity transition for performance
   
@@ -115,92 +119,27 @@ export default function Services() {
           <p className="text-corporate-body max-w-2xl mt-8">
             Topgun Security bietet ein modulares Ökosystem an Sicherheitsdienstleistungen für Köln und NRW. 
             <span className="block mt-2 text-sm italic opacity-70">
-              Hovern Sie über die Karten für einen visuellen Eindruck. Klicken Sie für Details.
+              Klicken Sie auf eine Kachel für Detailinformationen.
             </span>
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <button 
+            <Link 
               key={service.title} 
-              className="corp-reveal cursor-pointer text-left w-full h-full block focus:outline-none focus:ring-2 focus:ring-accent"
+              href={service.href}
+              className="corp-reveal cursor-pointer text-left w-full h-full block focus:outline-none focus:ring-2 focus:ring-accent group"
               onMouseEnter={() => setHoveredService(index)}
               onMouseLeave={() => setHoveredService(null)}
-              onClick={() => setSelectedService(service)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  setSelectedService(service);
-                }
-              }}
               aria-label={`View details for ${service.title}`}
               title={`Details anzeigen`}
             >
               <ServiceCard {...service} />
-            </button>
+            </Link>
           ))}
         </div>
       </div>
-
-      {/* Detail Modal */}
-      {selectedService && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          <button 
-            type="button"
-            className="absolute inset-0 bg-primary/90 backdrop-blur-sm cursor-pointer w-full h-full border-none p-0 m-0 block" 
-            onClick={() => setSelectedService(null)}
-            aria-label="Close modal"
-          />
-          <div className="relative bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl animate-in fade-in zoom-in-95 duration-300 border border-primary/10">
-            <button 
-              onClick={() => setSelectedService(null)}
-              className="absolute top-6 right-6 p-2 bg-muted hover:bg-accent hover:text-white transition-colors rounded-full z-50 cursor-pointer"
-              title="Close modal"
-              type="button"
-            >
-              <X className="w-6 h-6" />
-            </button>
-
-            <div className="grid grid-cols-1 md:grid-cols-2">
-              <div className="h-64 md:h-full relative min-h-[300px]">
-                <Image 
-                  src={selectedService.image} 
-                  alt={selectedService.title}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-primary/20" />
-              </div>
-              <div className="p-12 flex flex-col justify-center">
-                 <div className="w-12 h-1 bg-accent mb-8" />
-                 <h3 className="text-3xl md:text-4xl font-black text-primary uppercase mb-6 leading-none hyphens-auto" lang="de">
-                    {selectedService.title.replace("\u00AD", "")}
-                 </h3>
-                 <p className="text-corporate-body mb-8">
-                   {selectedService.longDescription}
-                 </p>
-                 
-                 <div className="mt-auto pt-8 border-t border-primary/5">
-                   <p className="text-xs font-bold text-accent uppercase tracking-widest mb-2">Einsatzgebiete</p>
-                   <p className="text-sm font-medium text-primary/70">
-                     Köln • Leverkusen • Bonn • Düsseldorf • Ruhrgebiet
-                   </p>
-                 </div>
-                 
-                 <button 
-                   onClick={() => {
-                     setSelectedService(null);
-                     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                   }}
-                   className="mt-8 btn-primary self-start"
-                 >
-                   Angebot anfordern
-                 </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
