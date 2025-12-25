@@ -22,7 +22,9 @@ export function Contact() {
                  <a href="mailto:verwaltung@topgun-security.de" className="text-xl font-bold text-primary hover:text-accent transition-all duration-500 underline decoration-2 underline-offset-8">verwaltung@topgun-security.de</a>
               </div>
               <div>
-                 <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary/20 mb-4 block">Betriebsleitung</span>
+                 <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary/20 mb-4 block">Geschäftsleitung</span>
+                 <p className="text-xl font-bold text-primary mb-2">Fahrhad Dilmangahni</p>
+                 <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary/20 mb-4 block mt-8">Betriebsleitung</span>
                  <p className="text-xl font-bold text-primary">Hüseyin Simsek</p>
               </div>
               <div className="pt-12 border-t border-primary/5">
@@ -40,7 +42,7 @@ export function Contact() {
                     24/7 Notfall Service
                  </span>
                  <a href="tel:+4915565098461" className="inline-flex items-center justify-center bg-destructive text-white text-xs font-bold uppercase tracking-widest px-8 py-4 rounded hover:bg-destructive/90 transition-colors shadow-lg">
-                    HOTLINE: +49 155 65098461
+                    DIREKT ANRUFEN
                  </a>
               </div>
             </div>

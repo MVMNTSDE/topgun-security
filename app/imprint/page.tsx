@@ -16,14 +16,15 @@ export default function ImprintPage() {
               <h2 className="text-xl font-black text-primary mb-6 uppercase tracking-tight">Angaben gemäß § 5 TMG</h2>
               <p className="font-medium">
                 Topgun Security-Sicherheit & Service GmbH<br />
-                Muldestr. 22<br />
-                51371 Leverkusen
+                Heinrich-Heine Straße 7<br />
+                40699 Erkrath
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="border-l-4 border-accent p-8 bg-muted">
                 <h2 className="text-sm font-black text-primary mb-4 uppercase tracking-[0.3em]">Vertreten durch</h2>
+                <p className="text-primary font-bold mb-2">Fahrhad Dilmangahni (Geschäftsführer)</p>
                 <p className="text-primary font-bold">Hüseyin Simsek (Betriebsleiter)</p>
               </div>
 
