@@ -28,13 +28,13 @@ export default function NewCustomerCTA() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             
             {/* Option 1: Call */}
-            <a href="tel:022195285529" className="group bg-white/5 hover:bg-white/10 border border-white/10 p-8 rounded-xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center">
+            <a href="tel:+4915565098461" className="group bg-white/5 hover:bg-white/10 border border-white/10 p-8 rounded-xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center">
                <div className="bg-primary w-14 h-14 rounded-full flex items-center justify-center text-accent mb-4 group-hover:scale-110 transition-transform border border-white/5 shadow-inner">
                  <Phone size={24} />
                </div>
-               <h3 className="text-white font-bold mb-2">Sofort anrufen</h3>
+               <h3 className="text-white font-bold mb-2">Notfall Anruf</h3>
                <p className="text-white/40 text-sm mb-4">Direkter Draht zur Einsatzzentrale</p>
-               <span className="text-accent font-black text-lg tracking-widest">0221 95285529</span>
+               <span className="text-accent font-black text-lg tracking-widest">0155 65098461</span>
             </a>
 
             {/* Option 2: Campaign */}

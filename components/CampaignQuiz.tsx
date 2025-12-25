@@ -17,7 +17,9 @@ const questions = [
       { id: "objekt", label: "Objektschutz & Werkschutz", icon: "🏢" },
       { id: "event", label: "Veranstaltungsschutz", icon: "🎉" },
       { id: "retail", label: "Einzelhandel / Detektive", icon: "🛍️" },
-      { id: "personal", label: "Personenschutz / Doorman", icon: "vip" }, // VIP icon placeholder
+      { id: "personal", label: "Personenschutz / Doorman", icon: "vip" },
+      { id: "asyl", label: "Asyl & Notunterkünfte", icon: "🏠" },
+      { id: "revier", label: "Revierfahrten / Patrouille", icon: "🚓" },
     ]
   },
   {
