@@ -14,7 +14,8 @@ const sectorData = [
       challenge: "Spionage & Vandalismus in Wettbewerbsphase.",
       solution: "Hybride Überwachung: KI-Kameras + Unregelmäßige Patrouillen.",
       stats: "100% Sicherung der Modelldaten"
-    }
+    },
+    location: "Düsseldorf"
   },
   {
     name: "Immobilien Verwaltung",
@@ -23,7 +24,8 @@ const sectorData = [
       challenge: "Steigende Einbruchszahlen & Vandalismus.",
       solution: "24/7 Doorman-Service & Perimeterschutz.",
       stats: "0 Zwischenfälle in 24 Monaten"
-    }
+    },
+    location: "Köln"
   },
   {
     name: "Facility Management",
@@ -32,7 +34,8 @@ const sectorData = [
       challenge: "Koordination von Zutritten für 50+ Dienstleister.",
       solution: "Digitales Besuchermanagement & Schleusen-Personal.",
       stats: "Reibungsloser Ablauf bei Großevents"
-    }
+    },
+    location: "Essen"
   },
   {
     name: "Büro Komplexe",
@@ -41,7 +44,8 @@ const sectorData = [
       challenge: "Unbemerkter Zutritt Fremder in Büroflächen.",
       solution: "Empfangsdienst mit Concierge-Level & Ausweiskontrolle.",
       stats: "Subjektives Sicherheitsgefühl +90%"
-    }
+    },
+    location: "Düsseldorf"
   },
   {
     name: "Business Parks",
@@ -50,7 +54,8 @@ const sectorData = [
       challenge: "Nächtlicher Materialdiebstahl & illegale Müllentsorgung.",
       solution: "Drohnengestützte Revierstreifen & Kennzeichenerfassung.",
       stats: "Schadensreduktion um 60.000€ p.a."
-    }
+    },
+    location: "Dortmund"
   },
   {
     name: "High End Immobilien",
@@ -59,7 +64,8 @@ const sectorData = [
       challenge: "Schutz einer High-Net-Worth Familie.",
       solution: "Bewaffneter Personenschutz & Smarthome-Security-Integration.",
       stats: "Maximale Privatsphäre garantiert"
-    }
+    },
+    location: "Meerbusch"
   },
   {
     name: "Bauträger & Baustellen",
@@ -68,7 +74,8 @@ const sectorData = [
       challenge: "Massiver Diebstahl von Kupfer & Baumaschinen.",
       solution: "Baustellenbewachung mit Hundeführern & Video-Türmen.",
       stats: "Bauverzögerung verhindert"
-    }
+    },
+    location: "Bochum"
   },
   {
     name: "Hotellerie",
@@ -77,7 +84,8 @@ const sectorData = [
       challenge: "Diskretion für VIP-Gäste & Event-Protection.",
       solution: "Anzug-Träger Security: 'Gäste-Mindset' mit Kampfsporterfahrung.",
       stats: "Exzellentes Gäste-Feedback"
-    }
+    },
+    location: "Köln"
   },
   {
     name: "Logistikzentren",
@@ -86,7 +94,8 @@ const sectorData = [
       challenge: "Interner Warenschwund & Organisierte Kriminalität.",
       solution: "Taschenkontrollen & Verdeckte Ermittler.",
       stats: "Aufklärungsquote 100%"
-    }
+    },
+    location: "Duisburg"
   },
   {
     name: "Industrie & Werke",
@@ -95,7 +104,8 @@ const sectorData = [
       challenge: "Werksspionage & Sabotage-Risiko.",
       solution: "Strenge Werkschutz-Protokolle nach ISO-Norm.",
       stats: "Audit-Score: 98/100"
-    }
+    },
+    location: "Leverkusen"
   }
 ];
 
@@ -139,6 +149,7 @@ export function About() {
           imageUrl="/images/logo-text.png" // Fallback or specific sector icon could go here
           title={`REPORT: ${selectedReport.name.toUpperCase()}`}
           variant="report"
+          validityArea={selectedReport.location}
           description={
             <div className="space-y-4">
                <div>
