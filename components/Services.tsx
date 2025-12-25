@@ -59,6 +59,22 @@ const services = [
     image: "/images/services/jugendschutz-school.png", 
     href: "/leistungen/jugendschutz"
   },
+  {
+    title: "Veranstaltungs\u00ADschutz",
+    description: "Sichere Events durch professionelle Einlasskontrollen, Crowd Management und VIP-Betreuung.",
+    longDescription: "",
+    icon: "users" as const, // Reusing users icon or maybe another appropriate one if available in ServiceCard logic, using 'users' as safe bet
+    image: "/images/services/doorman-mall.png", // Using a placeholder image for now
+    href: "/leistungen/veranstaltungsschutz"
+  },
+  {
+    title: "Asyl- & Notunterkunft\u00ADbetreuung",
+    description: "Sozialkompetente Sicherheitsdienstleistung für sensible Einrichtungen. Deeskalation und 24/7 Schutz.",
+    longDescription: "",
+    icon: "shield" as const, 
+    image: "/images/gallery/img-5.png", // Using a placeholder image for now
+    href: "/leistungen/asyl-notunterkunft"
+  },
 ];
 
 export default function Services() {
