@@ -14,42 +14,42 @@ const industriesList = [
     description: "Sicherheit & Service für Facility Management und Wohnwirtschaft.",
     icon: Building2,
     href: "/branchen/immobilien",
-    image: "/images/gallery/img-4.png",
+    image: "/images/services/gate-service-cinematic.png",
   },
   {
     title: "Logistik",
     description: "Schutz der Lieferkette und Transportüberwachung.",
     icon: Truck,
     href: "/branchen/logistik",
-    image: "/images/gallery/img-5.png",
+    image: "/images/services/mobile-patrol-cinematic.png",
   },
   {
     title: "Bauwesen",
     description: "Sicherung von Baustellen gegen Diebstahl und Vandalismus.",
     icon: Construction,
     href: "/branchen/bau", // Future page
-    image: "/images/gallery/img-2.png",
+    image: "/images/services/construction-security-cinematic.png",
   },
   {
     title: "Einzelhandel",
     description: "Doorman & Detektei zur Vermeidung von Inventurdifferenzen.",
     icon: ShoppingBag,
     href: "/branchen/retail", // Future page
-    image: "/images/gallery/img-3.png",
+    image: "/images/services/retail-security-cinematic.png",
   },
   {
     title: "Industrie",
     description: "Werkschutz und Prozesssicherheit für Produktionsbetriebe.",
     icon: Factory,
     href: "/leistungen/werkschutz", // Link to Werkschutz service page as it serves this industry perfectly
-    image: "/images/gallery/img-1.png",
+    image: "/images/services/gate-service-cinematic.png",
   },
   {
      title: "Corporate",
      description: "Empfangsdienste und Sicherheit für Unternehmenszentralen.",
      icon: Briefcase,
      href: "/leistungen/empfangsdienst",
-     image: "/images/gallery/img-4.png",
+     image: "/images/services/corporate-security-cinematic.png",
   }
 ];
 

@@ -1,5 +1,6 @@
 import { ServicePageLayout } from "@/components/ServicePageLayout";
 import { ShieldCheck, Award, HeartHandshake, Users, Target, Scale } from "lucide-react";
+import { OperationalLogics } from "@/components/OperationalLogics";
 
 export const metadata = {
   title: "Über Topgun Security | Verantwortung & Werte",
@@ -13,6 +14,7 @@ export default function UnternehmenPage() {
       heroSubtitle="Sicherheit braucht Haltung. Wir verbinden operative Schlagkraft mit hanseatischen Kaufmannstugenden."
       heroImage="/images/services/portrait-professional.png"
       parentLink={{ href: "/", label: "Zurück zur Startseite" }}
+      bottomSection={<OperationalLogics />}
     >
       {/* 1. Vision & Mission */}
       <div className="mb-20">

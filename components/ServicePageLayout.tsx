@@ -14,6 +14,7 @@ interface ServicePageLayoutProps {
     href: string;
     label: string;
   };
+  bottomSection?: React.ReactNode;
 }
 
 export function ServicePageLayout({
@@ -22,6 +23,7 @@ export function ServicePageLayout({
   heroSubtitle,
   heroImage = "/images/gallery/img-1.png", // Default fallback
   parentLink = { href: "/#services", label: "Zurück zur Übersicht" },
+  bottomSection,
 }: Readonly<ServicePageLayoutProps>) {
   return (
     <div className="bg-background min-h-screen selection:bg-accent selection:text-white flex flex-col">
@@ -71,6 +73,9 @@ export function ServicePageLayout({
                 </article>
             </div>
         </div>
+        </div>
+        
+        {bottomSection}
       </main>
 
       <NewCustomerCTA />

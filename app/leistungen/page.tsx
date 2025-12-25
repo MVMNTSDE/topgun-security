@@ -15,42 +15,42 @@ const servicesList = [
     description: "Ganzheitliche Absicherung von Immobilien und Gewerbeflächen.",
     icon: Building2,
     href: "/leistungen/objektschutz",
-    image: "/images/gallery/img-1.png",
+    image: "/images/services/gate-service-cinematic.png",
   },
   {
     title: "Werkschutz",
     description: "Spezialisierte Sicherheit für Industrie, Produktion und Logistik.",
     icon: Factory,
     href: "/leistungen/werkschutz",
-    image: "/images/gallery/img-2.png",
+    image: "/images/services/gate-service-cinematic.png",
   },
   {
     title: "Baustellenbewachung",
     description: "Schutz vor Diebstahl und Vandalismus in jeder Bauphase.",
     icon: Hammer,
     href: "/branchen/bau", 
-    image: "/images/gallery/img-3.png",
+    image: "/images/services/construction-security-cinematic.png",
   },
   {
     title: "Empfangsdienste",
     description: "Repräsentative Sicherheit für Ihr Foyer und den Empfang.",
     icon: Shield,
     href: "/leistungen/empfangsdienst",
-    image: "/images/gallery/img-4.png",
+    image: "/images/services/corporate-security-cinematic.png",
   },
   {
     title: "Revierdienst",
     description: "Mobile Kontrollen und Alarmverfolgung für weitläufige Areale.",
     icon: Truck,
     href: "/leistungen/revierdienst",
-    image: "/images/gallery/img-5.png",
+    image: "/images/services/mobile-patrol-cinematic.png",
   },
   {
      title: "Detektei & Retail",
      description: "Verdeckte Ermittlungen und Doorman-Services für den Einzelhandel.",
      icon: Users,
      href: "/leistungen/detektei",
-     image: "/images/gallery/img-1.png",
+     image: "/images/services/retail-security-cinematic.png",
   }
 ];
 
