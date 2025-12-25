@@ -80,7 +80,7 @@ export default function JugendschutzPage() {
            <div>
               <h3 className="text-xl font-bold text-primary mb-3">Pädagogischer Ansatz</h3>
               <p className="text-gray-600 leading-relaxed">
-                 Unser Team agiert nicht als "Türsteher", sondern als Ansprechpartner. Deeskalation und Kommunikation stehen immer an erster Stelle.
+                 Unser Team agiert nicht als &quot;Türsteher&quot;, sondern als Ansprechpartner. Deeskalation und Kommunikation stehen immer an erster Stelle.
               </p>
            </div>
         </div>
