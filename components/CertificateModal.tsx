@@ -20,7 +20,7 @@ interface CertificateModalProps {
   readonly validityArea?: string;
 }
 
-export function CertificateModal({ isOpen, onClose, imageUrl, title, description, variant = "certificate", ...props }: CertificateModalProps) {
+export function CertificateModal({ isOpen, onClose, imageUrl, title, description, variant = "certificate", validityArea }: CertificateModalProps) {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -88,7 +88,7 @@ export function CertificateModal({ isOpen, onClose, imageUrl, title, description
           <div className="mt-auto pt-8 border-t border-primary/5">
             <span className="text-[10px] font-black tracking-widest uppercase text-primary/30 mb-4 block">Gültigkeitsbereich</span>
             <p className="text-primary font-bold text-sm">
-              {props.validityArea || "Topgun Security & Service GmbH Leverkusen"}
+              {validityArea || "Topgun Security & Service GmbH Leverkusen"}
             </p>
           </div>
           

@@ -25,11 +25,7 @@ export function Header() {
   const logoIconRef = useRef<HTMLDivElement>(null);
 
   // Determine if the current page has a dark hero (needs white text initially)
-  const isDarkHero = pathname === "/" || 
-                     pathname.startsWith("/leistungen") || 
-                     pathname.startsWith("/unternehmen") || 
-                     pathname.startsWith("/partner") ||
-                     pathname.startsWith("/branchen");
+  const isDarkHero = pathname === "/";
 
   useGSAP(() => {
     const tl = gsap.timeline({
