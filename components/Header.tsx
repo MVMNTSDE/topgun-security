@@ -24,6 +24,13 @@ export function Header() {
   const bgRef = useRef<HTMLDivElement>(null);
   const logoIconRef = useRef<HTMLDivElement>(null);
 
+  // Determine if the current page has a dark hero (needs white text initially)
+  const isDarkHero = pathname === "/" || 
+                     pathname.startsWith("/leistungen") || 
+                     pathname.startsWith("/unternehmen") || 
+                     pathname.startsWith("/partner") ||
+                     pathname.startsWith("/branchen");
+
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -69,8 +76,8 @@ export function Header() {
       ease: "power2.out"
     }, 0.1);
 
-    // 3. Animate Nav Links Color (Only on Home where they start white)
-    if (pathname === "/") {
+    // 3. Animate Nav Links Color (Only on pages where they start white)
+    if (isDarkHero) {
       tl.to(".nav-link", {
         color: "rgba(3, 2, 19, 0.4)", // text-primary/40
         duration: 0.8,
@@ -102,12 +109,12 @@ export function Header() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-between">
         {/* Dynamic Logo */}
         {/* Dynamic Logo Container */}
-        <Link href="/" className="relative h-24 w-64 md:h-40 md:w-120 lg:h-48 lg:w-160 group">
+        <Link href="/" className="relative h-14 w-40 md:h-16 md:w-48 group">
            {/* Initial State: Dynamic Text Logo (White on Home, Black on others) */}
            <div ref={logoIconRef} className="absolute inset-0 flex items-center">
               <div className="relative h-full w-full transition-transform origin-left">
                 <Image 
-                  src={pathname === "/" ? "/images/assets/logo-text-white.png" : "/images/logo-text.png"}
+                  src={isDarkHero ? "/images/assets/logo-text-white.png" : "/images/logo-text.png"}
                   alt="Topgun Security" 
                   fill
                   className="object-contain object-left"
@@ -131,22 +138,22 @@ export function Header() {
         </Link>
 
         {/* Corporate Desktop Nav */}
-        <div className="hidden md:flex items-center gap-12">
+        <div className="hidden lg:flex items-center gap-8 xl:gap-12">
           {navLinks.map((link) => (
             <Link 
               key={link.name} 
               href={link.href}
               className={cn(
-                "nav-link text-[11px] font-black tracking-[0.3em] uppercase transition-all duration-500 hover:text-accent",
-                pathname === "/" ? "text-white/80" : "text-primary/40"
+                "nav-link text-xs font-bold tracking-[0.2em] uppercase transition-all duration-500 hover:text-accent whitespace-nowrap",
+                isDarkHero ? "text-white/80" : "text-primary/40"
               )}
             >
               {link.name}
             </Link>
           ))}
           <Link 
-            href="#contact" 
-            className="btn-primary"
+            href="/#contact" 
+            className="btn-primary px-8! py-3! text-xs"
           >
             Anfrage Senden
           </Link>
@@ -154,13 +161,13 @@ export function Header() {
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-primary" // This might be hard to see on Home if dark?
+          className="lg:hidden text-primary" // This might be hard to see on Home if dark?
           // Fix: Make toggle also dynamic in next step or use same nav-link class logic
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle Menu"
           title="Menu"
         >
-          {isMenuOpen ? <X size={26} /> : <Menu size={26} className={cn("transition-colors", pathname === "/" ? "text-white nav-link" : "text-primary")} />}
+          {isMenuOpen ? <X size={26} /> : <Menu size={26} className={cn("transition-colors", isDarkHero ? "text-white nav-link" : "text-primary")} />}
         </button>
       </div>
 
@@ -176,20 +183,20 @@ export function Header() {
         >
           <X size={32} />
         </button>
-        <div className="flex flex-col items-center gap-14 text-center">
+        <div className="flex flex-col items-center gap-10 text-center">
           {navLinks.map((link) => (
             <Link 
               key={link.name} 
               href={link.href}
-              className="text-5xl font-black text-white hover:text-accent uppercase tracking-tighter transition-colors"
+              className="text-3xl font-black text-white hover:text-accent uppercase tracking-tighter transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               {link.name}
             </Link>
           ))}
           <Link 
-            href="#contact" 
-            className="btn-primary mt-10 px-12 text-sm"
+            href="/#contact" 
+            className="btn-primary mt-6 px-12 text-sm"
             onClick={() => setIsMenuOpen(false)}
           >
             Mandatsanfrage

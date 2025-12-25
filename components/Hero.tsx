@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import Link from "next/link";
 import gsap from "gsap";
 
 export default function Hero() {
@@ -65,12 +66,12 @@ export default function Hero() {
           </p>
 
           <div className="hero-text flex flex-col sm:flex-row gap-6">
-            <button className="btn-primary">
+            <Link href="/#contact" className="btn-primary">
               Erstberatung Vereinbaren
-            </button>
-            <button className="btn-ghost border-white! text-white! hover:bg-white! hover:text-primary!">
+            </Link>
+            <a href="mailto:ausschreibung@topgun-security.de" className="btn-ghost border-white! text-white! hover:bg-white! hover:text-primary!">
               Ausschreibung Senden
-            </button>
+            </a>
           </div>
         </div>
       </div>

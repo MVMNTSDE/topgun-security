@@ -22,7 +22,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-8 bg-white p-0">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="space-y-3">
-          <label htmlFor="name" className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Ansprechpartner</label>
+          <label htmlFor="name" className="text-[10px] font-black uppercase tracking-widest md:tracking-[0.3em] text-primary/40 ml-1">Ansprechpartner</label>
           <input
             id="name"
             type="text"
@@ -34,7 +34,7 @@ export default function ContactForm() {
           />
         </div>
         <div className="space-y-3">
-          <label htmlFor="email" className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Digitaler Kontakt</label>
+          <label htmlFor="email" className="text-[10px] font-black uppercase tracking-widest md:tracking-[0.3em] text-primary/40 ml-1">Digitaler Kontakt</label>
           <input
             id="email"
             type="email"
@@ -49,7 +49,7 @@ export default function ContactForm() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="space-y-3">
-          <label htmlFor="company" className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">GmbH / AG / Körperschaft</label>
+          <label htmlFor="company" className="text-[10px] font-black uppercase tracking-widest md:tracking-[0.3em] text-primary/40 ml-1">GmbH / AG / Körperschaft</label>
           <input
             id="company"
             type="text"
@@ -61,7 +61,7 @@ export default function ContactForm() {
           />
         </div>
         <div className="space-y-3">
-          <label htmlFor="industry" className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Wirtschaftssektor</label>
+          <label htmlFor="industry" className="text-[10px] font-black uppercase tracking-widest md:tracking-[0.3em] text-primary/40 ml-1">Wirtschaftssektor</label>
           <select
             id="industry"
             className="w-full bg-muted border border-primary/5 p-5 text-sm focus:border-accent focus:outline-none transition-all appearance-none cursor-pointer text-primary"
@@ -80,7 +80,7 @@ export default function ContactForm() {
       </div>
 
       <div className="space-y-3">
-        <label htmlFor="service" className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Gewünschtes Mandat</label>
+        <label htmlFor="service" className="text-[10px] font-black uppercase tracking-widest md:tracking-[0.3em] text-primary/40 ml-1">Gewünschtes Mandat</label>
         <select
           id="service"
           className="w-full bg-muted border border-primary/5 p-5 text-sm focus:border-accent focus:outline-none transition-all appearance-none cursor-pointer text-primary"
@@ -97,7 +97,7 @@ export default function ContactForm() {
       </div>
 
       <div className="space-y-3">
-        <label htmlFor="message" className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 ml-1">Anforderungsprofil / Nachricht</label>
+        <label htmlFor="message" className="text-[10px] font-black uppercase tracking-widest md:tracking-[0.3em] text-primary/40 ml-1">Anforderungsprofil / Nachricht</label>
         <textarea
           id="message"
           rows={4}

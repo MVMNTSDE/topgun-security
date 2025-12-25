@@ -10,7 +10,7 @@ export function Contact() {
           <div className="lg:col-span-4 corp-reveal">
             <div className="div-line" />
             <h2 className="text-primary uppercase">Direkte<br /><span className="text-accent underline decoration-4 underline-offset-8">Anfrage</span></h2>
-            <p className="text-primary/40 text-[10px] font-black tracking-[0.5em] uppercase mt-12 mb-16">Köln | Leverkusen | NRW</p>
+            <p className="text-primary/40 text-[10px] font-black tracking-[0.5em] uppercase mt-12 mb-16">Köln | Bonn | Düsseldorf | Leverkusen | NRW</p>
             
             <div className="space-y-16">
               <div>
@@ -37,7 +37,7 @@ export function Contact() {
           <div className="lg:col-span-8 corp-reveal bg-white p-12 lg:p-24 shadow-[-80px_80px_160px_rgba(0,30,86,0.06)] border border-primary/5">
               <div className="mb-16">
                  <h3 className="text-primary text-2xl font-black tracking-tighter mb-4 italic">Vertrauliche Erstbewertung</h3>
-                 <p className="text-primary/40 text-sm font-medium">Spezialisierte Beratung für GmbHs, AGs und Großkonzerne ab 5 Angestellten.</p>
+                 <p className="text-primary/40 text-sm font-medium">Spezialisierte Beratung für GmbHs, AGs und Großkonzerne.</p>
               </div>
               <ContactForm />
           </div>
