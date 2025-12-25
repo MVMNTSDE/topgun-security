@@ -30,10 +30,10 @@ export default function ImprintPage() {
 
               <div className="border-l-4 border-primary p-8 bg-muted md:col-span-2 lg:col-span-1">
                 <h2 className="text-sm font-black text-primary mb-6 uppercase tracking-[0.3em]">Kontakt</h2>
-                <div className="flex flex-col xl:flex-row gap-8 xl:gap-0">
+                <div className="flex flex-col gap-12">
                   
                   {/* GF Contact */}
-                  <div className="xl:pr-8 xl:border-r border-primary/20 flex-1">
+                  <div className="flex-1">
                      <p className="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-2">Geschäftsführung</p>
                      <p className="text-primary font-bold mb-1">
                        <a href="tel:+491787703738" className="hover:text-accent transition-colors">+49 178 7703738</a>
@@ -44,7 +44,7 @@ export default function ImprintPage() {
                   </div>
 
                   {/* Admin/Hotline Contact */}
-                  <div className="xl:pl-8 flex-1">
+                  <div className="flex-1">
                      <p className="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-2">Verwaltung & Notfall</p>
                      <p className="text-primary font-bold mb-1">
                        <a href="tel:+4915565098461" className="hover:text-accent transition-colors">+49 155 65098461</a>
