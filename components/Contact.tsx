@@ -23,7 +23,8 @@ export function Contact() {
               </div>
               <div>
                  <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary/20 mb-4 block">Geschäftsleitung</span>
-                 <p className="text-xl font-bold text-primary mb-2">Fahrhad Dilmangahni</p>
+                 <p className="text-xl font-bold text-primary mb-1">Fahrhad Dilmangahni</p>
+                 <a href="tel:+491787703738" className="text-sm font-bold text-primary/60 hover:text-accent transition-colors block mb-2">+49 178 7703738</a>
                  <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary/20 mb-4 block mt-8">Betriebsleitung</span>
                  <p className="text-xl font-bold text-primary">Hüseyin Simsek</p>
               </div>
