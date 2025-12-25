@@ -25,15 +25,36 @@ export default function ImprintPage() {
               <div className="border-l-4 border-accent p-8 bg-muted">
                 <h2 className="text-sm font-black text-primary mb-4 uppercase tracking-[0.3em]">Vertreten durch</h2>
                 <p className="text-primary font-bold mb-2">Fahrhad Dilmangahni (Geschäftsführer)</p>
-                <p className="text-primary font-bold">Hüseyin Simsek (Betriebsleiter)</p>
+                <p className="text-primary font-bold">Hüseyin Simsek (Operative Leitung)</p>
               </div>
 
-              <div className="border-l-4 border-primary p-8 bg-muted">
-                <h2 className="text-sm font-black text-primary mb-4 uppercase tracking-[0.3em]">Kontakt</h2>
-                <p className="text-primary font-bold">
-                  Telefon: 0221 95285529<br />
-                  E-Mail: verwaltung@topgun-security.de
-                </p>
+              <div className="border-l-4 border-primary p-8 bg-muted md:col-span-2 lg:col-span-1">
+                <h2 className="text-sm font-black text-primary mb-6 uppercase tracking-[0.3em]">Kontakt</h2>
+                <div className="flex flex-col xl:flex-row gap-8 xl:gap-0">
+                  
+                  {/* GF Contact */}
+                  <div className="xl:pr-8 xl:border-r border-primary/20 flex-1">
+                     <p className="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-2">Geschäftsführung</p>
+                     <p className="text-primary font-bold mb-1">
+                       <a href="tel:+491787703738" className="hover:text-accent transition-colors">+49 178 7703738</a>
+                     </p>
+                     <p className="text-primary font-bold">
+                       <a href="mailto:info@topgunsecurity.de" className="hover:text-accent transition-colors">info@topgunsecurity.de</a>
+                     </p>
+                  </div>
+
+                  {/* Admin/Hotline Contact */}
+                  <div className="xl:pl-8 flex-1">
+                     <p className="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-2">Verwaltung & Notfall</p>
+                     <p className="text-primary font-bold mb-1">
+                       <a href="tel:+4915565098461" className="hover:text-accent transition-colors">+49 155 65098461</a>
+                     </p>
+                     <p className="text-primary font-bold">
+                       <a href="mailto:verwaltung@topgun-security.de" className="hover:text-accent transition-colors">verwaltung@topgun-security.de</a>
+                     </p>
+                  </div>
+
+                </div>
               </div>
             </div>
 
