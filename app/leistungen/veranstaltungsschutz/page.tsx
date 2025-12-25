@@ -13,7 +13,7 @@ export default function VeranstaltungsschutzPage() {
     <ServicePageLayout
       heroTitle="Veranstaltungsschutz"
       heroSubtitle="Wir sorgen für reibungslose Abläufe und entspannte Gäste durch professionelle Planung."
-      heroImage="/images/services/doorman-mall.png" // Placeholder - would ideally differ
+      heroImage="/images/services/event-security-cinematic.png"
       parentLink={{ href: "/leistungen", label: "Zurück zu den Leistungen" }}
     >
       {/* 1. Einleitender Kontext */}

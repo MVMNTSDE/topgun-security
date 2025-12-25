@@ -13,7 +13,7 @@ export default function AsylPage() {
     <ServicePageLayout
       heroTitle="Asyl- & Notunterkunftbetreuung"
       heroSubtitle="Sicherheit mit Menschlichkeit. Wir schützen Bewohner und Einrichtungen mit Respekt und Konsequenz."
-      heroImage="/images/gallery/img-5.png" // Placeholder
+      heroImage="/images/services/shelter-security-cinematic.png"
       parentLink={{ href: "/leistungen", label: "Zurück zu den Leistungen" }}
     >
       {/* 1. Einleitender Kontext */}

@@ -46,11 +46,11 @@ export function CertificateModal({ isOpen, onClose, imageUrl, title, description
       />
       
       {/* Modal Content */}
-      <div className="relative bg-white w-full max-w-5xl h-full max-h-[90vh] flex flex-col md:flex-row overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
+      <div className="relative bg-white w-full max-w-7xl h-[95vh] md:h-auto md:max-h-[92vh] flex flex-col md:flex-row overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300 rounded-lg">
         {/* Close Button */}
         <button 
           onClick={onClose}
-          className="absolute top-6 right-6 z-10 p-2 bg-primary text-white hover:bg-accent transition-colors"
+          className="absolute top-6 right-6 z-20 p-2 bg-primary text-white hover:bg-accent transition-colors rounded-full shadow-lg"
           aria-label="Close"
         >
           <X size={24} />
@@ -58,8 +58,8 @@ export function CertificateModal({ isOpen, onClose, imageUrl, title, description
 
         {/* Image Container */}
         <div className={cn(
-          "bg-muted relative flex items-center justify-center overflow-y-auto p-4 md:p-8",
-          variant === "report" ? "w-full md:w-1/3 bg-primary/5" : "w-full md:w-2/3"
+          "bg-muted relative flex items-center justify-center overflow-y-auto p-4 md:p-8 shrink-0",
+          variant === "report" ? "w-full md:w-1/4 bg-primary/5 hidden md:flex" : "w-full md:w-3/5"
         )}>
           <Image 
             src={imageUrl} 
@@ -75,8 +75,8 @@ export function CertificateModal({ isOpen, onClose, imageUrl, title, description
 
         {/* Info Container */}
         <div className={cn(
-          "flex flex-col bg-white p-8 md:p-12 overflow-y-auto",
-          variant === "report" ? "w-full md:w-2/3" : "w-full md:w-1/3"
+          "flex flex-col bg-white p-8 md:p-16 overflow-y-auto scrollbar-thin scrollbar-thumb-primary/20 hover:scrollbar-thumb-primary/40",
+          variant === "report" ? "w-full md:w-3/4" : "w-full md:w-2/5"
         )}>
           <div className="div-line" />
           <h2 className="text-primary mt-8 mb-6">{title}</h2>

@@ -64,7 +64,7 @@ const services = [
     description: "Sichere Events durch professionelle Einlasskontrollen, Crowd Management und VIP-Betreuung.",
     longDescription: "",
     icon: "users" as const, // Reusing users icon or maybe another appropriate one if available in ServiceCard logic, using 'users' as safe bet
-    image: "/images/services/doorman-mall.png", // Using a placeholder image for now
+    image: "/images/services/event-security-cinematic.png",
     href: "/leistungen/veranstaltungsschutz"
   },
   {
@@ -72,7 +72,7 @@ const services = [
     description: "Sozialkompetente Sicherheitsdienstleistung für sensible Einrichtungen. Deeskalation und 24/7 Schutz.",
     longDescription: "",
     icon: "shield" as const, 
-    image: "/images/gallery/img-5.png", // Using a placeholder image for now
+    image: "/images/services/shelter-security-cinematic.png",
     href: "/leistungen/asyl-notunterkunft"
   },
 ];
@@ -88,7 +88,7 @@ export default function Services() {
       <div className="absolute inset-0 z-0 pointer-events-none bg-black">
         {services.map((service, index) => (
            <div 
-             key={`bg-${index}`}
+             key={`bg-${service.title}`}
              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${hoveredService === index ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
            >
              {/* Abstract Technical Backgrounds based on index */}
