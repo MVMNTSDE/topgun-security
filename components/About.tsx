@@ -310,9 +310,27 @@ export function About() {
                    </button>
                 </div>
 
-                <p className="text-corporate-body text-primary/60! text-sm italic mt-16 leading-relaxed border-t border-primary/5 pt-8">
-                  &ldquo;Gerne würden wir mit Ihnen prüfen, ob sich eine Zusammenarbeit anbietet. Wir freuen uns auf die Möglichkeit, eine erfolgreiche Partnerschaft aufzubauen.&rdquo;
-                </p>
+                <div className="mt-16 pt-8 border-t border-primary/5 space-y-8">
+                   <div>
+                      <p className="text-corporate-body text-primary/60! text-sm italic leading-relaxed mb-3">
+                        &ldquo;Gerne würden wir mit Ihnen prüfen, ob sich eine Zusammenarbeit anbietet. Wir freuen uns auf die Möglichkeit, eine erfolgreiche Partnerschaft aufzubauen.&rdquo;
+                      </p>
+                      <div className="flex items-center gap-3">
+                         <div className="h-px w-8 bg-accent" />
+                         <span className="text-[10px] font-black uppercase tracking-widest text-primary">Fahrhad Dilmangahni, Geschäftsführung</span>
+                      </div>
+                   </div>
+
+                   <div>
+                      <p className="text-corporate-body text-primary/60! text-sm italic leading-relaxed mb-3">
+                        &ldquo;Wir definieren Sicherheit neu durch operative Exzellenz und kompromisslosen Einsatz für Ihre Werte.&rdquo;
+                      </p>
+                      <div className="flex items-center gap-3">
+                         <div className="h-px w-8 bg-accent" />
+                         <span className="text-[10px] font-black uppercase tracking-widest text-primary">Hüseyin Simsek, Operative Leitung</span>
+                      </div>
+                   </div>
+                </div>
              </div>
           </div>
         </div>
