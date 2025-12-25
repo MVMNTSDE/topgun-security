@@ -88,6 +88,23 @@
     box-sizing: border-box;
   }
 
+  html {
+    scroll-behavior: smooth;
+    font-size: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      font-size: 90%; /* Scale down for laptops/desktops as requested */
+    }
+  }
+
+  @media (min-width: 1920px) {
+    html {
+      font-size: 100%; /* Restore for very large screens */
+    }
+  }
+
   body {
     @apply bg-background text-foreground;
     -webkit-font-smoothing: antialiased;
