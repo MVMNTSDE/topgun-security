@@ -10,7 +10,7 @@ import Services from "@/components/Services";
 import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
-import BackgroundAudio from "@/components/BackgroundAudio";
+import EmergencyButton from "@/components/EmergencyButton";
 import CampaignQuiz from "@/components/CampaignQuiz";
 import NewCustomerCTA from "@/components/NewCustomerCTA";
 
@@ -69,6 +69,7 @@ export default function Home() {
 
   return (
     <div ref={mainRef} className="bg-background min-h-screen selection:bg-accent selection:text-white">
+      <EmergencyButton />
       <Header />
       <main>
         <Hero />

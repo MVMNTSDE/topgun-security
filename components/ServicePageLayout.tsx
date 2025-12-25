@@ -51,11 +51,11 @@ export function ServicePageLayout({
             </Link>
 
             <div className="div-line bg-accent mb-6" />
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase leading-tight break-words hyphens-auto">
               {heroTitle}
             </h1>
             {heroSubtitle && (
-              <p className="text-white/80 text-lg md:text-xl max-w-2xl mt-4 font-light">
+              <p className="text-white/80 text-base md:text-xl max-w-2xl mt-4 font-light">
                 {heroSubtitle}
               </p>
             )}

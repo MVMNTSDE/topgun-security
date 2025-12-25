@@ -11,7 +11,7 @@ export default function UnternehmenPage() {
     <ServicePageLayout
       heroTitle="Unser Unternehmen"
       heroSubtitle="Sicherheit braucht Haltung. Wir verbinden operative Schlagkraft mit hanseatischen Kaufmannstugenden."
-      heroImage="/images/gallery/img-4.png"
+      heroImage="/images/services/portrait-professional.png"
       parentLink={{ href: "/", label: "Zurück zur Startseite" }}
     >
       {/* 1. Vision & Mission */}

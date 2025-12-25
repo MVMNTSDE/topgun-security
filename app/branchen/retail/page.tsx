@@ -13,7 +13,7 @@ export default function RetailPage() {
     <ServicePageLayout
       heroTitle="Retail Security"
       heroSubtitle="Das Einkaufserlebnis schützen. Wir sichern Ihre Umsätze und sorgen für eine entspannte Atmosphäre im Store."
-      heroImage="/images/gallery/img-1.png"
+      heroImage="/images/services/doorman-mall.png"
       parentLink={{ href: "/branchen", label: "Zurück zu den Branchen" }}
     >
       {/* 1. Einleitender Kontext */}

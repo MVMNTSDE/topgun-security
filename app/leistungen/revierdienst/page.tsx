@@ -13,7 +13,7 @@ export default function RevierdienstPage() {
     <ServicePageLayout
       heroTitle="Revierdienst"
       heroSubtitle="Präsenz zeigen, wo sie gebraucht wird. Mobile Sicherheit für Gewerbeparks, Baustellen und Wohngebiete."
-      heroImage="/images/gallery/img-5.png"
+      heroImage="/images/services/revierdienst-car.png"
       parentLink={{ href: "/leistungen", label: "Zurück zu den Leistungen" }}
     >
       {/* 1. Einleitender Kontext */}

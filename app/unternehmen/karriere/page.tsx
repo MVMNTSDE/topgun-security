@@ -11,7 +11,7 @@ export default function KarrierePage() {
     <ServicePageLayout
       heroTitle="Karriere"
       heroSubtitle="Sicherheit ist Mannschaftssport. Wir suchen Charaktere, nicht nur Lebensläufe."
-      heroImage="/images/gallery/img-3.png"
+      heroImage="/images/services/portrait-professional.png"
       parentLink={{ href: "/unternehmen", label: "Zurück zum Unternehmen" }}
     >
       {/* 1. Intro / Employer Branding */}

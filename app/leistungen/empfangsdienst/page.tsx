@@ -13,7 +13,7 @@ export default function EmpfangsdienstPage() {
     <ServicePageLayout
       heroTitle="Empfangsdienst"
       heroSubtitle="Der erste Eindruck zählt. Wir verbinden repräsentativen Service mit kompromissloser Sicherheit."
-      heroImage="/images/gallery/img-4.png"
+      heroImage="/images/services/doorman-mall.png"
       parentLink={{ href: "/leistungen", label: "Zurück zu den Leistungen" }}
     >
       {/* 1. Einleitender Kontext */}

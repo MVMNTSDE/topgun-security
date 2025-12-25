@@ -13,7 +13,7 @@ export default function ImmobilienPage() {
     <ServicePageLayout
       heroTitle="Immobilien & Facility Management"
       heroSubtitle="Objektwerte sichern. Mieter schützen. Risiken minimieren. Ihr Partner für professionelles Immobilien-Sicherheitsmanagement."
-      heroImage="/images/gallery/img-4.png" // Using 'Empfang/Building' style image
+      heroImage="/images/services/portrait-professional.png"
       parentLink={{ href: "/#services", label: "Zurück zur Übersicht" }}
     >
        {/* Intro Section */}

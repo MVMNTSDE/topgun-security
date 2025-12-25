@@ -14,7 +14,7 @@ export default function LogistikPage() {
     <ServicePageLayout
       heroTitle="Logistik & Supply Chain"
       heroSubtitle="Wenn die Lieferkette steht, steht alles. Wir schützen Ihre Warenströme vor Diebstahl, Manipulation und Unterbrechung."
-      heroImage="/images/gallery/img-5.png"
+      heroImage="/images/services/revierdienst-car.png"
       parentLink={{ href: "/branchen", label: "Zurück zu den Branchen" }}
     >
       {/* 1. Einleitender Kontext */}

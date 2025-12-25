@@ -13,7 +13,7 @@ export default function BauPage() {
     <ServicePageLayout
       heroTitle="Baustellensicherheit"
       heroSubtitle="Damit Ihr Projekt im Zeitplan bleibt. Wir sichern Werte, kontrollieren Zufahrten und verhindern Bauverzögerungen durch Vandalismus."
-      heroImage="/images/gallery/img-2.png"
+      heroImage="/images/services/revierdienst-car.png"
       parentLink={{ href: "/branchen", label: "Zurück zu den Branchen" }}
     >
       {/* 1. Einleitender Kontext */}

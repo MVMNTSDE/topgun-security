@@ -4,11 +4,19 @@ import ServiceCard from "./ServiceCard";
 
 const services = [
   {
+    title: "Kinder- & Jugendschutz",
+    description: "Spezialisierte Sicherheitskonzepte für Schulen, Kitas und Jugendeinrichtungen. Prävention und Schutz.",
+    longDescription: "",
+    icon: "users" as const,
+    image: "/images/services/jugendschutz-school.png", 
+    href: "/leistungen/jugendschutz"
+  },
+  {
     title: "Doorman",
     description: "Repräsentative Sicherheit an Ihren Eingängen. Wir kombinieren hocheffiziente Kontrolle mit diskreter Präsenz.",
-    longDescription: "", // Legacy field removed
+    longDescription: "", 
     icon: "shield" as const,
-    image: "/images/gallery/img-1.png",
+    image: "/images/services/doorman-mall.png",
     href: "/leistungen/empfangsdienst"
   },
   {
@@ -24,7 +32,7 @@ const services = [
     description: "Prävention von Inventurdifferenzen durch hochqualifizierte Überwachung im Einzelhandel.",
     longDescription: "",
     icon: "users" as const,
-    image: "/images/gallery/img-3.png",
+    image: "/images/services/portrait-professional.png",
     href: "/leistungen/detektei"
   },
   {
@@ -32,7 +40,7 @@ const services = [
     description: "Die professionelle Schnittstelle zwischen Ihrem Unternehmen und Ihren Gästen. Sicher und zuvorkommend.",
     longDescription: "",
     icon: "shield" as const,
-    image: "/images/gallery/img-4.png",
+    image: "/images/services/doorman-mall.png",
     href: "/leistungen/empfangsdienst"
   },
   {
@@ -48,7 +56,7 @@ const services = [
     description: "Systematische Überprüfung Ihrer Liegenschaften in definierten Intervallen zur effektiven Gefahrenabwehr.",
     longDescription: "",
     icon: "map" as const,
-    image: "/images/gallery/img-1.png",
+    image: "/images/services/revierdienst-car.png",
     href: "/leistungen/revierdienst"
   },
 ];

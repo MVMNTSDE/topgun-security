@@ -12,7 +12,7 @@ export default function QualifikationPage() {
     <ServicePageLayout
       heroTitle="Qualifikation & Standards"
       heroSubtitle="Sicherheit ist eine Frage der Kompetenz. Wir investieren konsequent in die Ausbildung unserer Teams."
-      heroImage="/images/gallery/img-1.png"
+      heroImage="/images/services/portrait-professional.png"
       parentLink={{ href: "/unternehmen", label: "Zurück zum Unternehmen" }}
     >
       <div className="mb-16">

@@ -14,7 +14,7 @@ export default function PartnerPage() {
     <ServicePageLayout
       heroTitle="Partner Netzwerk"
       heroSubtitle="Sicherheit ist ein Mannschaftssport. Wir suchen starke Partner für eine sichere Region."
-      heroImage="/images/gallery/img-4.png"
+      heroImage="/images/services/portrait-professional.png"
       parentLink={{ href: "/", label: "Zurück zur Startseite" }}
     >
       {/* 1. Intro */}

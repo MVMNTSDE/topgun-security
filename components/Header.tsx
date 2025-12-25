@@ -21,6 +21,7 @@ export function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
   const logoIconRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -33,16 +34,23 @@ export function Header() {
       }
     });
 
-    // Glass effect and resize background
+    // 1. Layout Animation (Padding) - Targets the Nav Container
     tl.to(headerRef.current, {
-      backgroundColor: "rgba(255, 255, 255, 0.95)", // More opaque for contrast with dark logo if needed
-      backdropFilter: "blur(16px)", 
-      borderBottomColor: "rgba(3, 2, 19, 0.05)",
       paddingTop: "0.75rem",
       paddingBottom: "0.75rem",
       duration: 1,
       ease: "power2.out"
-    });
+    }, 0);
+
+    // 2. Background Animation (Glass Effect) - Targets the Background Element
+    // This prevents the "containing block" issue for the fixed mobile menu
+    tl.to(bgRef.current, {
+      backgroundColor: "rgba(255, 255, 255, 0.95)", // More opaque for contrast with dark logo if needed
+      backdropFilter: "blur(16px)", 
+      borderBottomColor: "rgba(3, 2, 19, 0.05)",
+      duration: 1,
+      ease: "power2.out"
+    }, 0);
 
     // Logo transformation
     // 1. Fade out/Slide up the Text Logo
@@ -68,9 +76,6 @@ export function Header() {
         duration: 0.8,
         ease: "power2.out"
       }, 0);
-      
-      // Also animate the mobile toggle button if needed, but it's usually separate.
-      // The desktop nav is the concern here.
     }
 
   }, { scope: headerRef, dependencies: [pathname] });
@@ -85,8 +90,14 @@ export function Header() {
   return (
     <nav 
       ref={headerRef}
-      className="fixed top-0 left-0 w-full z-50 border-b border-transparent py-6 transition-colors"
+      className="fixed top-0 left-0 w-full z-50 py-6 transition-all"
     >
+      {/* Background Layer for Glass Effect */}
+      <div 
+        ref={bgRef}
+        className="absolute inset-0 border-b border-transparent -z-10 transition-colors"
+      />
+
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-between">
         {/* Dynamic Logo */}
         {/* Dynamic Logo Container */}
@@ -142,12 +153,13 @@ export function Header() {
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-primary"
+          className="md:hidden text-primary" // This might be hard to see on Home if dark?
+          // Fix: Make toggle also dynamic in next step or use same nav-link class logic
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle Menu"
           title="Menu"
         >
-          {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
+          {isMenuOpen ? <X size={26} /> : <Menu size={26} className={cn("transition-colors", pathname === "/" ? "text-white nav-link" : "text-primary")} />}
         </button>
       </div>
 

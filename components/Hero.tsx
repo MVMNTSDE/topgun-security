@@ -54,10 +54,10 @@ export default function Hero() {
             </span>
           </div>
           
-          <h1 className="hero-text text-white mb-10 leading-none">
+          <h1 className="hero-text text-white mb-10 leading-none text-3xl sm:text-4xl md:text-6xl lg:text-7xl">
             INSTITUTIONELLE<br />
             <span className="text-accent underline decoration-4 underline-offset-8">SICHERHEIT</span> KÖLN<br />
-            <span className="text-white/40 text-4xl">| NRW</span>
+            <span className="text-white/40 text-2xl sm:text-3xl md:text-4xl">| NRW</span>
           </h1>
           
           <p className="hero-text text-white/70 text-xl md:text-2xl mb-16 max-w-2xl font-medium leading-relaxed">
