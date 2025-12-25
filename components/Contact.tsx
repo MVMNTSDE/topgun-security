@@ -26,7 +26,8 @@ export function Contact() {
                  <p className="text-xl font-bold text-primary mb-1">Fahrhad Dilmangahni</p>
                  <a href="tel:+491787703738" className="text-sm font-bold text-primary/60 hover:text-accent transition-colors block mb-2">+49 178 7703738</a>
                  <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary/20 mb-4 block mt-8">Operative Leitung</span>
-                 <p className="text-xl font-bold text-primary">Hüseyin Simsek</p>
+                 <p className="text-xl font-bold text-primary mb-1">Hüseyin Simsek</p>
+                 <a href="tel:+4915565098461" className="text-sm font-bold text-primary/60 hover:text-accent transition-colors block">+49 155 65098461</a>
               </div>
               <div className="pt-12 border-t border-primary/5">
                  <p className="text-primary/60 text-xs font-bold leading-relaxed">
