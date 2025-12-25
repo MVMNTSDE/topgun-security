@@ -57,7 +57,7 @@ export default function NewCustomerCTA() {
                </div>
                <h3 className="text-white font-bold mb-2">E-Mail schreiben</h3>
                <p className="text-white/40 text-sm mb-4">Schriftliches Angebot anfordern</p>
-               <span className="text-white font-medium text-sm underline decoration-accent decoration-2 underline-offset-4">verwaltung@...</span>
+               <span className="text-white font-medium text-sm underline decoration-accent decoration-2 underline-offset-4 break-all">verwaltung@topgun-security.de</span>
             </a>
 
           </div>

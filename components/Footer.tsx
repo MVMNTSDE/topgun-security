@@ -37,8 +37,8 @@ export function Footer() {
              <span className="text-[10px] font-black tracking-[0.6em] uppercase text-accent mb-12 block">Compliance</span>
              <div className="flex flex-col gap-6">
                <div className="flex items-center gap-6 mb-4">
-                  <Image src="/certificates/iso9001.png" alt="ISO 9001" width={40} height={40} className="h-10 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
-                  <Image src="/certificates/din77200.png" alt="DIN 77200" width={40} height={40} className="h-10 w-auto brightness-0 invert opacity-50 hover:opacity-100 transition-opacity" />
+                  <Image src="/certificates/iso9001.png" alt="ISO 9001" width={40} height={40} className="h-10 w-auto hover:scale-110 transition-transform" />
+                  <Image src="/certificates/din77200.png" alt="DIN 77200" width={40} height={40} className="h-10 w-auto hover:scale-110 transition-transform" />
                </div>
                <div className="flex items-center gap-4 py-3 border-b border-white/5">
                  <div className="w-1.5 h-1.5 bg-accent" />
