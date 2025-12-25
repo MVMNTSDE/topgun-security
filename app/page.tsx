@@ -12,7 +12,7 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import EmergencyButton from "@/components/EmergencyButton";
 import CampaignQuiz from "@/components/CampaignQuiz";
-import NewCustomerCTA from "@/components/NewCustomerCTA";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,7 +77,7 @@ export default function Home() {
         <About />
         <CampaignQuiz />
         <Contact />
-        <NewCustomerCTA />
+
       </main>
       <Footer />
 

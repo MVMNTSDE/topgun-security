@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import NewCustomerCTA from "@/components/NewCustomerCTA";
 
 interface ServicePageLayoutProps {
   children: React.ReactNode;
@@ -72,6 +73,7 @@ export function ServicePageLayout({
         </div>
       </main>
 
+      <NewCustomerCTA />
       <Footer />
     </div>
   );

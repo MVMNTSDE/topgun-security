@@ -54,14 +54,14 @@ export default function Hero() {
             </span>
           </div>
           
-          <h1 className="hero-text text-white mb-10 leading-none text-3xl sm:text-4xl md:text-6xl lg:text-7xl">
+          <h1 className="hero-text text-white mb-10 leading-[0.9] text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tighter uppercase font-black">
             INSTITUTIONELLE<br />
-            <span className="text-accent underline decoration-4 underline-offset-8">SICHERHEIT</span> KÖLN<br />
-            <span className="text-white/40 text-2xl sm:text-3xl md:text-4xl">| NRW</span>
+            <span className="text-accent underline decoration-8 underline-offset-8">SICHERHEIT</span> KÖLN<br />
+            <span className="text-white/40 text-2xl sm:text-3xl md:text-4xl lg:text-5xl block mt-4 font-bold tracking-widest">| KÖLN & NRW</span>
           </h1>
           
-          <p className="hero-text text-white/70 text-xl md:text-2xl mb-16 max-w-2xl font-medium leading-relaxed">
-            Top-Tier Sicherheitsdienstleistungen für den Kölner Mittelstand & Großkonzerne (Radius 45km). Seit 12 Jahren Ihr Partner für absolute Diskretion und operative Exzellenz.
+          <p className="hero-text text-white/70 text-xl md:text-2xl mb-16 max-w-3xl font-medium leading-relaxed">
+            Ganzheitliche Sicherheitslösungen für Wirtschaft, Industrie und öffentliche Einrichtungen. Wir schützen Ihre Werte durch zertifizierte Standards, operative Exzellenz und absolute Diskretion.
           </p>
 
           <div className="hero-text flex flex-col sm:flex-row gap-6">

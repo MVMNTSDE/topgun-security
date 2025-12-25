@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import NewCustomerCTA from "@/components/NewCustomerCTA";
 
 export default function PrivacyPage() {
   return (
@@ -49,6 +50,7 @@ export default function PrivacyPage() {
           </section>
         </div>
       </div>
+      <NewCustomerCTA />
       <Footer />
     </main>
   );

@@ -9,7 +9,7 @@ interface CertificateModalProps {
   readonly onClose: () => void;
   readonly imageUrl: string;
   readonly title: string;
-  readonly description: string;
+  readonly description: React.ReactNode;
 }
 
 export function CertificateModal({ isOpen, onClose, imageUrl, title, description }: CertificateModalProps) {

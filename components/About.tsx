@@ -6,17 +6,97 @@ import { CertificateModal } from "./CertificateModal";
 
 
 
-const sectors = [
-  "Architektur Büros",
-  "Immobilien Verwaltungen",
-  "Facility Management Firmen",
-  "Büro Komplexe",
-  "Business Parks",
-  "High End Immobilien",
-  "Bauträger & Baufirmen",
-  "Hotellerie ab 100 Zimmern",
-  "Logistikzentren",
-  "IndustrieWerke"
+const sectorData = [
+  {
+    name: "Architektur Büros",
+    report: {
+      title: "Schutz geistigen Eigentums",
+      challenge: "Spionage & Vandalismus in Wettbewerbsphase.",
+      solution: "Hybride Überwachung: KI-Kameras + Unregelmäßige Patrouillen.",
+      stats: "100% Sicherung der Modelldaten"
+    }
+  },
+  {
+    name: "Immobilien Verwaltung",
+    report: {
+      title: "Wohnquartier Köln-Marienburg",
+      challenge: "Steigende Einbruchszahlen & Vandalismus.",
+      solution: "24/7 Doorman-Service & Perimeterschutz.",
+      stats: "0 Zwischenfälle in 24 Monaten"
+    }
+  },
+  {
+    name: "Facility Management",
+    report: {
+      title: "Messe-Standort Betreuung",
+      challenge: "Koordination von Zutritten für 50+ Dienstleister.",
+      solution: "Digitales Besuchermanagement & Schleusen-Personal.",
+      stats: "Reibungsloser Ablauf bei Großevents"
+    }
+  },
+  {
+    name: "Büro Komplexe",
+    report: {
+      title: "Corporate Campus Düsseldorf",
+      challenge: "Unbemerkter Zutritt Fremder in Büroflächen.",
+      solution: "Empfangsdienst mit Concierge-Level & Ausweiskontrolle.",
+      stats: "Subjektives Sicherheitsgefühl +90%"
+    }
+  },
+  {
+    name: "Business Parks",
+    report: {
+      title: "Gewerbepark Überwachung",
+      challenge: "Nächtlicher Materialdiebstahl & illegale Müllentsorgung.",
+      solution: "Drohnengestützte Revierstreifen & Kennzeichenerfassung.",
+      stats: "Schadensreduktion um 60.000€ p.a."
+    }
+  },
+  {
+    name: "High End Immobilien",
+    report: {
+      title: "Privat-Residenz Absicherung",
+      challenge: "Schutz einer High-Net-Worth Familie.",
+      solution: "Bewaffneter Personenschutz & Smarthome-Security-Integration.",
+      stats: "Maximale Privatsphäre garantiert"
+    }
+  },
+  {
+    name: "Bauträger & Baustellen",
+    report: {
+      title: "Großbaustelle City-Nord",
+      challenge: "Massiver Diebstahl von Kupfer & Baumaschinen.",
+      solution: "Baustellenbewachung mit Hundeführern & Video-Türmen.",
+      stats: "Bauverzögerung verhindert"
+    }
+  },
+  {
+    name: "Hotellerie",
+    report: {
+      title: "5-Sterne Haus am Ring",
+      challenge: "Diskretion für VIP-Gäste & Event-Protection.",
+      solution: "Anzug-Träger Security: 'Gäste-Mindset' mit Kampfsporterfahrung.",
+      stats: "Exzellentes Gäste-Feedback"
+    }
+  },
+  {
+    name: "Logistikzentren",
+    report: {
+      title: "Fulfillment Center NRW",
+      challenge: "Interner Warenschwund & Organisierte Kriminalität.",
+      solution: "Taschenkontrollen & Verdeckte Ermittler.",
+      stats: "Aufklärungsquote 100%"
+    }
+  },
+  {
+    name: "Industrie & Werke",
+    report: {
+      title: "Produktionswerk Chemie",
+      challenge: "Werksspionage & Sabotage-Risiko.",
+      solution: "Strenge Werkschutz-Protokolle nach ISO-Norm.",
+      stats: "Audit-Score: 98/100"
+    }
+  }
 ];
 
 const certData = {
@@ -34,12 +114,13 @@ const certData = {
 
 export function About() {
   const [activeCert, setActiveCert] = useState<keyof typeof certData | null>(null);
+  const [selectedReport, setSelectedReport] = useState<typeof sectorData[0] | null>(null);
 
   const closeModal = () => setActiveCert(null);
 
   return (
     <div id="about">
-      {/* Modal */}
+      {/* Cert Modal */}
       {activeCert && (
         <CertificateModal
           isOpen={!!activeCert}
@@ -47,6 +128,32 @@ export function About() {
           imageUrl={certData[activeCert].imageUrl}
           title={certData[activeCert].title}
           description={certData[activeCert].description}
+        />
+      )}
+
+      {/* Sector Report Modal - reusing existing modal component if possible, or inline it */}
+      {selectedReport && (
+        <CertificateModal
+          isOpen={!!selectedReport}
+          onClose={() => setSelectedReport(null)}
+          imageUrl="/images/logo-text.png" // Fallback or specific sector icon could go here
+          title={`REPORT: ${selectedReport.name.toUpperCase()}`}
+          description={
+            <div className="space-y-4">
+               <div>
+                  <span className="text-accent text-xs font-black uppercase tracking-widest block mb-1">Herausforderung</span>
+                  <p className="text-primary/80 font-medium">{selectedReport.report.challenge}</p>
+               </div>
+               <div>
+                  <span className="text-accent text-xs font-black uppercase tracking-widest block mb-1">Lösung</span>
+                  <p className="text-primary/80 font-medium">{selectedReport.report.solution}</p>
+               </div>
+               <div className="bg-accent/10 p-4 border-l-2 border-accent mt-4">
+                  <span className="text-accent text-xs font-black uppercase tracking-widest block mb-1">Ergebnis</span>
+                  <p className="text-primary font-bold">{selectedReport.report.stats}</p>
+               </div>
+            </div>
+          }
         />
       )}
 
@@ -105,17 +212,21 @@ export function About() {
            </div>
            
            <div className="grid grid-cols-2 lg:grid-cols-5 gap-px bg-primary/10 border border-primary/10">
-              {sectors.map((sector) => (
-                 <div key={sector} className="bg-white p-10 corp-reveal group hover:bg-primary transition-colors duration-500 cursor-pointer relative overflow-hidden">
+              {sectorData.map((item) => (
+                 <button 
+                   key={item.name} 
+                   onClick={() => setSelectedReport(item)}
+                   className="bg-white p-10 corp-reveal group hover:bg-primary transition-colors duration-500 cursor-pointer relative overflow-hidden text-left w-full h-full"
+                 >
                     <div className="relative z-10">
-                      <span className="text-[10px] font-black tracking-widest uppercase text-primary/30 group-hover:text-accent mb-4 block">Sector</span>
-                      <h4 className="text-primary font-black text-sm tracking-tight group-hover:text-white leading-tight">{sector}</h4>
+                      <span className="text-[10px] font-black tracking-widest uppercase text-primary/30 group-hover:text-accent mb-4 block">Report Laden</span>
+                      <h4 className="text-primary font-black text-sm tracking-tight group-hover:text-white leading-tight">{item.name}</h4>
                     </div>
                     {/* Hover flourish */}
                     <div className="absolute -bottom-10 -right-10 text-[10rem] text-accent/5 font-black leading-none group-hover:text-accent/10 transition-colors pointer-events-none">
                       +
                     </div>
-                 </div>
+                 </button>
               ))}
            </div>
         </div>

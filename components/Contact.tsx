@@ -19,7 +19,11 @@ export function Contact() {
               </div>
               <div>
                  <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary/20 mb-4 block">Digital Protocol</span>
-                 <a href="mailto:info@topgunsecurity.de" className="text-xl font-bold text-primary hover:text-accent transition-all duration-500 underline decoration-2 underline-offset-8">info@topgunsecurity.de</a>
+                 <a href="mailto:verwaltung@topgun-security.de" className="text-xl font-bold text-primary hover:text-accent transition-all duration-500 underline decoration-2 underline-offset-8">verwaltung@topgun-security.de</a>
+              </div>
+              <div>
+                 <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary/20 mb-4 block">Betriebsleitung</span>
+                 <p className="text-xl font-bold text-primary">Hüseyin Simsek</p>
               </div>
               <div className="pt-12 border-t border-primary/5">
                  <p className="text-primary/60 text-xs font-bold leading-relaxed">

@@ -84,6 +84,7 @@ export function Header() {
     { name: "Leistungen", href: "/leistungen" },
     { name: "Branchen", href: "/branchen" }, 
     { name: "Über Uns", href: "/unternehmen" }, // Updated to future-proof route
+    { name: "Partner", href: "/partner" },
     { name: "Kontakt", href: "/#contact" },
   ];
 
@@ -101,10 +102,10 @@ export function Header() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-between">
         {/* Dynamic Logo */}
         {/* Dynamic Logo Container */}
-        <Link href="/" className="relative h-24 w-80 md:w-96 group">
+        <Link href="/" className="relative h-24 w-64 md:h-40 md:w-120 lg:h-48 lg:w-160 group">
            {/* Initial State: Dynamic Text Logo (White on Home, Black on others) */}
            <div ref={logoIconRef} className="absolute inset-0 flex items-center">
-              <div className="relative h-20 w-full transition-transform origin-left">
+              <div className="relative h-full w-full transition-transform origin-left">
                 <Image 
                   src={pathname === "/" ? "/images/assets/logo-text-white.png" : "/images/logo-text.png"}
                   alt="Topgun Security" 
@@ -117,7 +118,7 @@ export function Header() {
 
            {/* Scroll State: Full Logo (Standard) */}
            <div className="logo-full absolute inset-0 flex items-center opacity-0 translate-y-4">
-              <div className="relative h-24 w-full">
+              <div className="relative h-full w-full">
                 <Image 
                   src="/images/logo-full.png" 
                   alt="Topgun Security" 

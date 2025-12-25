@@ -1,5 +1,5 @@
 import Link from "next/link";
-import NewCustomerCTA from "@/components/NewCustomerCTA";
+
 import Image from "next/image";
 import { ServicePageLayout } from "@/components/ServicePageLayout";
 import { Shield, Factory, Building2, Hammer, Users, Truck } from "lucide-react";
@@ -107,9 +107,7 @@ export default function LeistungenOverviewPage() {
         ))}
       </div>
 
-       <div className="mt-20">
-           <NewCustomerCTA />
-       </div>
+
     </ServicePageLayout>
   );
 }

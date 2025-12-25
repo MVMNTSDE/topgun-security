@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import NewCustomerCTA from "@/components/NewCustomerCTA";
 
 export default function ImprintPage() {
   return (
@@ -23,14 +24,14 @@ export default function ImprintPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="border-l-4 border-accent p-8 bg-muted">
                 <h2 className="text-sm font-black text-primary mb-4 uppercase tracking-[0.3em]">Vertreten durch</h2>
-                <p className="text-primary font-bold">Ferhad Dilmaghani (Geschäftsführer)</p>
+                <p className="text-primary font-bold">Hüseyin Simsek (Betriebsleiter)</p>
               </div>
 
               <div className="border-l-4 border-primary p-8 bg-muted">
                 <h2 className="text-sm font-black text-primary mb-4 uppercase tracking-[0.3em]">Kontakt</h2>
                 <p className="text-primary font-bold">
                   Telefon: 0221 95285529<br />
-                  E-Mail: info@topgunsecurity.de
+                  E-Mail: verwaltung@topgun-security.de
                 </p>
               </div>
             </div>
@@ -87,6 +88,7 @@ export default function ImprintPage() {
           </section>
         </div>
       </div>
+      <NewCustomerCTA />
       <Footer />
     </main>
   );
