@@ -19,11 +19,11 @@ export default function AsylPage() {
       {/* 1. Einleitender Kontext */}
       <div className="mb-16">
         <h2 className="text-3xl md:text-4xl font-black text-primary mb-6">
-          Verantwortungsvoller Schutz für schutzbedürftige Menschen.
+          Sicherheit und Betreuung für Unterkünfte.
         </h2>
         <div className="border-l-4 border-accent pl-6 mb-8">
             <p className="text-xl text-primary/80 italic mb-2">
-            „In sensiblen Umgebungen wie Unterkünften ist Sicherheit mehr als Bewachung – es ist soziale Verantwortung. Wir garantieren ein friedliches Miteinander.“
+            „In sensiblen Umgebungen wie Unterkünften ist Sicherheit mehr als Bewachung. Es ist soziale Verantwortung. Wir garantieren ein friedliches Miteinander.“
             </p>
         </div>
         <p className="text-lg leading-relaxed text-gray-700 mb-6">
@@ -43,12 +43,12 @@ export default function AsylPage() {
 
       {/* 2. Fachliche Erklärung */}
       <div className="mb-16">
-        <h2 className="text-3xl font-bold text-primary mb-6">Das "Topgun Human Security" Konzept</h2>
+        <h2 className="text-3xl font-bold text-primary mb-6">Unser Sicherheitskonzept</h2>
         <p className="text-gray-700 mb-6">
           Wir verstehen unsere Rolle nicht als reine Ordnungskraft, sondern als stabilisierenden Faktor im Alltag der Einrichtung. Unsere Mitarbeiter sind oft erste Ansprechpartner für Bewohner und bilden die Schnittstelle zur Einrichtungsleitung und Sozialarbeit.
         </p>
         <p className="text-gray-700">
-           Unser Konzept balanciert strikte Sicherheitsvorgaben (Zutrittskontrollen, Brandschutz, Gewaltprävention) mit einem menschenwürdigen Umgang. Wir sorgen dafür, dass Regeln eingehalten werden, ohne die Bewohner zu kriminalisieren.
+           Wir verbinden die notwendige Durchsetzung der Hausordnung und Sicherheitsvorgaben (Zutrittskontrollen, Brandschutz, Gewaltprävention) mit einem respektvollen Umgang. Wir sorgen dafür, dass Regeln eingehalten werden, ohne die Bewohner pauschal zu kriminalisieren.
         </p>
       </div>
 
@@ -83,9 +83,9 @@ export default function AsylPage() {
              <div>
                 <h3 className="text-2xl font-bold text-primary mb-2">Qualifiziertes Personal</h3>
                 <p className="text-gray-700">
-                   Eingesetztes Personal verfügt über die Sachkundeprüfung nach §34a GewO, sowie erweiterte Führungszeugnisse. 
+                   Eingesetztes Personal verfügt über die Sachkundeprüfung nach §34a GewO sowie erweiterte Führungszeugnisse. 
                    Zusätzlich schulen wir in Erster Hilfe, Brandschutz und Diversity Management. 
-                   Sprachkenntnisse (Arabisch, Farsi, Englisch, Französisch) sind bei uns Standard, nicht Ausnahme.
+                   Sprachkenntnisse (Arabisch, Farsi, Englisch, Französisch) sind Teil unseres Anforderungsprofils.
                 </p>
              </div>
           </div>

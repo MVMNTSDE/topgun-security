@@ -12,18 +12,18 @@ export default function VeranstaltungsschutzPage() {
   return (
     <ServicePageLayout
       heroTitle="Veranstaltungsschutz"
-      heroSubtitle="Sichere Events sind kein Zufall. Wir sorgen für reibungslose Abläufe und entspannte Gäste."
+      heroSubtitle="Wir sorgen für reibungslose Abläufe und entspannte Gäste durch professionelle Planung."
       heroImage="/images/services/doorman-mall.png" // Placeholder - would ideally differ
       parentLink={{ href: "/leistungen", label: "Zurück zu den Leistungen" }}
     >
       {/* 1. Einleitender Kontext */}
       <div className="mb-16">
         <h2 className="text-3xl md:text-4xl font-black text-primary mb-6">
-          Ihr Event in sicheren Händen.
+          Sicherheit für Ihre Veranstaltung.
         </h2>
         <div className="border-l-4 border-accent pl-6 mb-8">
             <p className="text-xl text-primary/80 italic mb-2">
-            „Ob Gala-Dinner, Großkonzert oder Firmenfeier: Wir agieren als diskrete Gastgeber oder sichtbare Präsenz – genau so, wie Ihr Event es erfordert.“
+            „Ob Gala-Dinner, Großkonzert oder Firmenfeier: Wir agieren als diskrete Gastgeber oder sichtbare Präsenz, angepasst an den Charakter Ihres Events.“
             </p>
         </div>
         <p className="text-lg leading-relaxed text-gray-700 mb-6">
@@ -48,7 +48,7 @@ export default function VeranstaltungsschutzPage() {
           Jedes Event ist einzigartig. Wir erstellen im Vorfeld detaillierte Sicherheitskonzepte, die Fluchtwege, Brandschutz und Kapazitäten berücksichtigen. Am Tag der Veranstaltung koordiniert ein erfahrener Einsatzleiter das Team und hält Kontakt zu Behörden und Rettungskräften.
         </p>
         <p className="text-gray-700">
-           Unser Personal tritt je nach Anlass in gehobener Abendgarderobe (Service-Security) oder in einheitlicher Einsatzkleidung auf. Freundlichkeit ist dabei unsere stärkste Waffe.
+           Unser Personal tritt je nach Anlass in gehobener Abendgarderobe (Service-Security) oder in einheitlicher Einsatzkleidung auf. Ein freundliches, aber bestimmtes Auftreten ist für uns selbstverständlich.
         </p>
       </div>
 
@@ -86,7 +86,7 @@ export default function VeranstaltungsschutzPage() {
                 <h3 className="text-2xl font-bold text-primary mb-2">Deeskalation als Priorität</h3>
                 <p className="text-gray-700">
                    Unsere Mitarbeiter durchlaufen regelmäßige Schulungen in Konfliktmanagement und Deeskalationstechniken. 
-                   Wir lösen Situationen verbal, bevor sie physisch werden müssen. Ein sicheres Fest ist ein friedliches Fest.
+                   Wir lösen Situationen verbal, bevor sie physisch werden müssen. Deeskalation steht für uns an erster Stelle.
                 </p>
              </div>
           </div>
