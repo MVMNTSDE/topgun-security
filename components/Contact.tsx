@@ -32,15 +32,15 @@ export function Contact() {
                  </p>
               </div>
               <div>
-                 <span className="text-[10px] font-black tracking-[0.5em] uppercase text-destructive mb-4 block flex items-center gap-2">
+                 <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-6 block flex items-center gap-2">
                     <span className="relative flex h-2 w-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-destructive opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-destructive"></span>
                     </span>
-                    24/7 Notfall Hotline
+                    24/7 Notfall Service
                  </span>
-                 <a href="tel:+4915565098461" className="text-2xl font-black text-destructive hover:text-destructive/80 transition-all duration-500 block">
-                    +49 155 65098461
+                 <a href="tel:+4915565098461" className="inline-flex items-center justify-center bg-destructive text-white text-xs font-bold uppercase tracking-widest px-8 py-4 rounded hover:bg-destructive/90 transition-colors shadow-lg">
+                    HOTLINE: +49 155 65098461
                  </a>
               </div>
             </div>

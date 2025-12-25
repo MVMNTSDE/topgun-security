@@ -104,7 +104,7 @@ export function Header() {
         className="absolute inset-0 border-b border-transparent -z-10 transition-colors"
       />
 
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-between">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-between relative z-10">
         {/* Dynamic Logo */}
         {/* Dynamic Logo Container */}
         <Link href="/" className="relative h-20 w-56 md:h-24 md:w-72 lg:h-28 lg:w-80 group">
