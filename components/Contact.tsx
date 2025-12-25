@@ -27,14 +27,26 @@ export function Contact() {
               </div>
               <div className="pt-12 border-t border-primary/5">
                  <p className="text-primary/60 text-xs font-bold leading-relaxed">
-                   Erreichbarkeit Werktags:<br />
-                   <span className="text-primary font-black">08:00 – 18:00 UHR</span>
+                   Erreichbarkeit:<br />
+                   <span className="text-primary font-black">MO – SO: 08:00 – 20:00 UHR</span>
                  </p>
+              </div>
+              <div>
+                 <span className="text-[10px] font-black tracking-[0.5em] uppercase text-destructive mb-4 block flex items-center gap-2">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-destructive opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-destructive"></span>
+                    </span>
+                    24/7 Notfall Hotline
+                 </span>
+                 <a href="tel:+4915565098461" className="text-2xl font-black text-destructive hover:text-destructive/80 transition-all duration-500 block">
+                    +49 155 65098461
+                 </a>
               </div>
             </div>
           </div>
 
-          <div className="lg:col-span-8 corp-reveal bg-white p-12 lg:p-24 shadow-[-80px_80px_160px_rgba(0,30,86,0.06)] border border-primary/5">
+          <div className="lg:col-span-8 corp-reveal bg-white p-8 lg:p-16 shadow-[-80px_80px_160px_rgba(0,30,86,0.06)] border border-primary/5 flex flex-col justify-center">
               <div className="mb-16">
                  <h3 className="text-primary text-2xl font-black tracking-tighter mb-4 italic">Vertrauliche Erstbewertung</h3>
                  <p className="text-primary/40 text-sm font-medium">Spezialisierte Beratung für GmbHs, AGs und Großkonzerne.</p>

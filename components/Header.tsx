@@ -49,11 +49,9 @@ export function Header() {
       ease: "power2.out"
     }, 0);
 
-    // 2. Background Animation (Glass Effect) - Targets the Background Element
-    // This prevents the "containing block" issue for the fixed mobile menu
+    // 2. Background Animation (Solid White)
     tl.to(bgRef.current, {
-      backgroundColor: "rgba(255, 255, 255, 0.95)", // More opaque for contrast with dark logo if needed
-      backdropFilter: "blur(16px)", 
+      backgroundColor: "#ffffff", // Solid White
       borderBottomColor: "rgba(3, 2, 19, 0.05)",
       duration: 1,
       ease: "power2.out"
@@ -109,7 +107,7 @@ export function Header() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-between">
         {/* Dynamic Logo */}
         {/* Dynamic Logo Container */}
-        <Link href="/" className="relative h-14 w-40 md:h-16 md:w-48 group">
+        <Link href="/" className="relative h-20 w-56 md:h-24 md:w-72 lg:h-28 lg:w-80 group">
            {/* Initial State: Dynamic Text Logo (White on Home, Black on others) */}
            <div ref={logoIconRef} className="absolute inset-0 flex items-center">
               <div className="relative h-full w-full transition-transform origin-left">
