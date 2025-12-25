@@ -73,8 +73,7 @@ export function ServicePageLayout({
                 </article>
             </div>
         </div>
-        </div>
-        
+
         {bottomSection}
       </main>
 
