@@ -80,7 +80,7 @@ export default function Home() {
         <NewCustomerCTA />
       </main>
       <Footer />
-      <BackgroundAudio />
+
     </div>
   );
 }
