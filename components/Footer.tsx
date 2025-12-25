@@ -23,7 +23,7 @@ export function Footer() {
           </div>
 
           <div>
-            <span className="text-[10px] font-black tracking-[0.6em] uppercase text-accent mb-12 block">Directory</span>
+            <span className="text-[10px] font-black tracking-[0.6em] uppercase text-accent mb-12 block">Inhaltsverzeichnis</span>
             <ul className="space-y-6 text-[10px] font-bold tracking-[0.3em] uppercase text-white/40">
               <li><Link href="#services" className="hover:text-white transition-colors">Portfolio</Link></li>
               <li><Link href="/branchen" className="hover:text-white transition-colors">Sektoren</Link></li>
@@ -53,7 +53,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-12 pt-16 border-t border-white/5 text-[9px] font-black tracking-[0.6em] uppercase text-white/10">
-          <span>© {new Date().getFullYear()} TOPGUN SECURITY GMBH. LEVERKUSEN | KÖLN.</span>
+          <span>© {new Date().getFullYear()} TOPGUN SECURITY GMBH. KÖLN | BONN | DÜSSELDORF | LEVERKUSEN | NRW.</span>
           <div className="flex gap-16">
              <Link href="/imprint" className="hover:text-white transition-colors">Impressum</Link>
              <Link href="/privacy" className="hover:text-white transition-colors">Datenschutz</Link>
