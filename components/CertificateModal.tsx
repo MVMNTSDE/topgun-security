@@ -3,6 +3,12 @@
 import { X } from "lucide-react";
 import Image from "next/image";
 import { useEffect } from "react";
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
 
 interface CertificateModalProps {
   readonly isOpen: boolean;
@@ -10,9 +16,10 @@ interface CertificateModalProps {
   readonly imageUrl: string;
   readonly title: string;
   readonly description: React.ReactNode;
+  readonly variant?: "certificate" | "report";
 }
 
-export function CertificateModal({ isOpen, onClose, imageUrl, title, description }: CertificateModalProps) {
+export function CertificateModal({ isOpen, onClose, imageUrl, title, description, variant = "certificate" }: CertificateModalProps) {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -50,18 +57,27 @@ export function CertificateModal({ isOpen, onClose, imageUrl, title, description
         </button>
 
         {/* Image Container */}
-        <div className="w-full md:w-2/3 bg-muted relative flex items-center justify-center overflow-y-auto p-4 md:p-8">
+        <div className={cn(
+          "bg-muted relative flex items-center justify-center overflow-y-auto p-4 md:p-8",
+          variant === "report" ? "w-full md:w-1/3 bg-primary/5" : "w-full md:w-2/3"
+        )}>
           <Image 
             src={imageUrl} 
             alt={title} 
             width={800}
             height={1131}
-            className="w-full h-auto object-contain shadow-lg" 
+            className={cn(
+               "shadow-lg",
+               variant === "report" ? "w-32 h-auto object-contain shadow-none opacity-50" : "w-full h-auto object-contain"
+            )}
           />
         </div>
 
         {/* Info Container */}
-        <div className="w-full md:w-1/3 p-8 md:p-12 flex flex-col bg-white">
+        <div className={cn(
+          "flex flex-col bg-white p-8 md:p-12 overflow-y-auto",
+          variant === "report" ? "w-full md:w-2/3" : "w-full md:w-1/3"
+        )}>
           <div className="div-line" />
           <h2 className="text-primary mt-8 mb-6">{title}</h2>
           <p className="text-corporate-body text-primary/60! mb-8 leading-relaxed">

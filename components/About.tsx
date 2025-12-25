@@ -138,6 +138,7 @@ export function About() {
           onClose={() => setSelectedReport(null)}
           imageUrl="/images/logo-text.png" // Fallback or specific sector icon could go here
           title={`REPORT: ${selectedReport.name.toUpperCase()}`}
+          variant="report"
           description={
             <div className="space-y-4">
                <div>
