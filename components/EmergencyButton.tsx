@@ -9,9 +9,9 @@ export default function EmergencyButton() {
       <div className="absolute inset-0 bg-red-600 rounded-full animate-ping opacity-20 duration-1000" />
       
       <a
-        href="tel:022195285529"
+        href="tel:+4915565098461"
         className="relative w-16 h-16 bg-red-600 border-2 border-white/20 rounded-full flex items-center justify-center text-white shadow-[0_0_30px_rgba(220,38,38,0.5)] transition-all duration-300 hover:scale-110 hover:bg-red-700 hover:shadow-[0_0_50px_rgba(220,38,38,0.7)] animate-[wiggle_4s_ease-in-out_infinite]"
-        title="Notfall-Hotline anrufen"
+        title="Notfall: 0155 650 98 461"
       >
         <Phone size={28} className="animate-[tada_3s_ease-in-out_infinite]" strokeWidth={2.5} />
       </a>
