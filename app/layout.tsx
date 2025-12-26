@@ -15,6 +15,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://topgun-security.de"),
   title: "Topgun Security | Premium Security Services",
   description: "Exzellenz im Objektschutz und professionelle Sicherheitsdienstleistungen.",
 };

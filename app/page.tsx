@@ -27,6 +27,27 @@ export default function Home() {
       </main>
       <Footer />
       <HomeAnimations />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Topgun Security GmbH",
+            "url": "https://topgun-security.de",
+            "telephone": "+4922195285529",
+            "email": "verwaltung@topgun-security.de",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Köln",
+              "addressRegion": "NRW",
+              "addressCountry": "DE"
+            },
+            "areaServed": "NRW",
+            "priceRange": "$$$"
+          }),
+        }}
+      />
     </div>
   );
 }
