@@ -15,7 +15,7 @@ export default function PartnerContactForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Simulate submission
-    console.log("Partner Inquiry submitted:", formData);
+    // console.log("Partner Inquiry submitted:", formData);
     alert("Vielen Dank für Ihre Anfrage. Wir melden uns umgehend bei Ihnen.");
   };
 
