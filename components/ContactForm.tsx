@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Button from "./Button";
+import { sendEmail } from "@/app/actions/send-email";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -13,9 +14,27 @@ export default function ContactForm() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // console.log("Inquiry submitted:", formData);
+    setStatus("submitting");
+
+    const data = new FormData();
+    data.append("type", "contact");
+    Object.entries(formData).forEach(([key, value]) => data.append(key, value));
+
+    const result = await sendEmail(data);
+
+    if (result.success) {
+      setStatus("success");
+      setFormData({ name: "", email: "", company: "", industry: "Real Estate", service: "Doorman", message: "" });
+      setTimeout(() => setStatus("idle"), 5000);
+    } else {
+      setStatus("error");
+      alert("Fehler beim Senden: " + result.message);
+      setStatus("idle");
+    }
   };
 
   return (
@@ -109,8 +128,13 @@ export default function ContactForm() {
       </div>
 
       <div className="pt-4">
-        <Button type="submit" size="lg" className="w-full text-xs font-black uppercase tracking-[0.4em] bg-primary! hover:bg-accent! transition-colors duration-500 py-6">
-          Mandatsanfrage Senden
+        <Button 
+          type="submit" 
+          size="lg" 
+          className="w-full text-xs font-black uppercase tracking-[0.4em] bg-primary! hover:bg-accent! transition-colors duration-500 py-6 disabled:opacity-50 disabled:cursor-not-allowed"
+          disabled={status === "submitting" || status === "success"}
+        >
+          {status === "submitting" ? "Wird gesendet..." : status === "success" ? "Gesendet!" : "Mandatsanfrage Senden"}
         </Button>
       </div>
     </form>

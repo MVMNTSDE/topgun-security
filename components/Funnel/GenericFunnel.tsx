@@ -10,42 +10,35 @@ function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-const questions = [
-  {
-    id: "purpose",
-    question: "Welchen Sicherheitsbedarf haben Sie aktuell?",
-    options: [
-      { id: "objekt", label: "Objektschutz & Werkschutz", icon: "🏢" },
-      { id: "event", label: "Veranstaltungsschutz", icon: "🎉" },
-      { id: "retail", label: "Einzelhandel / Detektive", icon: "🛍️" },
-      { id: "personal", label: "Personenschutz / Doorman", icon: "vip" },
-      { id: "asyl", label: "Asyl & Notunterkünfte", icon: "🏠" },
-      { id: "revier", label: "Revierfahrten / Patrouille", icon: "🚓" },
-    ]
-  },
-  {
-    id: "scale",
-    question: "Wie groß ist der zu sichernde Bereich / Umfang?",
-    options: [
-      { id: "small", label: "Einzelobjekt / < 500m²" },
-      { id: "medium", label: "Mittelstand / 500-2000m²" },
-      { id: "large", label: "Industriekomplex / > 2000m²" },
-      { id: "multi", label: "Mehrere Standorte" },
-    ]
-  },
-  {
-    id: "timeline",
-    question: "Wann soll der Einsatz beginnen?",
-    options: [
-      { id: "asap", label: "Sofort (Notfall)" },
-      { id: "month", label: "Innerhalb 1 Monat" },
-      { id: "quarter", label: "Nächstes Quartal" },
-      { id: "planning", label: "Noch in Planung" },
-    ]
-  }
-];
+export type FunnelQuestion = {
+  id: string;
+  question: string;
+  options: {
+    id: string;
+    label: string;
+    icon?: string;
+  }[];
+};
 
-export default function CampaignQuiz() {
+interface GenericFunnelProps {
+  industry: string;
+  title: string;
+  description: string;
+  questions: FunnelQuestion[];
+  offerCode: string;
+  offerTitle: string;
+  offerDescription: string;
+}
+
+export default function GenericFunnel({
+  industry,
+  title,
+  description,
+  questions,
+  offerCode,
+  offerTitle,
+  offerDescription,
+}: GenericFunnelProps) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [isCompleted, setIsCompleted] = useState(false);
@@ -66,7 +59,8 @@ export default function CampaignQuiz() {
     setStatus("submitting");
 
     const data = new FormData();
-    data.append("type", "campaign");
+    data.append("type", "funnel");
+    data.append("industry", industry);
     data.append("email", email);
     data.append("quiz_answers", JSON.stringify(answers));
     
@@ -74,7 +68,7 @@ export default function CampaignQuiz() {
 
     if (result.success) {
       setStatus("success");
-      alert("Vielen Dank! Ihr Code: TOPGUN30 wurde an " + email + " gesendet. Wir melden uns in Kürze.");
+      alert(`Vielen Dank! Ihr Code: ${offerCode} wurde an ${email} gesendet. Wir melden uns in Kürze.`);
     } else {
       setStatus("error");
       alert("Fehler beim Senden: " + result.message);
@@ -83,29 +77,25 @@ export default function CampaignQuiz() {
   };
 
   return (
-    <section id="campaign" className="bg-primary py-32 overflow-hidden relative">
-      {/* Background Ambience */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/5 via-primary to-primary pointer-events-none" />
-
+    <section className="bg-white border-t border-primary/5 py-24 relative overflow-hidden">
       <div className="container-custom relative z-10">
         <div className="max-w-3xl mx-auto">
           
           {/* Header */}
-          <div className="text-center mb-16 corp-reveal">
+          <div className="text-center mb-12">
             <span className="text-accent font-black tracking-[0.3em] uppercase text-xs mb-4 block">
-              Neukunden-Initiative 2025
+              {industry} Security Check
             </span>
-            <h2 className="text-white text-4xl md:text-5xl mb-6">
-              Sicherheits-Check & <br className="hidden md:block"/> 
-              <span className="text-accent">30% Start-Rabatt</span>
+            <h2 className="text-primary text-3xl md:text-4xl font-black mb-6">
+              {title}
             </h2>
-            <p className="text-white/60 max-w-xl mx-auto">
-              Beantworten Sie 3 kurze Fragen zu Ihrem Bedarf. Sie erhalten sofort eine unverbindliche Ersteinschätzung und unseren exklusiven Business-Rabattcode für die ersten 3 Monate.
+            <p className="text-gray-500 max-w-xl mx-auto">
+              {description}
             </p>
           </div>
 
           {/* Quiz Card */}
-          <div className="bg-white rounded-sm p-8 md:p-12 shadow-2xl border-t-4 border-accent relative min-h-[400px] flex flex-col justify-center transition-all duration-500">
+          <div className="bg-gray-50 rounded-sm p-8 md:p-12 border border-primary/5 relative min-h-[400px] flex flex-col justify-center transition-all duration-500">
             
             {!isCompleted ? (
               <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
@@ -116,7 +106,7 @@ export default function CampaignQuiz() {
                       key={idx} 
                       className={cn(
                         "h-1 w-12 rounded-full transition-colors duration-300",
-                        idx <= step ? "bg-accent" : "bg-primary/10"
+                        idx <= step ? "bg-accent" : "bg-gray-200"
                       )}
                     />
                   ))}
@@ -131,9 +121,10 @@ export default function CampaignQuiz() {
                     <button
                       key={option.id}
                       onClick={() => handleSelect(questions[step].id, option.id)}
-                      className="group p-6 border border-primary/10 hover:border-accent hover:bg-accent/5 transition-all duration-300 text-left flex items-center justify-between"
+                      className="group p-6 border border-primary/5 bg-white hover:border-accent hover:shadow-md transition-all duration-300 text-left flex items-center justify-between"
                     >
                       <span className="font-bold text-primary group-hover:text-accent transition-colors">
+                        {option.icon && <span className="mr-2 inline-block">{option.icon}</span>}
                         {option.label}
                       </span>
                       {answers[questions[step].id] === option.id && (
@@ -145,20 +136,19 @@ export default function CampaignQuiz() {
               </div>
             ) : (
               <div className="text-center animate-in zoom-in-95 duration-500">
-                <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <ShieldCheck className="w-10 h-10 text-accent" />
+                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <ShieldCheck className="w-8 h-8 text-accent" />
                 </div>
-                <h3 className="text-3xl font-black text-primary uppercase mb-4">
-                  Qualifizierung Erfolgreich
+                <h3 className="text-2xl font-black text-primary uppercase mb-4">
+                  {offerTitle}
                 </h3>
-                <p className="text-corporate-body mb-8">
-                  Basierend auf Ihren Angaben haben wir Kapazitäten für Ihr Projekt reserviert. Sichern Sie sich jetzt Ihr Angebot.
+                <p className="text-gray-600 mb-8">
+                  {offerDescription}
                 </p>
 
-                <div className="bg-primary/5 p-8 rounded-sm mb-8 inline-block w-full max-w-md mx-auto">
-                  <span className="block text-xs font-bold text-primary/40 uppercase tracking-widest mb-2">Ihr Rabatt-Code</span>
-                  <code className="text-4xl font-black text-accent tracking-widest">TOPGUN30</code>
-                  <p className="text-xs text-primary/40 mt-2">Gültig für Neukunden bei Abschluss eines 3-Monats-Vertrags.</p>
+                <div className="bg-white border border-primary/5 p-8 rounded-sm mb-8 inline-block w-full max-w-md mx-auto shadow-sm">
+                  <span className="block text-xs font-bold text-primary/40 uppercase tracking-widest mb-2">Ihr Vorteilscode</span>
+                  <code className="text-3xl font-black text-accent tracking-widest">{offerCode}</code>
                 </div>
 
                 <form onSubmit={handleLeadSubmit} className="max-w-md mx-auto relative">
@@ -166,21 +156,21 @@ export default function CampaignQuiz() {
                      <input 
                        type="email" 
                        required 
-                       placeholder="Ihre geschäftliche E-Mail" 
-                       className="flex-1 bg-white border border-primary/20 px-6 py-4 focus:outline-none focus:border-accent font-medium text-primary placeholder:text-primary/30"
+                       placeholder="Geschäftliche E-Mail" 
+                       className="flex-1 bg-white border border-primary/10 px-6 py-4 focus:outline-none focus:border-accent font-medium text-primary placeholder:text-primary/30"
                        value={email}
                        onChange={(e) => setEmail(e.target.value)}
                      />
                      <button 
                        type="submit" 
-                       className="btn-primary whitespace-nowrap px-8! disabled:opacity-50 disabled:cursor-not-allowed"
+                       className="btn-primary whitespace-nowrap px-6! disabled:opacity-50 disabled:cursor-not-allowed"
                        disabled={status === "submitting" || status === "success"}
                      >
                        {status === "submitting" ? "..." : <ArrowRight className="w-5 h-5" />}
                      </button>
                    </div>
                    <p className="text-[10px] text-primary/40 mt-4">
-                     Mit dem Absenden stimmen Sie zu, dass Topgun Security Sie kontaktieren darf. Ihre Daten sind sicher.
+                     Mit dem Absenden stimmen Sie der Kontaktaufnahme zu.
                    </p>
                 </form>
               </div>
@@ -190,14 +180,13 @@ export default function CampaignQuiz() {
             {!isCompleted && step > 0 && (
               <button
                 onClick={() => setStep(s => s - 1)}
-                className="absolute bottom-8 left-8 text-xs font-bold text-primary/30 hover:text-accent uppercase tracking-widest transition-colors"
+                className="absolute bottom-6 left-8 text-xs font-bold text-gray-400 hover:text-accent uppercase tracking-widest transition-colors"
               >
                 ← Zurück
               </button>
             )}
 
           </div>
-
         </div>
       </div>
     </section>

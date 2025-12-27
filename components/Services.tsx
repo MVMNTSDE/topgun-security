@@ -6,7 +6,7 @@ import ServiceCard from "./ServiceCard";
 
 const services = [
   {
-    title: "Baustellen\u00ADbewachung",
+    title: "Baustellenbewachung",
     description: "Lückenlose Absicherung Ihrer Sachwerte vor Ort. Schutz vor Vandalismus, Diebstahl und unbefugtem Zutritt.",
     longDescription: "",
     icon: "hammer" as const,
@@ -14,7 +14,7 @@ const services = [
     href: "/branchen/bau"
   },
   {
-    title: "Pforten\u00ADdienst",
+    title: "Pfortendienst",
     description: "Kontrollierter Personen- und Fahrzeugverkehr an Ihren Toren. Infrastrukturelle Sicherheit rund um die Uhr.",
     longDescription: "",
     icon: "shield" as const,
@@ -22,7 +22,7 @@ const services = [
     href: "/leistungen/werkschutz"
   },
   {
-    title: "Empfangs\u00ADdienst",
+    title: "Empfangsdienst",
     description: "Die professionelle Schnittstelle zwischen Ihrem Unternehmen und Ihren Gästen. Sicher und zuvorkommend.",
     longDescription: "",
     icon: "shield" as const,
@@ -30,7 +30,7 @@ const services = [
     href: "/leistungen/empfangsdienst"
   },
   {
-    title: "Revier\u00ADkontrollen",
+    title: "Revierkontrollen",
     description: "Systematische Überprüfung Ihrer Liegenschaften in definierten Intervallen zur effektiven Gefahrenabwehr.",
     longDescription: "",
     icon: "map" as const,
@@ -46,7 +46,7 @@ const services = [
     href: "/leistungen/empfangsdienst"
   },
   {
-    title: "Kaufhaus\u00ADdetektive",
+    title: "Kaufhausdetektive",
     description: "Prävention von Inventurdifferenzen durch hochqualifizierte Überwachung im Einzelhandel.",
     longDescription: "",
     icon: "users" as const,
@@ -62,7 +62,7 @@ const services = [
     href: "/leistungen/jugendschutz"
   },
   {
-    title: "Veranstaltungs\u00ADschutz",
+    title: "Veranstaltungsschutz",
     description: "Sichere Events durch professionelle Einlasskontrollen, Crowd Management und VIP-Betreuung.",
     longDescription: "",
     icon: "users" as const, // Reusing users icon or maybe another appropriate one if available in ServiceCard logic, using 'users' as safe bet
@@ -70,7 +70,7 @@ const services = [
     href: "/leistungen/veranstaltungsschutz"
   },
   {
-    title: "Asyl- & Notunterkunft\u00ADbetreuung",
+    title: "Asyl- & Notunterkunftbetreuung",
     description: "Sozialkompetente Sicherheitsdienstleistung für sensible Einrichtungen. Deeskalation und 24/7 Schutz.",
     longDescription: "",
     icon: "shield" as const, 

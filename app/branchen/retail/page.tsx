@@ -1,7 +1,7 @@
 import { ServicePageLayout } from "@/components/ServicePageLayout";
 import { TrustBadge } from "@/components/TrustBadge";
 import { ShoppingBag, Eye, UserCheck, BadgeEuro, CreditCard } from "lucide-react";
-import Link from "next/link";
+import GenericFunnel from "@/components/Funnel/GenericFunnel";
 
 export const metadata = {
   title: "Einzelhandelssicherheit (Retail Security) | Topgun Security",
@@ -109,28 +109,46 @@ export default function RetailPage() {
         </div>
       </div>
 
-      {/* 6. CTA */}
-      <div className="bg-white border-2 border-primary rounded-xl p-8 md:p-12 text-center shadow-2xl relative overflow-hidden">
-             
-             <h2 className="text-3xl font-black text-primary uppercase mb-4 relative z-10">Store schützen?</h2>
-             <p className="text-gray-600 max-w-2xl mx-auto mb-8 relative z-10">
-                Lassen Sie uns über Ihre Inventurziele sprechen.
-             </p>
-             <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
-                <Link 
-                    href="/#contact" 
-                    className="btn-primary"
-                >
-                    Retail-Schutz anfragen
-                </Link>
-                <Link 
-                    href="/leistungen/detektei" 
-                    className="px-8 py-4 bg-gray-100 hover:bg-gray-200 text-primary font-bold uppercase tracking-wider transition-all text-sm flex items-center justify-center rounded"
-                >
-                    Mehr zur Detektei
-                </Link>
-             </div>
-      </div>
+      {/* 6. CTA / Funnel */}
+      <GenericFunnel
+        industry="Retail"
+        title="Inventur-Differenzen senken?"
+        description="Beantworten Sie 3 Fragen zu Ihrer Situation. Wir analysieren Ihr Risikoprofil und senden Ihnen eine passende Strategie-Empfehlung."
+        questions={[
+           {
+            id: "issue",
+            question: "Was ist Ihre größte Herausforderung?",
+            options: [
+              { id: "theft", label: "Ladendiebstahl / Banden", icon: "🏃" },
+              { id: "staff", label: "Interne Differenzen / Mitarbeiter", icon: "busts_in_silhouette" },
+              { id: "aggression", label: "Aggression / Vandalismus", icon: "weary" },
+              { id: "inventory", label: "Unklare Inventurverluste", icon: "chart_with_downwards_trend" },
+            ]
+          },
+          {
+            id: "size",
+            question: "Wie viele Filialen betreffen dies?",
+            options: [
+              { id: "single", label: "1 Filiale (Pilot)" },
+              { id: "small_chain", label: "2-5 Filialen" },
+              { id: "large_chain", label: "Filialnetz (>5)" },
+            ]
+          },
+          {
+            id: "measure",
+            question: "Welche Maßnahmen nutzen Sie bereits?",
+            options: [
+              { id: "cameras", label: "Videoüberwachung" },
+              { id: "eas", label: "Warensicherungs-Tags" },
+              { id: "detective", label: "Detektiv / Doorman" },
+              { id: "none", label: "Bisher keine / Wenig" },
+            ]
+          }
+        ]}
+        offerCode="RETAIL-AUDIT-25"
+        offerTitle="Sicherheits-Audit Qualifiziert"
+        offerDescription="Basierend auf Ihren Angaben empfehlen wir ein gezieltes Store-Audit. Sichern Sie sich unsere kostenlose Ersteinschätzung."
+      />
     </ServicePageLayout>
   );
 }
