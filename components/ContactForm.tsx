@@ -24,15 +24,22 @@ export default function ContactForm() {
     data.append("type", "contact");
     Object.entries(formData).forEach(([key, value]) => data.append(key, value));
 
-    const result = await sendEmail(data);
+    try {
+      const result = await sendEmail(data);
 
-    if (result.success) {
-      setStatus("success");
-      setFormData({ name: "", email: "", company: "", industry: "Real Estate", service: "Doorman", message: "" });
-      setTimeout(() => setStatus("idle"), 5000);
-    } else {
+      if (result.success) {
+        setStatus("success");
+        setFormData({ name: "", email: "", company: "", industry: "Real Estate", service: "Doorman", message: "" });
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+        alert("Fehler beim Senden: " + result.message);
+        setStatus("idle");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
       setStatus("error");
-      alert("Fehler beim Senden: " + result.message);
+      alert("Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.");
       setStatus("idle");
     }
   };

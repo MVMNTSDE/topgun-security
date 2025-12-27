@@ -64,14 +64,21 @@ export default function GenericFunnel({
     data.append("email", email);
     data.append("quiz_answers", JSON.stringify(answers));
     
-    const result = await sendEmail(data);
+    try {
+      const result = await sendEmail(data);
 
-    if (result.success) {
-      setStatus("success");
-      alert(`Vielen Dank! Ihr Code: ${offerCode} wurde an ${email} gesendet. Wir melden uns in Kürze.`);
-    } else {
+      if (result.success) {
+        setStatus("success");
+        alert(`Vielen Dank! Ihr Code: ${offerCode} wurde an ${email} gesendet. Wir melden uns in Kürze.`);
+      } else {
+        setStatus("error");
+        alert("Fehler beim Senden: " + result.message);
+        setStatus("idle");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
       setStatus("error");
-      alert("Fehler beim Senden: " + result.message);
+      alert("Ein unerwarteter Fehler ist aufgetreten.");
       setStatus("idle");
     }
   };
