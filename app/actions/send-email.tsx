@@ -7,6 +7,10 @@ import * as React from 'react';
 const resend = new Resend(process.env.RESEND_API_KEY);
 const TO_EMAIL = 'verwaltung@topgun-security.de';
 
+import { UserConfirmationTemplate } from '@/components/email-template-user';
+
+// ... (existing helper function if any, or just import)
+
 export async function sendEmail(formData: FormData) {
   const type = formData.get('type') as 'contact' | 'partner' | 'campaign' | 'funnel';
   const rawData: Record<string, any> = {};
@@ -18,26 +22,60 @@ export async function sendEmail(formData: FormData) {
     }
   });
 
+  const email = rawData.email as string;
+  const name = rawData.name as string;
+  const offerCode = "TOPGUN30"; // Static for now, or derive from logic
+
   if (!process.env.RESEND_API_KEY) {
     console.warn('RESEND_API_KEY is missing. Email would have contained:', rawData);
     return { success: true, message: 'Simulated success (API Key missing)' };
   }
 
   try {
-    const { data, error } = await resend.emails.send({
+    // 1. Send Notification to Admin (Topgun)
+    const adminData = await resend.emails.send({
       from: 'Topgun Security Website <verwaltung@topgun-security.de>',
       to: [TO_EMAIL],
-      replyTo: rawData.email as string,
+      replyTo: email,
       subject: `[Website] ${type.toUpperCase()} - Anfrage`,
       react: <EmailTemplate type={type} data={rawData} />,
     });
 
-    if (error) {
-      console.error('Resend error:', error);
-      return { success: false, message: error.message };
+    if (adminData.error) {
+        console.error('Admin email error:', adminData.error);
+        throw new Error(adminData.error.message);
     }
 
-    return { success: true, data };
+    // 2. Send Confirmation to User (Auto-Responder)
+    // Only send if we have a valid email
+    if (email) {
+        const userSubject = type === 'campaign' || type === 'funnel' 
+            ? `Ihr Sicherheits-Code: ${offerCode}` 
+            : 'Eingangsbestätigung: Ihre Anfrage bei Topgun Security';
+
+        await resend.emails.send({
+            from: 'Topgun Security <verwaltung@topgun-security.de>',
+            to: [email],
+            subject: userSubject,
+            react: <UserConfirmationTemplate type={type} name={name} offerCode={offerCode} />,
+        });
+    }
+
+    // 3. Add to Resend Audience (Lead Capture)
+    if (process.env.RESEND_AUDIENCE_ID && email) {
+        try {
+            await resend.contacts.create({
+                email: email,
+                firstName: name,
+                audienceId: process.env.RESEND_AUDIENCE_ID,
+            });
+        } catch (contactError) {
+            // Non-blocking error for contact creation
+            console.warn('Failed to add contact to audience:', contactError);
+        }
+    }
+
+    return { success: true, data: adminData.data };
   } catch (error: any) {
     console.error('Server error during email sending:', error);
     return { success: false, message: error.message || 'Internal server error' };
