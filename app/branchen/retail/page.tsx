@@ -4,8 +4,13 @@ import { ShoppingBag, Eye, UserCheck, BadgeEuro, CreditCard } from "lucide-react
 import GenericFunnel from "@/components/Funnel/GenericFunnel";
 
 export const metadata = {
-  title: "Einzelhandelssicherheit (Retail Security) | Topgun Security",
-  description: "Ganzheitliche Sicherheitskonzepte für den Einzelhandel. Doorman, Detektiv und Inventurschutz für Stores und Shopping-Center in Köln.",
+  title: "Einzelhandelssicherheit & Doorman Service | Topgun Security",
+  description: "Sicherheit für High-End Retail. Doorman, Ladendetektive & Inventurschutz für den Einzelhandel in Köln & Düsseldorf.",
+  openGraph: {
+    title: "Einzelhandelssicherheit & Doorman Service | Topgun Security",
+    description: "Sicherheit für High-End Retail. Doorman, Ladendetektive & Inventurschutz für den Einzelhandel in Köln & Düsseldorf.",
+    images: [{ url: '/images/services/doorman-mall.png', width: 1200, height: 630 }],
+  },
 };
 
 export default function RetailPage() {
@@ -50,15 +55,15 @@ export default function RetailPage() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
             <div className="bg-gray-50 p-6 rounded border border-gray-100">
-                <h4 className="font-bold text-accent text-lg mb-2">1. Die Prävention (Doorman)</h4>
+                <h3 className="font-bold text-accent text-lg mb-2">1. Die Prävention (Doorman)</h3>
                 <p className="text-sm text-gray-600">Steht sichtbar am Eingang. Begrüßt Kunden, schreckt Täter ab (&quot;Hard Target&quot;). Sorgt für subjektives Sicherheitsgefühl.</p>
             </div>
              <div className="bg-gray-50 p-6 rounded border border-gray-100">
-                <h4 className="font-bold text-accent text-lg mb-2">2. Die Intervention (Detektiv)</h4>
+                <h3 className="font-bold text-accent text-lg mb-2">2. Die Intervention (Detektiv)</h3>
                 <p className="text-sm text-gray-600">Arbeitet unsichtbar. Greift erst ein, wenn gestohlen wurde. Dokumentiert und bringt zur Anzeige.</p>
             </div>
              <div className="bg-gray-50 p-6 rounded border border-gray-100">
-                <h4 className="font-bold text-accent text-lg mb-2">3. Die Analyse (Audit)</h4>
+                <h3 className="font-bold text-accent text-lg mb-2">3. Die Analyse (Audit)</h3>
                 <p className="text-sm text-gray-600">Prüft interne Prozesse. Wie wird kassiert? Wie wird Ware angenommen? Wo sind die Blind Spots der Kameras?</p>
             </div>
         </div>

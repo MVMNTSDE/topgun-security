@@ -4,8 +4,13 @@ import { Building2, Key, Video, Eye, Briefcase, BadgeCheck } from "lucide-react"
 import Link from "next/link";
 
 export const metadata = {
-  title: "Sicherheitsdienst für Immobilien & Facility Management | Topgun Security",
-  description: "Spezialisierte Sicherheitslösungen für Immobilienverwalter und Facility Management. Werterhalt, Mietersicherheit und effizientes Leerstandsmanagement.",
+  title: "Objektschutz & Immobilien-Sicherheit | Topgun Security",
+  description: "Sicherheit für Immobilien & Facility Management. Objektschutz, Leerstandsüberwachung & Doorman-Service in NRW.",
+  openGraph: {
+    title: "Objektschutz & Immobilien-Sicherheit | Topgun Security",
+    description: "Sicherheit für Immobilien & Facility Management. Objektschutz, Leerstandsüberwachung & Doorman-Service in NRW.",
+    images: [{ url: '/images/services/portrait-professional.png', width: 1200, height: 630 }],
+  },
 };
 
 export default function ImmobilienPage() {

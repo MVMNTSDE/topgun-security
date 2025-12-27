@@ -23,6 +23,9 @@ export const EmailTemplate: React.FC<EmailTemplateProps> = ({
 
   // Helper to parse JSON strings (like quiz_answers)
   const formatValue = (key: string, value: any) => {
+    if (typeof value === 'object' && value !== null) {
+        return JSON.stringify(value, null, 2);
+    }
     if (typeof value === 'string' && (value.startsWith('{') || value.startsWith('['))) {
       try {
         const parsed = JSON.parse(value);
@@ -41,7 +44,7 @@ export const EmailTemplate: React.FC<EmailTemplateProps> = ({
         return value;
       }
     }
-    return value;
+    return String(value);
   };
 
   return (

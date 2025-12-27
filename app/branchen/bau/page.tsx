@@ -4,8 +4,13 @@ import { HardHat, Eye, Siren, FileCheck } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Baustellenbewachung & Sicherheit | Topgun Security",
-  description: "Schutz für Ihre Baustelle vor Diebstahl, Vandalismus und Schwarzarbeit. Zutrittskontrolle und Brandwache in Köln & NRW.",
+  title: "Baustellenbewachung & Sicherheit NRW | Topgun Security",
+  description: "Professioneller Baustellenschutz in NRW. 24/7 Überwachung, Zutrittskontrolle & Diebstahlschutz für Bauprojekte.",
+  openGraph: {
+    title: "Baustellenbewachung & Sicherheit NRW | Topgun Security",
+    description: "Professioneller Baustellenschutz in NRW. 24/7 Überwachung, Zutrittskontrolle & Diebstahlschutz für Bauprojekte.",
+    images: [{ url: '/images/services/revierdienst-car.png', width: 1200, height: 630 }],
+  },
 };
 
 export default function BauPage() {
@@ -101,15 +106,15 @@ export default function BauPage() {
         <h2 className="text-2xl font-bold text-primary mb-6">Risiko Bauverzögerung</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 border border-gray-100 shadow-sm">
-                <h4 className="font-bold text-primary mb-2">Vandalismus</h4>
+                <h3 className="font-bold text-primary mb-2">Vandalismus</h3>
                 <p className="text-sm text-gray-600">Zerstörte Fenster oder besprühte Fassaden kurz vor Übergabe sind der Albtraum jedes Bauherrn.</p>
             </div>
             <div className="p-6 border border-gray-100 shadow-sm">
-                <h4 className="font-bold text-primary mb-2">Materialdiebstahl</h4>
+                <h3 className="font-bold text-primary mb-2">Materialdiebstahl</h3>
                 <p className="text-sm text-gray-600">Kupfer, Kabel und Werkzeug sind Währung. Wir sichern Ihre Lagerplätze.</p>
             </div>
              <div className="p-6 border border-gray-100 shadow-sm">
-                <h4 className="font-bold text-primary mb-2">Bauherrenhaftung</h4>
+                <h3 className="font-bold text-primary mb-2">Bauherrenhaftung</h3>
                 <p className="text-sm text-gray-600">Wir dokumentieren die Verkehrssicherungspflicht (Beleuchtung, Zaunstand) für Sie gerichtsfest.</p>
             </div>
         </div>

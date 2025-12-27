@@ -4,6 +4,8 @@ import { Resend } from 'resend';
 import { EmailTemplate } from '@/components/email-template';
 import * as React from 'react';
 
+import { renderToStaticMarkup } from 'react-dom/server';
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 const TO_EMAIL = 'verwaltung@topgun-security.de';
 
@@ -24,12 +26,15 @@ export async function sendEmail(formData: FormData) {
   }
 
   try {
+    // Explicitly render to HTML string to catch rendering errors specifically
+    const htmlContent = renderToStaticMarkup(<EmailTemplate type={type} data={rawData} />);
+
     const { data, error } = await resend.emails.send({
-      from: 'Topgun Security <verwaltung@topgun-security.de>',
+      from: 'Topgun Security Website <verwaltung@topgun-security.de>',
       to: [TO_EMAIL],
       replyTo: rawData.email as string,
       subject: `[Website] ${type.toUpperCase()} - Anfrage`,
-      react: <EmailTemplate type={type} data={rawData} />,
+      html: htmlContent,
     });
 
     if (error) {
@@ -38,8 +43,9 @@ export async function sendEmail(formData: FormData) {
     }
 
     return { success: true, data };
-  } catch (error) {
-    console.error('Server error:', error);
-    return { success: false, message: 'Internal server error' };
+  } catch (error: any) {
+    console.error('Server error during email sending:', error);
+    return { success: false, message: error.message || 'Internal server error' };
   }
 }
+
