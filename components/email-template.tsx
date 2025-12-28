@@ -28,6 +28,21 @@ export const EmailTemplate: React.FC<EmailTemplateProps> = ({
     source_type: 'Quelle',
     firstName: 'Vorname',
     lastName: 'Nachname',
+    quiz_answers: 'Kampagne-Antworten',
+    purpose: 'Einsatzzweck',
+    scale: 'Umfang',
+    timeline: 'Zeitraum',
+  };
+
+  const valueMap: Record<string, string> = {
+    personal: 'Privat / Persönlich',
+    business: 'Gewerblich / Business',
+    small: 'Klein (Einzelobjekt)',
+    medium: 'Mittel (Mehrere Objekte / Events)',
+    large: 'Groß (Komplex / Langfristig)',
+    planning: 'In Planung',
+    asap: 'Schnellstmöglich',
+    urgent: 'Dringend (Notfall)',
   };
 
   // Helper to format keys nicely (Translate if possible, else prettify)
@@ -50,7 +65,7 @@ export const EmailTemplate: React.FC<EmailTemplateProps> = ({
               <div key={k} style={{ marginBottom: '5px' }}>
                 <span style={{ color: '#888', fontSize: '11px', textTransform: 'uppercase' }}>{formatKey(k)}:</span>
                 <br />
-                <strong>{String(v)}</strong>
+                <strong>{valueMap[String(v)] || String(v)}</strong>
               </div>
             ))}
           </div>
@@ -96,6 +111,11 @@ export const EmailTemplate: React.FC<EmailTemplateProps> = ({
              case 'securityLevel': label = 'Sicherheitsstufe'; break;
              case 'startDate': label = 'Gewünschter Start'; break;
              case 'source_type': label = 'Quelle'; break;
+             case 'quiz_answers': label = 'Kampagne-Details'; break;
+          }
+
+          if (label === key && keyMap[key]) {
+              label = keyMap[key];
           }
 
           return (
@@ -104,7 +124,7 @@ export const EmailTemplate: React.FC<EmailTemplateProps> = ({
                 {label}
               </div>
               <div style={{ fontSize: '15px', color: '#111827', fontWeight: '500' }}>
-                {String(value)}
+                {formatValue(key, value)}
               </div>
             </div>
           );
