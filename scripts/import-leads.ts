@@ -16,13 +16,7 @@ if (!AUDIENCE_ID) {
   process.exit(1);
 }
 
-const CSV_FILE_PATH = path.join(process.cwd(), 'leads.csv');
 
-if (!fs.existsSync(CSV_FILE_PATH)) {
-  console.error(`❌ File not found: ${CSV_FILE_PATH}`);
-  console.log('Please place your CSV file in the root directory and name it "leads.csv".');
-  process.exit(1);
-}
 
 // Simple CSV Parser (splitting by comma, handling quotes roughly)
 function parseCSV(content: string) {
