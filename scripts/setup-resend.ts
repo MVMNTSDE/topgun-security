@@ -28,7 +28,7 @@ async function setupResend() {
         key: prop.key,
         type: 'text', 
         fallbackValue: prop.fallbackValue,
-      });
+      } as any);
       console.log(`✅ Created property: ${prop.key}`);
     } catch (error: any) {
       if (error?.message?.includes('already exists') || error?.statusCode === 409) {
