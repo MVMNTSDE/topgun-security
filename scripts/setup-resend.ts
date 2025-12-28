@@ -1,4 +1,3 @@
-```
 import { Resend } from 'resend';
 import dotenv from 'dotenv';
 
@@ -54,7 +53,7 @@ async function setupResend() {
       // Note: Resend API doesn't have a simple "check if exists" by name without listing.
       // We will try to create it. Typical "already exists" might not throw 409 for segments with same name,
       // so we might want to list first or just create. 
-      // For safety/idempotency, we list first.
+      // For safety, we list first.
       
       const allSegments = await resend.segments.list();
       const existing = allSegments.data?.data?.find((s: any) => s.name === seg.name);
@@ -103,4 +102,3 @@ async function setupResend() {
 }
 
 setupResend();
-```
