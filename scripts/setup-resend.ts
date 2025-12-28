@@ -6,6 +6,8 @@ import dotenv from 'dotenv';
 dotenv.config({ path: '.env.local' });
 dotenv.config(); // Fallback to standard .env
 
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 async function setupResendProperties() {
   const properties = [
     { key: 'company', type: 'string', fallbackValue: 'Privat' },
