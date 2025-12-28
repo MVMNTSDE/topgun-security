@@ -43,6 +43,15 @@ export const EmailTemplate: React.FC<EmailTemplateProps> = ({
     planning: 'In Planung',
     asap: 'Schnellstmöglich',
     urgent: 'Dringend (Notfall)',
+    // Industries
+    'Real Estate': 'Immobilien / Asset Management',
+    'Construction': 'Bauwesen / Bauträger',
+    'Industry': 'Industrie / Logistik',
+    'Retail': 'Einzelhandel / High-End',
+    'Hotel': 'Hotellerie',
+    'Other': 'Sonstiges',
+    // Services
+    'Doorman': 'Doorman / Empfang',
   };
 
   // Helper to format keys nicely (Translate if possible, else prettify)
