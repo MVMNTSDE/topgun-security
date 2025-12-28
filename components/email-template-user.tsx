@@ -17,6 +17,11 @@ export const UserConfirmationTemplate: React.FC<UserConfirmationTemplateProps> =
   return (
     <div style={{ fontFamily: 'Helvetica, Arial, sans-serif', color: '#1a1a1a', maxWidth: '600px', lineHeight: '1.6' }}>
       <div style={{ borderBottom: '4px solid #F59E0B', paddingBottom: '30px', marginBottom: '30px' }}>
+        <img 
+            src="https://topgun-security.de/images/logo-full.png" 
+            alt="Topgun Security" 
+            style={{ height: '40px', marginBottom: '20px', display: 'block' }} 
+        />
         <h1 style={{ color: '#111', margin: '0', fontSize: '24px', letterSpacing: '-0.5px' }}>
             {isCampaign ? 'Ihr Sicherheits-Code ist da!' : 'Danke für Ihre Anfrage'}
         </h1>

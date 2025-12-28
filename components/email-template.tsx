@@ -16,8 +16,22 @@ export const EmailTemplate: React.FC<EmailTemplateProps> = ({
     funnel: `Funnel: ${data.industry || 'Allgemein'}`,
   };
 
-  // Helper to format keys nicely
+  const keyMap: Record<string, string> = {
+    company: 'Firma',
+    industry: 'Branche',
+    service: 'Dienstleistung',
+    message: 'Nachricht',
+    phone: 'Telefon',
+    email: 'E-Mail',
+    name: 'Name',
+    source_type: 'Quelle',
+    firstName: 'Vorname',
+    lastName: 'Nachname',
+  };
+
+  // Helper to format keys nicely (Translate if possible, else prettify)
   const formatKey = (key: string) => {
+    if (keyMap[key]) return keyMap[key];
     return key.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
   };
 
@@ -50,6 +64,11 @@ export const EmailTemplate: React.FC<EmailTemplateProps> = ({
   return (
     <div style={{ fontFamily: 'Helvetica, Arial, sans-serif', color: '#1a1a1a', maxWidth: '600px', lineHeight: '1.5' }}>
       <div style={{ borderBottom: '2px solid #F59E0B', paddingBottom: '20px', marginBottom: '30px' }}>
+        <img 
+            src="https://topgun-security.de/images/logo-full.png" 
+            alt="Topgun Security" 
+            style={{ height: '40px', marginBottom: '20px', display: 'block' }} 
+        />
         <h1 style={{ color: '#111', margin: '0', fontSize: '24px', letterSpacing: '-0.5px' }}>{titleMap[type]}</h1>
         <p style={{ color: '#666', margin: '10px 0 0 0', fontSize: '14px' }}>
           Eingegangen am {new Date().toLocaleString('de-DE', { dateStyle: 'full', timeStyle: 'short' })}
