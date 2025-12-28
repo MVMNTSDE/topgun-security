@@ -9,10 +9,20 @@ const TO_EMAIL = 'verwaltung@topgun-security.de';
 
 import { UserConfirmationTemplate } from '@/components/email-template-user';
 
-// ... (existing helper function if any, or just import)
+
+function getTypeSubject(type: string, data: any): string {
+  switch (type) {
+    case 'contact': return 'Neue Kontaktanfrage über Webseite';
+    case 'partner': return 'Partneranfrage erhalten';
+    case 'mandate': return `Dringende Mandatsanfrage: ${data.company || 'Neu'}`;
+    case 'campaign': return 'Neukunden-Kampagne (Code angefordert)';
+    case 'funnel': return `Funnel-Anfrage: ${data.industry || 'Allgemein'}`;
+    default: return 'Neue Nachricht über Webseite';
+  }
+}
 
 export async function sendEmail(formData: FormData) {
-  const type = formData.get('type') as 'contact' | 'partner' | 'campaign' | 'funnel';
+  const type = formData.get('type') as 'contact' | 'partner' | 'campaign' | 'funnel' | 'mandate';
   const rawData: Record<string, any> = {};
 
   // Extract all data from formData
@@ -37,7 +47,7 @@ export async function sendEmail(formData: FormData) {
       from: 'Topgun Security <verwaltung@topgun-security.de>',
       to: [TO_EMAIL],
       replyTo: email,
-      subject: `[Website] ${type.toUpperCase()} - Anfrage`,
+      subject: getTypeSubject(type, rawData),
       react: <EmailTemplate type={type} data={rawData} />,
     });
 

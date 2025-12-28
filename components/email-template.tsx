@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 interface EmailTemplateProps {
-  type: 'contact' | 'partner' | 'campaign' | 'funnel';
+  type: 'contact' | 'partner' | 'campaign' | 'funnel' | 'mandate';
   data: any;
 }
 
@@ -14,6 +14,7 @@ export const EmailTemplate: React.FC<EmailTemplateProps> = ({
     partner: 'Neue Partneranfrage',
     campaign: 'Neukunden-Kampagne (TOPGUN30)',
     funnel: `Funnel: ${data.industry || 'Allgemein'}`,
+    mandate: `MANDATSANFRAGE: ${data.company || 'Unbekannt'}`,
   };
 
   const keyMap: Record<string, string> = {
@@ -76,20 +77,38 @@ export const EmailTemplate: React.FC<EmailTemplateProps> = ({
       </div>
       
       <div style={{ backgroundColor: '#f9fafb', padding: '30px', borderRadius: '12px', border: '1px solid #e5e7eb' }}>
-        <h2 style={{ fontSize: '16px', textTransform: 'uppercase', letterSpacing: '2px', color: '#F59E0B', marginTop: '0', marginBottom: '20px' }}>
-          Details
+        <h2 style={{ fontSize: '16px', fontWeight: 'bold', color: '#F59E0B', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '20px' }}>
+          Details zur Anfrage
         </h2>
         
-        {Object.entries(data).map(([key, value]) => (
-          <div key={key} style={{ marginBottom: '20px', borderBottom: '1px solid #f0f0f0', paddingBottom: '15px' }}>
-            <strong style={{ textTransform: 'uppercase', fontSize: '11px', color: '#6b7280', display: 'block', marginBottom: '4px', letterSpacing: '0.5px' }}>
-              {formatKey(key)}
-            </strong>
-             <div style={{ fontSize: '15px', color: '#111827', whiteSpace: 'pre-wrap' }}>
-              {formatValue(key, value)}
+        {Object.entries(data).map(([key, value]) => {
+          if (!value || key === 'type') return null;
+          
+          let label = key;
+          switch(key) {
+             case 'name': label = 'Name / Ansprechpartner'; break;
+             case 'email': label = 'E-Mail Adresse'; break;
+             case 'company': label = 'Firma / Organisation'; break;
+             case 'phone': label = 'Telefonnummer'; break;
+             case 'industry': label = 'Branche'; break;
+             case 'service': label = 'Interesse an'; break;
+             case 'message': label = 'Nachricht'; break;
+             case 'securityLevel': label = 'Sicherheitsstufe'; break;
+             case 'startDate': label = 'Gewünschter Start'; break;
+             case 'source_type': label = 'Quelle'; break;
+          }
+
+          return (
+            <div key={key} style={{ marginBottom: '16px' }}>
+              <div style={{ fontSize: '11px', fontWeight: 'bold', textTransform: 'uppercase', color: '#9ca3af', marginBottom: '4px' }}>
+                {label}
+              </div>
+              <div style={{ fontSize: '15px', color: '#111827', fontWeight: '500' }}>
+                {String(value)}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
       
       <div style={{ marginTop: '30px', fontSize: '12px', color: '#9ca3af', textAlign: 'center', borderTop: '1px solid #eee', paddingTop: '20px' }}>

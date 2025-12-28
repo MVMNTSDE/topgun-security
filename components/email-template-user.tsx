@@ -2,7 +2,7 @@
 import * as React from 'react';
 
 interface UserConfirmationTemplateProps {
-  type: 'contact' | 'partner' | 'campaign' | 'funnel';
+  type: 'contact' | 'partner' | 'campaign' | 'funnel' | 'mandate';
   name?: string;
   offerCode?: string;
 }
@@ -23,7 +23,7 @@ export const UserConfirmationTemplate: React.FC<UserConfirmationTemplateProps> =
             style={{ height: 'auto', width: '200px', marginBottom: '20px', display: 'block' }} 
         />
         <h1 style={{ color: '#111', margin: '0', fontSize: '24px', letterSpacing: '-0.5px' }}>
-            {isCampaign ? 'Ihr Sicherheits-Code ist da!' : 'Danke für Ihre Anfrage'}
+            {isCampaign ? 'Ihr Sicherheits-Code ist da!' : type === 'mandate' ? 'Eingangsbestätigung: Mandatsanfrage' : 'Danke für Ihre Anfrage'}
         </h1>
       </div>
       
