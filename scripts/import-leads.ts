@@ -52,11 +52,24 @@ function parseCSV(content: string) {
 }
 
 async function run() {
-  // Specific path for the user's file
-  const SPECIFIC_CSV_PATH = path.join(process.cwd(), '2025121023_Souvenirshop_Köln.csv');
-  const targetPath = fs.existsSync(SPECIFIC_CSV_PATH) ? SPECIFIC_CSV_PATH : CSV_FILE_PATH;
+  // Dynamically find the file to handle Unicode normalization (NFC vs NFD)
+  const rootDir = process.cwd();
+  const files = fs.readdirSync(rootDir);
+  
+  // Debug log
+  console.log('📂 Files in root:', files.filter(f => f.includes('2025')));
+
+  const csvFile = files.find(f => f.startsWith('2025121023') && f.endsWith('.csv')) || 'leads.csv';
+  
+  const targetPath = path.join(rootDir, csvFile);
 
   console.log(`🚀 Reading ${targetPath}...`);
+  
+  if (!fs.existsSync(targetPath)) {
+      console.error(`❌ File not found: ${targetPath}`);
+      process.exit(1);
+  }
+
   const fileContent = fs.readFileSync(targetPath, 'utf-8');
   const results = parseCSV(fileContent);
 
