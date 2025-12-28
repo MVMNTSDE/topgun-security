@@ -85,8 +85,8 @@ async function setupResend() {
       await resend.topics.create({
         name: topic.name,
         description: topic.description,
-        default_subscription: 'opt_out',
-      });
+        defaultSubscription: 'opt_out',
+      } as any);
       console.log(`✅ Created topic: ${topic.name}`);
     } catch (error: any) {
        // Resend might return 409 or similar.
