@@ -8,10 +8,7 @@ import EmergencyButton from "@/components/EmergencyButton";
 import CampaignQuiz from "@/components/CampaignQuiz";
 import HomeAnimations from "@/components/home/HomeAnimations";
 
-export const metadata = {
-  title: "Topgun Security | Premium Sicherheitsdienst NRW",
-  description: "Zertifizierter Objektschutz, Werkschutz und Sicherheitsdienste in Köln & NRW. DIN 77200 & ISO 9001 zertifiziert.",
-};
+
 
 export default function Home() {
   return (
