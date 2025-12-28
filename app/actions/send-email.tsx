@@ -68,6 +68,14 @@ export async function sendEmail(formData: FormData) {
                 email: email,
                 firstName: name,
                 audienceId: process.env.RESEND_AUDIENCE_ID,
+                // Map custom properties (must be registered in Resend first via script)
+                data: {
+                    company: rawData.company as string || 'Privat',
+                    industry: rawData.industry as string || 'General',
+                    service: rawData.service as string || 'Security',
+                    phone: rawData.phone as string || '',
+                    source_type: type,
+                } as any, // Cast to any if SDK types are strict, or strict Record<string, string>
             });
         } catch (contactError) {
             // Non-blocking error for contact creation
