@@ -34,7 +34,7 @@ export async function sendEmail(formData: FormData) {
   try {
     // 1. Send Notification to Admin (Topgun)
     const adminData = await resend.emails.send({
-      from: 'Website Formular <noreply@topgun-security.de>',
+      from: 'Topgun Security <verwaltung@topgun-security.de>',
       to: [TO_EMAIL],
       replyTo: email,
       subject: `[Website] ${type.toUpperCase()} - Anfrage`,
