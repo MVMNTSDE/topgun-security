@@ -67,7 +67,7 @@ export const EmailTemplate: React.FC<EmailTemplateProps> = ({
         <img 
             src="https://topgun-security.de/images/logo-full.png" 
             alt="Topgun Security" 
-            style={{ height: '40px', marginBottom: '20px', display: 'block' }} 
+            style={{ height: 'auto', width: '200px', marginBottom: '20px', display: 'block' }} 
         />
         <h1 style={{ color: '#111', margin: '0', fontSize: '24px', letterSpacing: '-0.5px' }}>{titleMap[type]}</h1>
         <p style={{ color: '#666', margin: '10px 0 0 0', fontSize: '14px' }}>
@@ -93,7 +93,7 @@ export const EmailTemplate: React.FC<EmailTemplateProps> = ({
       </div>
       
       <div style={{ marginTop: '30px', fontSize: '12px', color: '#9ca3af', textAlign: 'center', borderTop: '1px solid #eee', paddingTop: '20px' }}>
-        Topgun Security Website &bull; Automatische Benachrichtigung
+        TOPGUN SECURITY GMBH. KÖLN | BONN | DÜSSELDORF | LEVERKUSEN | NRW
       </div>
     </div>
   );

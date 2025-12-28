@@ -20,7 +20,7 @@ export const UserConfirmationTemplate: React.FC<UserConfirmationTemplateProps> =
         <img 
             src="https://topgun-security.de/images/logo-full.png" 
             alt="Topgun Security" 
-            style={{ height: '40px', marginBottom: '20px', display: 'block' }} 
+            style={{ height: 'auto', width: '200px', marginBottom: '20px', display: 'block' }} 
         />
         <h1 style={{ color: '#111', margin: '0', fontSize: '24px', letterSpacing: '-0.5px' }}>
             {isCampaign ? 'Ihr Sicherheits-Code ist da!' : 'Danke für Ihre Anfrage'}
@@ -54,7 +54,7 @@ export const UserConfirmationTemplate: React.FC<UserConfirmationTemplateProps> =
       </div>
       
       <div style={{ marginTop: '40px', fontSize: '12px', color: '#9ca3af', borderTop: '1px solid #eee', paddingTop: '20px' }}>
-        Topgun Security GmbH &bull; Köln & Düsseldorf
+        TOPGUN SECURITY GMBH. KÖLN | BONN | DÜSSELDORF | LEVERKUSEN | NRW
       </div>
     </div>
   );
