@@ -75,8 +75,8 @@ export async function sendEmail(formData: FormData) {
                     service: rawData.service as string || 'Security',
                     phone: rawData.phone as string || '',
                     source_type: type,
-                } as any, // Cast to any if SDK types are strict, or strict Record<string, string>
-            });
+                },
+            } as any);
         } catch (contactError) {
             // Non-blocking error for contact creation
             console.warn('Failed to add contact to audience:', contactError);

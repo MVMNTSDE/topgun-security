@@ -1,8 +1,10 @@
 
 import { Resend } from 'resend';
-import 'dotenv/config'; // Requirement: npm install dotenv
+import dotenv from 'dotenv';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Load environment variables (prefer .env.local for Next.js secrets)
+dotenv.config({ path: '.env.local' });
+dotenv.config(); // Fallback to standard .env
 
 async function setupResendProperties() {
   const properties = [
