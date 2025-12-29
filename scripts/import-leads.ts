@@ -4,9 +4,14 @@ import dotenv from 'dotenv';
 import fs from 'fs';
 import path from 'path';
 
-// Load environment variables
-dotenv.config({ path: '.env.local' });
-dotenv.config();
+// Force load .env.local to override any shell-cached values
+const envLocal = fs.readFileSync(path.join(process.cwd(), '.env.local'), 'utf-8');
+const envConfig = dotenv.parse(envLocal);
+for (const k in envConfig) {
+  process.env[k] = envConfig[k];
+}
+
+console.log('🔑 Loaded API Key:', process.env.RESEND_API_KEY?.substring(0, 10) + '...');
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const AUDIENCE_ID = process.env.RESEND_AUDIENCE_ID;
@@ -46,6 +51,14 @@ function parseCSV(content: string) {
 }
 
 async function run() {
+  // Debug: List Audiences
+  try {
+    const audiences = await resend.audiences.list();
+    console.log('📋 Available Audiences:', audiences.data?.data?.map(a => ({ id: a.id, name: a.name })));
+  } catch (e) {
+    console.warn('⚠️ Could not list audiences:', e);
+  }
+
   // Dynamically find the file to handle Unicode normalization (NFC vs NFD)
   const rootDir = process.cwd();
   const files = fs.readdirSync(rootDir);
@@ -166,7 +179,19 @@ async function run() {
         },
       } as any);
 
+      if (contact.error) {
+        console.error(`❌ API Error for ${email}:`, contact.error);
+        failCount++;
+        continue;
+      }
+
       const contactId = contact.data?.id;
+
+      if (!contactId) {
+         console.error(`❌ No Contact ID returned for ${email}:`, contact);
+         failCount++;
+         continue;
+      }
 
       // 2. Add to Segment (if segment found and contact created)
       if (segmentId && contactId) {
@@ -180,11 +205,11 @@ async function run() {
           }
       }
 
-      console.log(`✅ Imported: ${email} (${company})`);
+      console.log(`✅ Imported: ${email} (${company}) | ID: ${contactId}`);
       successCount++;
       
-      // Rate limit to avoid hitting API limits
-      await new Promise(r => setTimeout(r, 150));
+      // Rate limit to avoid hitting API limits (2 req/sec safer)
+      await new Promise(r => setTimeout(r, 1500));
 
     } catch (error: any) {
       console.error(`❌ Failed to import ${email}:`, error?.message || error);
