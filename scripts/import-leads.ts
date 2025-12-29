@@ -208,8 +208,8 @@ async function run() {
       console.log(`✅ Imported: ${email} (${company}) | ID: ${contactId}`);
       successCount++;
       
-      // Rate limit to avoid hitting API limits (2 req/sec safer)
-      await new Promise(r => setTimeout(r, 1500));
+      // Rate limit to avoid hitting API limits (Strict free plan protection)
+      await new Promise(r => setTimeout(r, 3000));
 
     } catch (error: any) {
       console.error(`❌ Failed to import ${email}:`, error?.message || error);
