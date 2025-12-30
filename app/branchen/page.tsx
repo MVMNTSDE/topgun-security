@@ -14,14 +14,14 @@ const industriesList = [
     description: "Sicherheit & Service für Facility Management und Wohnwirtschaft.",
     icon: Building2,
     href: "/branchen/immobilien",
-    image: "/images/services/gate-service-cinematic.png",
+    image: "/images/branchen/immobilien-new.png",
   },
   {
     title: "Logistik",
     description: "Schutz der Lieferkette und Transportüberwachung.",
     icon: Truck,
     href: "/branchen/logistik",
-    image: "/images/services/mobile-patrol-cinematic.png",
+    image: "/images/branchen/logistik-new.png",
   },
   {
     title: "Bauwesen",

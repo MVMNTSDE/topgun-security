@@ -30,7 +30,7 @@ export default function Hero() {
   return (
     <section 
       ref={containerRef}
-      className="relative min-h-[90vh] flex items-center pt-32 md:pt-48 bg-primary overflow-hidden"
+      className="relative min-h-[90vh] flex items-center pt-32 pb-32 md:pt-48 md:pb-48 bg-primary overflow-hidden"
     >
       {/* Heavy Corporate Backdrop */}
       <div className="absolute inset-0 z-0 bg-black">

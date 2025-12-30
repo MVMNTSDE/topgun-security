@@ -15,7 +15,7 @@ const servicesList = [
     description: "Ganzheitliche Absicherung von Immobilien und Gewerbeflächen.",
     icon: Building2,
     href: "/leistungen/objektschutz",
-    image: "/images/services/objektschutz-new.png",
+    image: "/images/gallery/img-2.png",
   },
   {
     title: "Werkschutz",
@@ -59,7 +59,7 @@ export default function LeistungenOverviewPage() {
     <ServicePageLayout
       heroTitle="SICHERHEITSDIENST NACH DIN-STANDARD"
       heroSubtitle="Von der Baustellenbewachung bis zum Werkschutz: Wir arbeiten strikt nach Dienstanweisung und Gefährdungsanalyse."
-      heroImage="/images/hero-leistungen-new.png"
+      heroImage="/images/services/retail-security-cinematic.png"
       parentLink={{ href: "/", label: "Zurück zur Startseite" }}
     >
       <div className="mb-16">

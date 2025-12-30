@@ -14,7 +14,7 @@ export default function PartnerPage() {
     <ServicePageLayout
       heroTitle="NETZWERK FÜR ERRICHTER & VERWALTER"
       heroSubtitle="Sie liefern die Technik oder Immobilie, wir die Intervention. Eine Partnerschaft auf Augenhöhe – ohne Knebelverträge."
-      heroImage="/images/gallery/img-1.png"
+      heroImage="/images/hero-partner-new.png"
       parentLink={{ href: "/", label: "Zurück zur Startseite" }}
     >
       {/* 1. Intro */}
@@ -119,7 +119,7 @@ export default function PartnerPage() {
             </div>
             <div className="md:w-1/2 relative h-64 md:h-80 w-full rounded-lg overflow-hidden shadow-lg">
                  <Image 
-                   src="/images/gallery/img-1.png" 
+                   src="/images/company/partners-handshake.png" 
                    alt="Handschlag Business" 
                    fill
                    className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
