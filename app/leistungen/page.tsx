@@ -15,7 +15,7 @@ const servicesList = [
     description: "Ganzheitliche Absicherung von Immobilien und Gewerbeflächen.",
     icon: Building2,
     href: "/leistungen/objektschutz",
-    image: "/images/services/gate-service-cinematic.png",
+    image: "/images/services/objektschutz-new.png",
   },
   {
     title: "Werkschutz",
@@ -57,9 +57,9 @@ const servicesList = [
 export default function LeistungenOverviewPage() {
   return (
     <ServicePageLayout
-      heroTitle="Unsere Leistungen"
-      heroSubtitle="Ein modulares Ökosystem für Ihre Sicherheit. Von der Analyse bis zur operativen Exzellenz."
-      heroImage="/images/gallery/img-5.png"
+      heroTitle="SICHERHEITSDIENST NACH DIN-STANDARD"
+      heroSubtitle="Von der Baustellenbewachung bis zum Werkschutz: Wir arbeiten strikt nach Dienstanweisung und Gefährdungsanalyse."
+      heroImage="/images/hero-leistungen-new.png"
       parentLink={{ href: "/", label: "Zurück zur Startseite" }}
     >
       <div className="mb-16">

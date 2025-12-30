@@ -56,13 +56,13 @@ export default function Hero() {
           </div>
           
           <h1 className="hero-text text-white mb-10 leading-[0.9] text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tighter uppercase font-black">
-            INSTITUTIONELLE<br />
-            <span className="text-accent underline decoration-8 underline-offset-8">SICHERHEIT</span> KÖLN<br />
+            ZERTIFIZIERTER<br />
+            <span className="text-accent underline decoration-8 underline-offset-8">WERKSCHUTZ</span> & OBJEKTSCHUTZ<br />
             <span className="text-white/40 text-2xl sm:text-3xl md:text-4xl lg:text-5xl block mt-4 font-bold tracking-widest">| KÖLN & NRW</span>
           </h1>
           
           <p className="hero-text text-white/70 text-xl md:text-2xl mb-16 max-w-3xl font-medium leading-relaxed">
-            Ganzheitliche Sicherheitslösungen für Wirtschaft, Industrie und öffentliche Einrichtungen. Wir schützen Ihre Werte durch zertifizierte Standards, operative Exzellenz und absolute Diskretion.
+            DIN 77200 Konform. IHK-geprüftes Personal. Wir sichern Industrie und Gewerbe in Köln & NRW gegen Ausfall und Kriminalität.
           </p>
 
           <div className="hero-text flex flex-col sm:flex-row gap-6">

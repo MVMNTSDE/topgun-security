@@ -12,9 +12,9 @@ export const metadata = {
 export default function PartnerPage() {
   return (
     <ServicePageLayout
-      heroTitle="Partner Netzwerk"
-      heroSubtitle="Sicherheit ist ein Mannschaftssport. Wir suchen starke Partner für eine sichere Region."
-      heroImage="/images/services/portrait-professional.png"
+      heroTitle="NETZWERK FÜR ERRICHTER & VERWALTER"
+      heroSubtitle="Sie liefern die Technik oder Immobilie, wir die Intervention. Eine Partnerschaft auf Augenhöhe – ohne Knebelverträge."
+      heroImage="/images/gallery/img-1.png"
       parentLink={{ href: "/", label: "Zurück zur Startseite" }}
     >
       {/* 1. Intro */}

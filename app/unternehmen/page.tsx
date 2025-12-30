@@ -10,8 +10,8 @@ export const metadata = {
 export default function UnternehmenPage() {
   return (
     <ServicePageLayout
-      heroTitle="Unser Unternehmen"
-      heroSubtitle="Sicherheit braucht Haltung. Wir verbinden operative Schlagkraft mit hanseatischen Kaufmannstugenden."
+      heroTitle="QUALITÄTSFÜHRER DURCH AUSBILDUNG"
+      heroSubtitle="Sicherheit ist kein Produkt, sondern eine Leistung von Menschen. Deshalb zahlen wir über Tarif und fordern IHK-Abschlüsse."
       heroImage="/images/services/portrait-professional.png"
       parentLink={{ href: "/", label: "Zurück zur Startseite" }}
       bottomSection={<OperationalLogics />}
