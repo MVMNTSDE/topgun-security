@@ -6,6 +6,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { createPortal } from 'react-dom';
 
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -65,7 +72,10 @@ const Modal = ({ isOpen, onClose, children, title, className = '', hideHeader }:
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: 'spring', duration: 0.5, bounce: 0.3 }}
-            className={`relative w-full max-w-lg bg-gray-900 border border-white/10 rounded-2xl shadow-2xl overflow-hidden ${className}`}
+            className={cn(
+              "relative w-full max-w-lg bg-gray-900 border border-white/10 rounded-2xl shadow-2xl overflow-hidden",
+              className
+            )}
           >
             {/* Header */}
             {!hideHeader && (
