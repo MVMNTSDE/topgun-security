@@ -2,9 +2,9 @@
 
 import { X } from "lucide-react";
 import Image from "next/image";
-import { useEffect } from "react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import Modal from "./Modal";
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -21,34 +21,17 @@ interface CertificateModalProps {
 }
 
 export function CertificateModal({ isOpen, onClose, imageUrl, title, description, variant = "certificate", validityArea }: CertificateModalProps) {
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isOpen]);
-
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-100 flex items-center justify-center p-4 md:p-10" role="dialog" aria-modal="true">
-      {/* Backdrop */}
-      <div 
-        className="absolute inset-0 bg-primary/95 backdrop-blur-md transition-opacity"
-        onClick={onClose}
-        onKeyDown={(e) => e.key === 'Enter' && onClose()}
-        role="button"
-        tabIndex={0}
-        aria-label="Close modal"
-      />
-      
-      {/* Modal Content */}
-      <div className="relative bg-white w-full max-w-7xl h-[95vh] md:h-auto md:max-h-[92vh] flex flex-col md:flex-row overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300 rounded-lg">
-        {/* Close Button */}
+    <Modal 
+      isOpen={isOpen} 
+      onClose={onClose} 
+      className="max-w-7xl h-[95vh] md:h-auto md:max-h-[92vh] flex flex-col md:flex-row bg-white overflow-hidden p-0 rounded-lg border-none"
+      hideHeader
+    >
+      <div className="flex flex-col md:flex-row w-full h-full">
+        {/* Close Button - Custom placement for this specific modal design */}
         <button 
           onClick={onClose}
           className="absolute top-6 right-6 z-20 p-2 bg-primary text-white hover:bg-accent transition-colors rounded-full shadow-lg"
@@ -71,7 +54,7 @@ export function CertificateModal({ isOpen, onClose, imageUrl, title, description
                "shadow-lg",
                variant === "report" ? "w-32 h-auto object-contain shadow-none opacity-50" : "w-full h-auto object-contain"
             )}
-          />
+           />
         </div>
 
         {/* Info Container */}
@@ -100,6 +83,6 @@ export function CertificateModal({ isOpen, onClose, imageUrl, title, description
           </button>
         </div>
       </div>
-    </div>
+    </Modal>
   );
 }

@@ -11,7 +11,7 @@ export const metadata = {
 export default function AsylPage() {
   return (
     <ServicePageLayout
-      heroTitle="Asyl- & Notunterkunftbetreuung"
+      heroTitle="Asyl- & Notunterkunft\u00ADbetreuung"
       heroSubtitle="Sicherheit mit Menschlichkeit. Wir schützen Bewohner und Einrichtungen mit Respekt und Konsequenz."
       heroImage="/images/services/shelter-security-cinematic.png"
       parentLink={{ href: "/leistungen", label: "Zurück zu den Leistungen" }}

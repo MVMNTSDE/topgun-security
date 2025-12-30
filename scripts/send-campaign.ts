@@ -20,7 +20,7 @@ const AUDIENCE_ID = process.env.RESEND_AUDIENCE_ID;
 
 // TEST MODE: Send all emails to this address instead of the real contact
 const TEST_EMAIL_RECIPIENT = 'verwaltung@topgun-security.de'; 
-const IS_TEST_MODE = false;
+const IS_TEST_MODE = true;
 
 async function sendCampaign() {
   if (!AUDIENCE_ID) {

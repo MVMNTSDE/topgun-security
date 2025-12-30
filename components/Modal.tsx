@@ -1,6 +1,7 @@
+
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { createPortal } from 'react-dom';
@@ -11,10 +12,18 @@ interface ModalProps {
   children: React.ReactNode;
   title?: string;
   className?: string;
+  hideHeader?: boolean;
 }
 
-export default function Modal({ isOpen, onClose, children, title, className = '' }: ModalProps) {
-  // Prevent body scroll when modal is open
+const Modal = ({ isOpen, onClose, children, title, className = '', hideHeader }: ModalProps) => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    return () => setMounted(false);
+  }, []);
+
+  // Prevent body scroll
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -26,7 +35,7 @@ export default function Modal({ isOpen, onClose, children, title, className = ''
     };
   }, [isOpen]);
 
-  // Handle ESC key
+  // Handle ESC
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -35,16 +44,12 @@ export default function Modal({ isOpen, onClose, children, title, className = ''
     return () => window.removeEventListener('keydown', handleEsc);
   }, [onClose]);
 
-  // Use createPortal to render at document root
-  // Note: In Next.js App Router we might just render it inline if we don't have a portal root set up,
-  // but usually document.body is fine for simple use cases or a dedicated div if one exists.
-  // Verification: Safe to render generic or use portal if mounted.
-  // For simplicity and robustness in this specific environment, conditional rendering here is fine.
-  
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -63,18 +68,20 @@ export default function Modal({ isOpen, onClose, children, title, className = ''
             className={`relative w-full max-w-lg bg-gray-900 border border-white/10 rounded-2xl shadow-2xl overflow-hidden ${className}`}
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-white/5">
-                {title ? (
-                     <h3 className="text-xl font-bold text-white">{title}</h3>
-                ) : <div />}
-                
-                <button 
-                    onClick={onClose}
-                    className="p-2 rounded-full hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
-                >
-                    <X size={20} />
-                </button>
-            </div>
+            {!hideHeader && (
+              <div className="flex items-center justify-between p-6 border-b border-white/5">
+                  {title ? (
+                       <h3 className="text-xl font-bold text-white">{title}</h3>
+                  ) : <div />}
+                  
+                  <button 
+                      onClick={onClose}
+                      className="p-2 rounded-full hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
+                  >
+                      <X size={20} />
+                  </button>
+              </div>
+            )}
 
             {/* Body */}
             <div>
@@ -83,6 +90,10 @@ export default function Modal({ isOpen, onClose, children, title, className = ''
           </motion.div>
         </div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
-}
+};
+
+export default Modal;
+

@@ -62,7 +62,7 @@ const services = [
     href: "/leistungen/jugendschutz"
   },
   {
-    title: "Veranstaltungsschutz",
+    title: "Veranstaltungs\u00ADschutz",
     description: "Sichere Events durch professionelle Einlasskontrollen, Crowd Management und VIP-Betreuung.",
     longDescription: "",
     icon: "users" as const, // Reusing users icon or maybe another appropriate one if available in ServiceCard logic, using 'users' as safe bet
@@ -70,7 +70,7 @@ const services = [
     href: "/leistungen/veranstaltungsschutz"
   },
   {
-    title: "Asyl- & Notunterkunftbetreuung",
+    title: "Asyl- & Notunterkunft\u00ADbetreuung",
     description: "Sozialkompetente Sicherheitsdienstleistung für sensible Einrichtungen. Deeskalation und 24/7 Schutz.",
     longDescription: "",
     icon: "shield" as const, 
@@ -143,7 +143,7 @@ export default function Services() {
             <span className="text-accent">SERVICES</span>
           </h2>
           <p className="text-white/60 text-lg leading-relaxed font-medium max-w-2xl mt-8">
-            Topgun Security bietet ein modulares Ökosystem an Sicherheitsdienstleistungen für Köln und NRW. 
+            Topgun Security bietet ein modulares Ökosystem an Sicherheitsdienstleistungen für Köln und NRW.
             <span className="block mt-2 text-sm italic opacity-70">
               Klicken Sie auf eine Kachel für Detailinformationen.
             </span>

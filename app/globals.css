@@ -132,7 +132,7 @@
 
   /* Typography System */
   h1, h2, h3, h4 {
-    @apply font-black uppercase tracking-tighter leading-[1.1] break-words hyphens-auto;
+    @apply font-black uppercase tracking-tighter leading-[1.1] wrap-break-word hyphens-auto;
   }
 
   h1 { @apply text-4xl sm:text-5xl md:text-7xl lg:text-8xl; }
