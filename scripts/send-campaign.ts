@@ -20,7 +20,7 @@ const AUDIENCE_ID = process.env.RESEND_AUDIENCE_ID;
 
 // TEST MODE: Send all emails to this address instead of the real contact
 const TEST_EMAIL_RECIPIENT = 'verwaltung@topgun-security.de'; 
-const IS_TEST_MODE = true;
+const IS_TEST_MODE = false;
 
 async function sendCampaign() {
   if (!AUDIENCE_ID) {
@@ -63,9 +63,36 @@ async function sendCampaign() {
       
       // Extract data
       const companyName = (data && data.company) ? data.company : '';
-      const fullName = (first_name && last_name) ? `${first_name} ${last_name}` : (first_name || 'Partner');
+      
+      // Name Logic:
+      // User Requirement: Use "Sehr geehrte Damen und Herren," if no last name is present.
+      // Also validate against long garbage strings.
+      
+      let salutation = 'Sehr geehrte Damen und Herren,';
+      let cleanName = '';
 
-      console.log(`📨 Sending to ${recipient} (Original: ${email}) - Company: ${companyName}`);
+      const hasLastName = last_name && last_name.trim().length > 1 && last_name.length < 20;
+      const hasFirstName = first_name && first_name.trim().length > 1 && first_name.length < 20;
+
+      if (hasLastName) {
+          // If we have a valid last name, we can try a personal greeting.
+          // Since we might not know gender (Herr/Frau), we can default to "Guten Tag Vorname Nachname," or keep the friendly "Hallo".
+          // Given the "Exklusiv-Angebot" context, "Guten Tag" might be safer effectively, or stick to "Hallo" if that's the brand voice.
+          // Let's use "Guten Tag" as a middle ground between "Hallo" and "Sehr geehrte...". 
+          // However, the previous default was "Hallo". If the user didn't complain about "Hallo" explicitly, but about the *weird inputs*,
+          // I will use "Hallo [First] [Last]" if both exist, otherwise just formal.
+          
+          if (hasFirstName) {
+             cleanName = `${first_name} ${last_name}`;
+             salutation = `Hallo ${cleanName},`;
+          } else {
+             // Only last name? "Hallo Herr/Frau X" requires gender. 
+             // Safer to fallback to formal if we only have one part and can't determine gender.
+             salutation = 'Sehr geehrte Damen und Herren,';
+          }
+      }
+
+      console.log(`📨 Sending to ${recipient} (Original: ${email}) - Company: ${companyName} | Salutation: "${salutation}"`);
 
       try {
         const { data: emailData, error } = await resend.emails.send({
@@ -73,7 +100,8 @@ async function sendCampaign() {
             to: [recipient],
             subject: `Sicherheit für ${companyName || 'Ihr Geschäft'} – Exklusiv-Angebot`,
             react: React.createElement(CampaignEmailTemplate, { 
-              name: fullName, 
+              name: cleanName, // Optional now
+              salutation: salutation, 
               company: companyName, 
               offerCode: "TOPGUN30" 
             }) as React.ReactElement, 

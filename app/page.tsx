@@ -36,8 +36,9 @@ export default function Home() {
             "email": "verwaltung@topgun-security.de",
             "address": {
               "@type": "PostalAddress",
-              "addressLocality": "Köln",
-              "addressRegion": "NRW",
+              "streetAddress": "Heinrich-Heine Straße 7",
+              "addressLocality": "Erkrath",
+              "postalCode": "40699",
               "addressCountry": "DE"
             },
             "areaServed": "NRW",

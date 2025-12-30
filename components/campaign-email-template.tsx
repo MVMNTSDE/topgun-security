@@ -2,13 +2,15 @@
 import * as React from 'react';
 
 interface CampaignEmailTemplateProps {
-  name: string;
+  name?: string;
+  salutation?: string;
   company: string;
   offerCode?: string;
 }
 
 export const CampaignEmailTemplate: React.FC<CampaignEmailTemplateProps> = ({
   name,
+  salutation,
   company,
   offerCode = "TOPGUN30"
 }) => {
@@ -29,7 +31,7 @@ export const CampaignEmailTemplate: React.FC<CampaignEmailTemplateProps> = ({
       {/* Content */}
       <div style={{ padding: '0 10px' }}>
         <p style={{ fontSize: '16px', color: '#374151' }}>
-          Hallo {name ? ` ${name}` : ''},
+          {salutation || `Hallo${name ? ' ' + name : ''},`}
         </p>
         
         <p>

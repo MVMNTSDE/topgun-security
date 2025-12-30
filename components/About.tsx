@@ -191,7 +191,7 @@ export function About() {
                  >
                     <div className="relative z-10">
                       <span className="text-[10px] font-black tracking-widest uppercase text-primary/30 group-hover:text-accent mb-4 block">Report Laden</span>
-                      <h4 className="text-primary font-black text-sm tracking-tight group-hover:text-white leading-tight">{item.name}</h4>
+                      <h4 className="text-primary font-black text-sm tracking-tight group-hover:text-white leading-tight break-words hyphens-auto" lang="de">{item.name}</h4>
                     </div>
                     {/* Hover flourish */}
                     <div className="absolute -bottom-10 -right-10 text-[10rem] text-accent/5 font-black leading-none group-hover:text-accent/10 transition-colors pointer-events-none">

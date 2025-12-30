@@ -24,7 +24,7 @@ export default function ServiceCard({ title, description, icon }: ServiceCardPro
         {icons[icon]}
       </div>
       
-      <h3 className="mb-4 font-extrabold text-[#030213] uppercase tracking-tight text-xl lg:text-3xl leading-none wrap-break-word hyphens-none" lang="de">
+      <h3 className="mb-4 font-extrabold text-[#030213] uppercase tracking-tight text-lg lg:text-3xl leading-tight break-words hyphens-auto" lang="de">
         {title}
       </h3>
       

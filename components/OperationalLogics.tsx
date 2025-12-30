@@ -40,7 +40,7 @@ export function OperationalLogics() {
           <div className="logic-reveal group">
             <div className="bg-white/5 border border-white/5 p-12 hover:border-accent/50 transition-all duration-700 h-full">
                <span className="text-accent font-black text-xs block mb-8 tracking-[0.5em]">PHASE 01</span>
-               <h3 className="text-white text-2xl tracking-tighter mb-6 uppercase">Identifikation</h3>
+               <h3 className="text-white text-2xl tracking-tighter mb-6 uppercase break-words hyphens-auto" lang="de">Identifikation</h3>
                <p className="text-white/60 text-sm leading-relaxed font-medium">
                  Wir beginnen nicht mit einem Angebot, sondern mit dem Zuhören. Jedes Mandat startet mit einer schonungslosen Analyse Ihrer Ist-Situation. Wir identifizieren Sicherheitslücken, die Ihnen vielleicht noch gar nicht bewusst sind.
                </p>

@@ -28,7 +28,7 @@ export function Footer() {
               <li><Link href="#services" className="hover:text-white transition-colors">Portfolio</Link></li>
               <li><Link href="/branchen" className="hover:text-white transition-colors">Sektoren</Link></li>
               <li><Link href="/partner" className="hover:text-white transition-colors">Partner</Link></li>
-              <li><Link href="/imprint" className="hover:text-white transition-colors">Infrastruktur</Link></li>
+              <li><Link href="/unternehmen" className="hover:text-white transition-colors">Über Uns</Link></li>
               <li><Link href="#contact" className="hover:text-white transition-colors">Kontakt</Link></li>
             </ul>
           </div>
