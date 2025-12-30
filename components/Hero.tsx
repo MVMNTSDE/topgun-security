@@ -47,7 +47,7 @@ export default function Hero() {
       </div>
 
       <div className="container-custom relative z-20">
-        <div className="max-w-4xl">
+        <div className="max-w-7xl">
           <div className="hero-text inline-flex items-center gap-4 mb-8">
             <div className="hero-line h-1 bg-accent w-12" />
             <span className="text-xs font-black tracking-[0.5em] uppercase text-white/90">
