@@ -6,13 +6,17 @@ interface CampaignEmailTemplateProps {
   salutation?: string;
   company: string;
   offerCode?: string;
+  unsubscribeLink?: string;
+  content?: string;
 }
 
 export const CampaignEmailTemplate: React.FC<CampaignEmailTemplateProps> = ({
   name,
   salutation,
   company,
-  offerCode = "TOPGUN30"
+  offerCode = "TOPGUN30",
+  unsubscribeLink,
+  content
 }) => {
   return (
     <div style={{ fontFamily: 'Helvetica, Arial, sans-serif', color: '#1a1a1a', maxWidth: '600px', lineHeight: '1.6' }}>
@@ -34,31 +38,37 @@ export const CampaignEmailTemplate: React.FC<CampaignEmailTemplateProps> = ({
           {salutation || `Hallo${name ? ' ' + name : ''},`}
         </p>
         
-        <p>
-            Als Inhaber eines Souvenir- & Spezialitätengeschäfts in Köln wissen Sie: 
-            <strong>Hohe Kundenfrequenz bedeutet auch hohes Risiko.</strong>
-        </p>
-        
-        <p>
-            Gerade in belebten Lagen wie der Altstadt oder Dom-Umgebung sind Ladendiebstahl und Vandalismus leider an der Tagesordnung. 
-             Topgun Security ist Ihr lokaler Partner für effektiven Objektschutz und Doorman-Services – diskret, professionell und bezahlbar.
-        </p>
+        {content ? (
+            <div dangerouslySetInnerHTML={{ __html: content }} />
+        ) : (
+            <>
+                <p>
+                    Als Inhaber eines Souvenir- & Spezialitätengeschäfts in Köln wissen Sie: 
+                    <strong>Hohe Kundenfrequenz bedeutet auch hohes Risiko.</strong>
+                </p>
+                
+                <p>
+                    Gerade in belebten Lagen wie der Altstadt oder Dom-Umgebung sind Ladendiebstahl und Vandalismus leider an der Tagesordnung. 
+                    Topgun Security ist Ihr lokaler Partner für effektiven Objektschutz und Doorman-Services – diskret, professionell und bezahlbar.
+                </p>
 
-        {/* Offer Box */}
-        <div style={{ background: '#F59E0B', color: 'white', padding: '20px', borderRadius: '8px', textAlign: 'center', margin: '30px 0' }}>
-            <span style={{ display: 'block', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '5px' }}>
-                Exklusiver Neukunden-Rabatt
-            </span>
-            <span style={{ display: 'block', fontSize: '32px', fontWeight: 'bold' }}>{offerCode}</span>
-            <span style={{ display: 'block', fontSize: '14px', marginTop: '5px' }}>
-                30% auf die erste Sicherheitsanalyse oder den ersten Einsatzmonat.
-            </span>
-        </div>
+                {/* Offer Box */}
+                <div style={{ background: '#F59E0B', color: 'white', padding: '20px', borderRadius: '8px', textAlign: 'center', margin: '30px 0' }}>
+                    <span style={{ display: 'block', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '5px' }}>
+                        Exklusiver Neukunden-Rabatt
+                    </span>
+                    <span style={{ display: 'block', fontSize: '32px', fontWeight: 'bold' }}>{offerCode}</span>
+                    <span style={{ display: 'block', fontSize: '14px', marginTop: '5px' }}>
+                        30% auf die erste Sicherheitsanalyse oder den ersten Einsatzmonat.
+                    </span>
+                </div>
 
-        <p>
-             Sichern Sie Ihre Waren und sorgen Sie für ein entspanntes Einkaufserlebnis bei Ihren Kunden.
-             Antworten Sie einfach auf diese E-Mail oder rufen Sie uns direkt an.
-        </p>
+                <p>
+                    Sichern Sie Ihre Waren und sorgen Sie für ein entspanntes Einkaufserlebnis bei Ihren Kunden.
+                    Antworten Sie einfach auf diese E-Mail oder rufen Sie uns direkt an.
+                </p>
+            </>
+        )}
         
         <p style={{ marginTop: '40px', color: '#6B7280', fontSize: '14px' }}>
           Mit freundlichen Grüßen,<br />
@@ -79,7 +89,7 @@ export const CampaignEmailTemplate: React.FC<CampaignEmailTemplateProps> = ({
         </p>
         <p style={{ marginTop: '20px', fontSize: '11px' }}>
             Sie erhalten diese E-Mail, weil wir glauben, dass unser Angebot für Ihr Unternehmen von Interesse sein könnte.<br/>
-            Wenn Sie keine weiteren Nachrichten erhalten möchten, können Sie sich hier <a href="https://topgun-security.de/api/unsubscribe?email={{email}}" style={{ color: '#9ca3af', textDecoration: 'underline' }}>abmelden</a>.
+            Wenn Sie keine weiteren Nachrichten erhalten möchten, können Sie sich hier <a href={unsubscribeLink || "#"} style={{ color: '#9ca3af', textDecoration: 'underline' }}>abmelden</a>.
         </p>
       </div>
     </div>

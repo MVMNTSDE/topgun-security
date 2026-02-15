@@ -82,7 +82,8 @@ async function sendCampaignV2() {
               name: `${lead.first_name || ''} ${lead.last_name || ''}`.trim(), 
               salutation: salutation, 
               company: companyName, 
-              offerCode: "TOPGUN30" 
+              offerCode: "TOPGUN30",
+              unsubscribeLink: `https://topgun-security.de/api/unsubscribe?email=${encodeURIComponent(lead.email)}`
             }) as React.ReactElement, 
         });
 

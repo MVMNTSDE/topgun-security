@@ -119,7 +119,8 @@ async function sendCampaign() {
               name: cleanName, // Optional now
               salutation: salutation, 
               company: companyName, 
-              offerCode: "TOPGUN30" 
+              offerCode: "TOPGUN30",
+              unsubscribeLink: `https://topgun-security.de/api/unsubscribe?email=${encodeURIComponent(email)}`
             }) as React.ReactElement, 
         });
 

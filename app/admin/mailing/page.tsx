@@ -1,5 +1,7 @@
 import { getMailingStats, getRecentLeads } from "./actions";
 import { Users, Ban, CheckCircle, BarChart as BarChartIcon } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import ImportLeadsButton from "./ImportLeadsButton";
 import StartCampaignButton from "./StartCampaignButton";
 
@@ -23,6 +25,12 @@ export default async function MailingDashboard() {
             <p className="text-gray-500">Manage cold acquisition leads and sending status.</p>
         </div>
         <div className="flex gap-3">
+            <Link href="/admin/mailing/leads">
+                <Button variant="outline">Manage Leads</Button>
+            </Link>
+            <Link href="/admin/mailing/logs">
+                <Button variant="outline">View Logs</Button>
+            </Link>
             <ImportLeadsButton />
             <StartCampaignButton />
         </div>
