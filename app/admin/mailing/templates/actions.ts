@@ -49,7 +49,7 @@ export async function createTemplateAction(formData: FormData) {
   const content = formData.get('content') as string;
 
   if (!name || !subject || !content) {
-    return { error: "Missing required fields" };
+    throw new Error("Missing required fields");
   }
 
   const { error } = await supabase
@@ -57,7 +57,7 @@ export async function createTemplateAction(formData: FormData) {
     .insert({ name, subject, content });
 
   if (error) {
-    return { error: error.message };
+    throw new Error(error.message);
   }
 
   revalidatePath('/admin/mailing/templates');
@@ -75,7 +75,7 @@ export async function updateTemplateAction(id: string, formData: FormData) {
     .eq('id', id);
 
   if (error) {
-    return { error: error.message };
+    throw new Error(error.message);
   }
 
   revalidatePath('/admin/mailing/templates');
@@ -89,8 +89,7 @@ export async function deleteTemplateAction(id: string) {
     .delete()
     .eq('id', id);
 
-  if (error) return { error: error.message };
+  if (error) throw new Error(error.message);
   
   revalidatePath('/admin/mailing/templates');
-  return { success: true };
 }

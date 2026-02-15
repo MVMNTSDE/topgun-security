@@ -3,17 +3,22 @@ import { login } from './actions'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import Image from 'next/image'
 
 export default function LoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="max-w-md w-full p-8 bg-white rounded-lg shadow-md">
             <div className="text-center mb-8">
-                <img 
-                    src="/images/logo-full.png" 
-                    alt="Topgun Security" 
-                    className="h-12 mx-auto mb-4"
-                />
+                <div className="relative h-12 mb-4 mx-auto w-48">
+                    <Image 
+                        src="/images/logo-full.png" 
+                        alt="Topgun Security" 
+                        fill
+                        className="object-contain"
+                        priority
+                    />
+                </div>
                 <h1 className="text-2xl font-bold text-gray-900">Admin Login</h1>
                 <p className="text-gray-500">Enter your credentials to access the dashboard.</p>
             </div>
