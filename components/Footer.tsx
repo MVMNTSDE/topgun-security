@@ -34,7 +34,7 @@ export function Footer() {
           </div>
 
           <div>
-             <span className="text-[10px] font-black tracking-[0.6em] uppercase text-accent mb-12 block">Compliance</span>
+             <span className="text-[10px] font-black tracking-[0.6em] uppercase text-accent mb-12 block">Zertifizierungen</span>
              <div className="flex flex-col gap-6">
                <div className="flex items-center gap-6 mb-4">
                   <Image src="/certificates/iso9001.png" alt="ISO 9001" width={40} height={40} className="h-10 w-auto hover:scale-110 transition-transform" />
@@ -42,11 +42,11 @@ export function Footer() {
                </div>
                <div className="flex items-center gap-4 py-3 border-b border-white/5">
                  <div className="w-1.5 h-1.5 bg-accent" />
-                 <span className="text-[9px] font-black text-white/40 uppercase tracking-widest">DIN 77200 STANDARDS</span>
+                 <span className="text-[9px] font-black text-white/40 uppercase tracking-widest">DIN 77200 KONFORM</span>
                </div>
                <div className="flex items-center gap-4 py-3 border-b border-white/5">
                  <div className="w-1.5 h-1.5 bg-white/20" />
-                 <span className="text-[9px] font-black text-white/40 uppercase tracking-widest">ISO 9001 CERTIFIED</span>
+                 <span className="text-[9px] font-black text-white/40 uppercase tracking-widest">ISO 9001 ZERTIFIZIERT</span>
                </div>
              </div>
           </div>
@@ -57,6 +57,7 @@ export function Footer() {
           <div className="flex gap-16">
              <Link href="/imprint" className="hover:text-white transition-colors">Impressum</Link>
              <Link href="/privacy" className="hover:text-white transition-colors">Datenschutz</Link>
+             <Link href="/agb" className="hover:text-white transition-colors">AGB</Link>
           </div>
         </div>
       </div>

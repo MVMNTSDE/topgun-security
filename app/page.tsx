@@ -29,20 +29,52 @@ export default function Home() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "LocalBusiness",
+            "@type": "SecurityService",
             "name": "Topgun Security GmbH",
             "url": "https://topgun-security.de",
-            "telephone": "+4922195285529",
+            "logo": "https://topgun-security.de/images/logo-full.png",
+            "image": "https://topgun-security.de/images/og-image.jpg",
+            "description": "Exzellenz im Objektschutz und professionelle Sicherheitsdienstleistungen in Köln, Bonn, Düsseldorf und ganz NRW. DIN 77200 zertifiziert.",
+            "telephone": "+491787703738",
             "email": "verwaltung@topgun-security.de",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "Heinrich-Heine Straße 7",
+              "streetAddress": "Heinrich-Heine-Straße 7",
               "addressLocality": "Erkrath",
               "postalCode": "40699",
-              "addressCountry": "DE"
+              "addressCountry": "DE",
+              "addressRegion": "NRW"
             },
-            "areaServed": "NRW",
-            "priceRange": "$$$"
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 51.2227,
+              "longitude": 6.9083
+            },
+            "areaServed": [
+              { "@type": "City", "name": "Köln" },
+              { "@type": "City", "name": "Düsseldorf" },
+              { "@type": "City", "name": "Bonn" },
+              { "@type": "AdministrativeArea", "name": "Nordrhein-Westfalen" }
+            ],
+            "priceRange": "$$$",
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+              ],
+              "opens": "00:00",
+              "closes": "23:59"
+            },
+            "sameAs": [
+              "https://www.instagram.com/topgun_security_gmbh",
+              // Add other social links if available
+            ]
           }),
         }}
       />

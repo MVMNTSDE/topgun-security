@@ -76,5 +76,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/privacy`,
       lastModified: new Date(),
     },
+    {
+      url: `${baseUrl}/agb`,
+      lastModified: new Date(),
+    },
   ];
 }

@@ -39,6 +39,7 @@ export default function Hero() {
           muted 
           loop 
           playsInline 
+          poster="/images/hero-poster.jpg"
           className="absolute inset-0 w-full h-full object-cover opacity-75"
         >
           <source src="/videos/security-bg.mp4" type="video/mp4" />

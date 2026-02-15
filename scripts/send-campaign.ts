@@ -49,7 +49,23 @@ async function sendCampaign() {
   }
 
   // Filter if needed (optional, assuming audience is clean or we want all)
-  const targetContacts = allContacts.filter(c => !c.unsubscribed); // Basic filter
+  // Filter contacts by source_type to target specific segments
+  // Define the target source type here or pass as arg in future
+  // Example: 'import_souvenir_shops', 'import_construction_sites'
+  // If empty, it warns or sends to all (safer to require it)
+  
+  const TARGET_SOURCE_TYPE = ''; // ⚠️ SET THIS to e.g. 'import_souvenirs' before running specific campaign
+
+  const targetContacts = allContacts.filter(c => {
+      if (c.unsubscribed) return false;
+      
+      // If a specific target is set, check the source_type data field
+      if (TARGET_SOURCE_TYPE && TARGET_SOURCE_TYPE !== '') {
+          return c.data?.source_type === TARGET_SOURCE_TYPE;
+      }
+      
+      return true; // Send to all active if no target specified (Use with caution!)
+  });
   console.log(`🎯 Targeting ${targetContacts.length} active contacts.`);
 
   let sentCount = 0;

@@ -144,6 +144,36 @@ export default function ObjektschutzPage() {
           Kostenlose Erstberatung anfordern
         </Link>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Objektschutz",
+            "provider": {
+              "@type": "SecurityService",
+              "name": "Topgun Security GmbH",
+              "url": "https://topgun-security.de"
+            },
+            "areaServed": {
+              "@type": "AdministrativeArea",
+              "name": "Nordrhein-Westfalen"
+            },
+            "description": "Professioneller Objektschutz für Unternehmen und Immobilien in NRW. 24/7 Überwachung, Zutrittskontrollen und Werkschutz nach DIN 77200.",
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Objektschutz Leistungen",
+              "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Werkschutz" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pfortendienst" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bestreifung" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alarmverfolgung" } }
+              ]
+            }
+          })
+        }}
+      />
     </ServicePageLayout>
   );
 }

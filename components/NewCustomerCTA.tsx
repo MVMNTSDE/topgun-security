@@ -20,7 +20,7 @@ export default function NewCustomerCTA() {
             
             <div className="inline-flex items-center gap-2 bg-accent/20 text-accent px-4 py-2 rounded-full mb-8 animate-pulse">
               <Zap size={16} fill="currentColor" />
-              <span className="text-xs font-bold uppercase tracking-wider">Fast-Track für Neukunden</span>
+              <span className="text-xs font-bold uppercase tracking-wider">Express-Service für Neukunden</span>
             </div>
 
             <h2 className="text-3xl md:text-5xl font-black text-white mb-6">
@@ -28,7 +28,7 @@ export default function NewCustomerCTA() {
             </h2>
             
             <p className="text-white/60 text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
-              Wir wissen, dass Sicherheit oft eilig ist. Nutzen Sie unseren Priority-Support für Erstkunden oder sichern Sie sich Ihren Start-Rabatt direkt online.
+              Wir wissen, dass Sicherheit oft eilig ist. Nutzen Sie unseren Premium-Support für Erstkunden oder sichern Sie sich Ihren Start-Rabatt direkt online.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -38,7 +38,7 @@ export default function NewCustomerCTA() {
                  <div className="bg-primary w-14 h-14 rounded-full flex items-center justify-center text-accent mb-4 group-hover:scale-110 transition-transform border border-white/5 shadow-inner">
                    <Phone size={24} />
                  </div>
-                 <h3 className="text-white font-bold mb-2">Notfall Anruf</h3>
+                 <h3 className="text-white font-bold mb-2">Notfall-Hotline</h3>
                  <p className="text-white/40 text-sm mb-4">Direkter Draht zur Einsatzzentrale</p>
                  <span className="text-accent font-black text-lg tracking-widest">0155 65098461</span>
               </a>

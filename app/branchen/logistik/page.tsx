@@ -151,6 +151,29 @@ export default function LogistikPage() {
              </div>
           </div>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Logistik Sicherheit",
+            "provider": {
+              "@type": "SecurityService",
+              "name": "Topgun Security GmbH",
+              "url": "https://topgun-security.de"
+            },
+            "areaServed": "Nordrhein-Westfalen",
+            "description": "TAPA-konforme Sicherheitslösungen für Logistik. Frachtschutz, Torkontrolle und Lagerüberwachung.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "EUR",
+              "description": "Logistik-Audit anfragen"
+            }
+          })
+        }}
+      />
     </ServicePageLayout>
   );
 }

@@ -136,6 +136,29 @@ export default function BauPage() {
                 </Link>
              </div>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Baustellenbewachung",
+            "provider": {
+              "@type": "SecurityService",
+              "name": "Topgun Security GmbH",
+              "url": "https://topgun-security.de"
+            },
+            "areaServed": "Nordrhein-Westfalen",
+            "description": "Professioneller Baustellenschutz in NRW. Zutrittskontrolle, Brandwache und Videoüberwachung. BG-Bau konform.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "EUR",
+              "description": "Individuelles Angebot"
+            }
+          })
+        }}
+      />
     </ServicePageLayout>
   );
 }

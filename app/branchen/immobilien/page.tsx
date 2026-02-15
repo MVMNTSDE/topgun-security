@@ -112,6 +112,29 @@ export default function ImmobilienPage() {
           Beratungstermin vereinbaren
         </Link>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Objektschutz",
+            "provider": {
+              "@type": "SecurityService",
+              "name": "Topgun Security GmbH",
+              "url": "https://topgun-security.de"
+            },
+            "areaServed": "Nordrhein-Westfalen",
+            "description": "Sicherheit für Immobilien & Facility Management. Objektschutz, Leerstandsüberwachung & Doorman-Service in NRW.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "EUR",
+              "description": "Sicherheitskonzept anfragen"
+            }
+          })
+        }}
+      />
     </ServicePageLayout>
   );
 }

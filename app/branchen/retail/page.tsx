@@ -154,6 +154,29 @@ export default function RetailPage() {
         offerTitle="Sicherheits-Audit Qualifiziert"
         offerDescription="Basierend auf Ihren Angaben empfehlen wir ein gezieltes Store-Audit. Sichern Sie sich unsere kostenlose Ersteinschätzung."
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Einzelhandelssicherheit",
+            "provider": {
+              "@type": "SecurityService",
+              "name": "Topgun Security GmbH",
+              "url": "https://topgun-security.de"
+            },
+            "areaServed": "Köln",
+            "description": "Doorman und Ladendetektive für High-End Retail in Köln. Diebstahlprävention und Inventurschutz.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "EUR",
+              "description": "Store-Audit"
+            }
+          })
+        }}
+      />
     </ServicePageLayout>
   );
 }

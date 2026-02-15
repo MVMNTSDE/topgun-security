@@ -71,10 +71,15 @@ export const CampaignEmailTemplate: React.FC<CampaignEmailTemplateProps> = ({
       <div style={{ marginTop: '40px', fontSize: '12px', color: '#9ca3af', borderTop: '1px solid #eee', paddingTop: '20px' }}>
         <p>
             TOPGUN SECURITY GMBH<br/>
-            KÖLN | BONN | DÜSSELDORF | LEVERKUSEN
+            KÖLN | BONN | DÜSSELDORF | LEVERKUSEN<br/>
+            <a href="https://topgun-security.de/imprint" style={{ color: '#9ca3af', textDecoration: 'underline' }}>Impressum</a>
         </p>
         <p>
             <a href="https://topgun-security.de" style={{ color: '#F59E0B', textDecoration: 'none' }}>www.topgun-security.de</a>
+        </p>
+        <p style={{ marginTop: '20px', fontSize: '11px' }}>
+            Sie erhalten diese E-Mail, weil wir glauben, dass unser Angebot für Ihr Unternehmen von Interesse sein könnte.<br/>
+            Wenn Sie keine weiteren Nachrichten erhalten möchten, können Sie sich hier <a href="https://topgun-security.de/api/unsubscribe?email={{email}}" style={{ color: '#9ca3af', textDecoration: 'underline' }}>abmelden</a>.
         </p>
       </div>
     </div>

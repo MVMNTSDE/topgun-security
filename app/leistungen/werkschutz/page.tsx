@@ -208,6 +208,29 @@ export default function WerkschutzPage() {
              </div>
           </div>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Werkschutz",
+            "provider": {
+              "@type": "SecurityService",
+              "name": "Topgun Security GmbH",
+              "url": "https://topgun-security.de"
+            },
+            "areaServed": "Nordrhein-Westfalen",
+            "description": "Spezialisierter Werkschutz für Industrie und Logistik. Torkontrolle, LKW-Management und Brandschutz durch qualifiziertes Personal.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "EUR",
+              "description": "Individuelles Angebot nach Sicherheitsanalyse"
+            }
+          })
+        }}
+      />
     </ServicePageLayout>
   );
 }

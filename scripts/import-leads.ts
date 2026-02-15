@@ -63,12 +63,11 @@ async function run() {
   const rootDir = process.cwd();
   const files = fs.readdirSync(rootDir);
   
-  // Debug log
-  console.log('📂 Files in root:', files.filter(f => f.includes('2025')));
-
-  const csvFile = files.find(f => f.startsWith('2025121023') && f.endsWith('.csv')) || 'leads.csv';
+  // Find the most recent CSV file or specific one
+  const csvFile = files.find(f => f.endsWith('.csv') && !f.includes('example')) || 'leads.csv';
   
   const targetPath = path.join(rootDir, csvFile);
+  const fileNameNoExt = path.basename(csvFile, '.csv').replace(/[^\w\s-]/g, '');
 
   console.log(`🚀 Reading ${targetPath}...`);
   
@@ -80,18 +79,19 @@ async function run() {
   const fileContent = fs.readFileSync(targetPath, 'utf-8');
   const results = parseCSV(fileContent);
 
-  console.log(`📋 Found ${results.length} rows. Importing into Audience: ${AUDIENCE_ID}`);
+  // Derive Segment Name from Filename
+  const segmentName = `Import: ${fileNameNoExt.charAt(0).toUpperCase() + fileNameNoExt.slice(1)}`;
+  const sourceType = `import_${fileNameNoExt.toLowerCase().replace(/\s+/g, '_')}`;
 
-  // 1. Get or Create "Cold Leads (Import)" Segment
+  console.log(`📋 Found ${results.length} rows.`);
+  console.log(`🏷️  Target Segment: "${segmentName}"`);
+  console.log(`🏷️  Source Type: "${sourceType}"`);
+
+
+  // 1. Get or Create Lead Segment
   let segmentId: string | undefined;
   try {
-    // Note: resend.segments.list() might not be available or returns different structure depending on version
-    // We will just try to create or assume it exists if finding fails. 
-    // For safety, we will just CREATE a segment with a timestamp if we want to be unique, 
-    // or just use a hardcoded known one. 
-    // Let's try to 'get' by listing.
     const allSegments = await resend.segments.list();
-    const segmentName = 'Cold Leads (Souvenirs)';
     const existing = allSegments.data?.data?.find((s: any) => s.name === segmentName);
     
     if (existing) {
@@ -175,7 +175,7 @@ async function run() {
           zip: zip,
           address: address,
           website: website,
-          source_type: 'cold_import_souvenir',
+          source_type: sourceType,
         },
       } as any);
 

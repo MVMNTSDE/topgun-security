@@ -1,6 +1,12 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import NewCustomerCTA from "@/components/NewCustomerCTA";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Impressum",
+  description: "Rechtliche Angaben, Anbieterkennzeichnung und Kontaktinformationen der Topgun Security-Sicherheit & Service GmbH.",
+};
 
 export default function ImprintPage() {
   return (
@@ -16,7 +22,7 @@ export default function ImprintPage() {
               <h2 className="text-xl font-black text-primary mb-6 uppercase tracking-tight">Angaben gemäß § 5 TMG</h2>
               <p className="font-medium">
                 Topgun Security-Sicherheit & Service GmbH<br />
-                Heinrich-Heine Straße 7<br />
+                Heinrich-Heine-Straße 7<br />
                 40699 Erkrath
               </p>
             </div>
@@ -36,7 +42,10 @@ export default function ImprintPage() {
                   <div className="flex-1">
                      <p className="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-2">Geschäftsführung</p>
                      <p className="text-primary font-bold mb-1">
-                       <a href="tel:+491787703738" className="hover:text-accent transition-colors">+49 178 7703738</a>
+                       <a href="tel:+491787703738" className="hover:text-accent transition-colors">0178 7703738</a>
+                     </p>
+                     <p className="text-primary font-bold mb-1">
+                       <a href="tel:+4917877801280" className="hover:text-accent transition-colors">0178 77801280</a>
                      </p>
                      <p className="text-primary font-bold">
                        <a href="mailto:info@topgunsecurity.de" className="hover:text-accent transition-colors">info@topgunsecurity.de</a>
@@ -46,8 +55,8 @@ export default function ImprintPage() {
                   {/* Admin/Hotline Contact */}
                   <div className="flex-1">
                      <p className="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-2">Verwaltung & Notfall</p>
-                     <p className="text-primary font-bold mb-1">
-                       <a href="tel:+4915565098461" className="hover:text-accent transition-colors">+49 155 65098461</a>
+                      <p className="text-primary font-bold mb-1">
+                       Fax: 04209 6852312
                      </p>
                      <p className="text-primary font-bold">
                        <a href="mailto:verwaltung@topgun-security.de" className="hover:text-accent transition-colors">verwaltung@topgun-security.de</a>
@@ -62,8 +71,8 @@ export default function ImprintPage() {
               <h2 className="text-xl font-black text-primary mb-6 uppercase tracking-tight">Registereintrag</h2>
               <p>
                 Eintragung im Handelsregister.<br />
-                Registergericht: Amtsgericht Köln<br />
-                Registernummer: HRB 109820
+                Registergericht: Amtsgericht Wuppertal<br />
+                Registernummer: HRB 36444
               </p>
             </div>
 
