@@ -5,18 +5,18 @@ interface CampaignEmailTemplateProps {
   name?: string;
   salutation?: string;
   company: string;
-  offerCode?: string;
   unsubscribeLink?: string;
   content?: string;
+  trackingPixelUrl?: string;
 }
 
 export const CampaignEmailTemplate: React.FC<CampaignEmailTemplateProps> = ({
   name,
   salutation,
   company,
-  offerCode = "TOPGUN30",
   unsubscribeLink,
-  content
+  content,
+  trackingPixelUrl
 }) => {
   return (
     <div style={{ fontFamily: 'Helvetica, Arial, sans-serif', color: '#1a1a1a', maxWidth: '600px', lineHeight: '1.6' }}>
@@ -43,29 +43,18 @@ export const CampaignEmailTemplate: React.FC<CampaignEmailTemplateProps> = ({
         ) : (
             <>
                 <p>
-                    Als Inhaber eines Souvenir- & Spezialitätengeschäfts in Köln wissen Sie: 
-                    <strong>Hohe Kundenfrequenz bedeutet auch hohes Risiko.</strong>
+                    Als Inhaber eines Unternehmens in Köln wissen Sie: <strong>Sicherheit ist planbar.</strong>
                 </p>
                 
                 <p>
-                    Gerade in belebten Lagen wie der Altstadt oder Dom-Umgebung sind Ladendiebstahl und Vandalismus leider an der Tagesordnung. 
-                    Topgun Security ist Ihr lokaler Partner für effektiven Objektschutz und Doorman-Services – diskret, professionell und bezahlbar.
+                    Topgun Security ist Ihr lokaler Partner für effektiven Objektschutz, Veranstaltungsdienste und Doorman-Services – diskret, professionell und zuverlässig. 
+                    Wir stellen sicher, dass Ihre Abläufe reibungslos und verlustfrei funktionieren.
                 </p>
 
-                {/* Offer Box */}
-                <div style={{ background: '#F59E0B', color: 'white', padding: '20px', borderRadius: '8px', textAlign: 'center', margin: '30px 0' }}>
-                    <span style={{ display: 'block', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '5px' }}>
-                        Exklusiver Neukunden-Rabatt
-                    </span>
-                    <span style={{ display: 'block', fontSize: '32px', fontWeight: 'bold' }}>{offerCode}</span>
-                    <span style={{ display: 'block', fontSize: '14px', marginTop: '5px' }}>
-                        30% auf die erste Sicherheitsanalyse oder den ersten Einsatzmonat.
-                    </span>
-                </div>
-
                 <p>
-                    Sichern Sie Ihre Waren und sorgen Sie für ein entspanntes Einkaufserlebnis bei Ihren Kunden.
-                    Antworten Sie einfach auf diese E-Mail oder rufen Sie uns direkt an.
+                    Minimieren Sie Ihre Risiken und schützen Sie Ihre Unternehmenswerte effektiv.
+                    Lassen Sie uns in einem kurzen, unverbindlichen Telefonat prüfen, wie wir Ihre Standorte optimal absichern können.
+                    <strong>Antworten Sie auf diese Nachricht</strong> oder rufen Sie uns direkt an.
                 </p>
             </>
         )}
@@ -77,21 +66,32 @@ export const CampaignEmailTemplate: React.FC<CampaignEmailTemplateProps> = ({
         </p>
       </div>
       
-      {/* Footer */}
-      <div style={{ marginTop: '40px', fontSize: '12px', color: '#9ca3af', borderTop: '1px solid #eee', paddingTop: '20px' }}>
+      {/* Footer & DSGVO */}
+      <div style={{ marginTop: '40px', fontSize: '12px', color: '#9ca3af', borderTop: '1px solid #eee', paddingTop: '20px', textAlign: 'justify' }}>
         <p>
-            TOPGUN SECURITY GMBH<br/>
+            <strong>TOPGUN SECURITY GMBH</strong><br/>
             KÖLN | BONN | DÜSSELDORF | LEVERKUSEN<br/>
-            <a href="https://topgun-security.de/imprint" style={{ color: '#9ca3af', textDecoration: 'underline' }}>Impressum</a>
+            📍 Hohenzollernring 57, 50672 Köln<br/>
+            📞 +49 (0) 221 / 123 456 78<br/>
+            <a href="https://topgun-security.de/imprint" style={{ color: '#9ca3af', textDecoration: 'underline' }}>Impressum</a> | <a href="https://topgun-security.de/privacy" style={{ color: '#9ca3af', textDecoration: 'underline' }}>Datenschutz</a>
         </p>
         <p>
             <a href="https://topgun-security.de" style={{ color: '#F59E0B', textDecoration: 'none' }}>www.topgun-security.de</a>
         </p>
-        <p style={{ marginTop: '20px', fontSize: '11px' }}>
-            Sie erhalten diese E-Mail, weil wir glauben, dass unser Angebot für Ihr Unternehmen von Interesse sein könnte.<br/>
-            Wenn Sie keine weiteren Nachrichten erhalten möchten, können Sie sich hier <a href={unsubscribeLink || "#"} style={{ color: '#9ca3af', textDecoration: 'underline' }}>abmelden</a>.
+        <p style={{ marginTop: '20px', fontSize: '11px', lineHeight: '1.5' }}>
+            <strong>Transparenzinformation gemäß Art. 14 DSGVO:</strong><br/>
+            Sie erhalten diese B2B-Informationsmail, weil wir aufgrund der inhaltlichen Ausrichtung Ihres Unternehmens davon ausgehen, dass unsere Dienstleistungen für Sie von berechtigtem wirtschaftlichen Interesse sind.<br/> 
+            Wir verarbeiten Ihre öffentlich zugänglichen Kontaktdaten auf Basis des berechtigten Interesses gemäß Art. 6 Abs. 1 lit. f DSGVO zur Geschäftsanbahnung und Direktwerbung im B2B-Kontext.<br/>
+            <br/>
+            Wenn Sie keine weiteren Nachrichten von uns erhalten möchten, können Sie dieser Verarbeitung jederzeit formlos per Antworten-Mail widersprechen oder <a href={unsubscribeLink || "#"} style={{ color: '#ef4444', fontWeight: 'bold', textDecoration: 'underline' }}>hier klicken, um sich sofort abzumelden</a>.
         </p>
       </div>
+      
+      {/* Tracking Pixel */}
+      {trackingPixelUrl && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={trackingPixelUrl} alt="" width="1" height="1" style={{ display: 'none' }} />
+      )}
     </div>
   );
 };

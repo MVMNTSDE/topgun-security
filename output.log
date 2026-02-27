@@ -1,0 +1,3 @@
+Sending test payload to n8n (http://87.106.190.120:5678/webhook-test/send-mail)...
+❌ Failed. n8n returned status: 404
+Error details: {"code":404,"message":"The requested webhook \"send-mail\" is not registered.","hint":"Click the 'Execute workflow' button on the canvas, then try again. (In test mode, the webhook only works for one call after you click this button)"}
