@@ -229,20 +229,22 @@ export async function sendCampaignBatchAction(
               /{{name}}/g,
               `${lead.first_name || ""} ${lead.last_name || ""}`.trim(),
             )
-            .replace(/{{company}}/g, companyName)
-            .replace(/{{offerCode}}/g, "TOPGUN30");
+            .replace(/{{company}}/g, companyName);
         }
       }
 
       try {
+        const mailLogId = crypto.randomUUID(); // Fix random UUID to use for db+tracking pixel
+        const trackingPixelUrl = `https://topgun-security.de/api/email-open?id=${mailLogId}`;
+
         const htmlBody = await render(
           React.createElement(CampaignEmailTemplate, {
             name: `${lead.first_name || ""} ${lead.last_name || ""}`.trim(),
             salutation: salutation,
             company: companyName,
-            offerCode: "TOPGUN30",
             unsubscribeLink: unsubscribeLink,
             content: content,
+            trackingPixelUrl: trackingPixelUrl,
           }) as React.ReactElement,
         );
 
@@ -273,6 +275,7 @@ export async function sendCampaignBatchAction(
         if (emailError) {
           console.error(`❌ Send failed for ${lead.email}:`, emailError);
           await supabase.from("mail_logs").insert({
+            id: mailLogId,
             lead_id: lead.id,
             campaign_name: CAMPAIGN_NAME,
             recipient_email: recipient,
@@ -281,6 +284,7 @@ export async function sendCampaignBatchAction(
           });
         } else {
           await supabase.from("mail_logs").insert({
+            id: mailLogId,
             lead_id: lead.id,
             campaign_name: CAMPAIGN_NAME,
             recipient_email: recipient,
