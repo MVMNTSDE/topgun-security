@@ -167,18 +167,14 @@ export async function importLeadsAction(formData: FormData) {
   }
 }
 
-import { Resend } from "resend";
 import * as React from "react";
 import { CampaignEmailTemplate } from "@/components/campaign-email-template";
+import { render } from "@react-email/render";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 const CAMPAIGN_NAME = "cold_acquisition_feb_2026";
-// WARNING: Set to FALSE to send real emails. currently in manual trigger mode, so maybe safe?
-// User asked to "connect to logic", implying real sending or at least the ability to.
-// We will default to TEST mode for safety until explicitly changed or based on an env var?
-// Let's rely on a variable we can pass or just hardcode for now as "Test Mode" default.
 const IS_TEST_MODE = process.env.NEXT_PUBLIC_IS_PRODUCTION_MODE !== "true";
-const TEST_RECIPIENT = "verwaltung@topgun-security.de";
+const TEST_RECIPIENT = "info@topgun.gmbh";
+const N8N_WEBHOOK_URL = "http://87.106.190.120:5678/webhook/send-mail";
 
 export async function sendCampaignBatchAction(
   batchSize = 5,
@@ -239,14 +235,8 @@ export async function sendCampaignBatchAction(
       }
 
       try {
-        const { error: emailError } = await resend.emails.send({
-          from: "Topgun Security <verwaltung@topgun-security.de>",
-          to: [recipient],
-          subject: subject,
-          headers: {
-            "List-Unsubscribe": `<${unsubscribeLink}>`,
-          },
-          react: React.createElement(CampaignEmailTemplate, {
+        const htmlBody = await render(
+          React.createElement(CampaignEmailTemplate, {
             name: `${lead.first_name || ""} ${lead.last_name || ""}`.trim(),
             salutation: salutation,
             company: companyName,
@@ -254,7 +244,31 @@ export async function sendCampaignBatchAction(
             unsubscribeLink: unsubscribeLink,
             content: content,
           }) as React.ReactElement,
+        );
+
+        const response = await fetch(N8N_WEBHOOK_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            from_email: "info@topgun.gmbh",
+            from_name: "Topgun Security",
+            to: recipient,
+            subject: subject,
+            html: htmlBody,
+            type: "cold_mail",
+            campaign_name: CAMPAIGN_NAME,
+            lead_id: lead.id,
+            unsubscribe_link: unsubscribeLink,
+          }),
         });
+
+        if (!response.ok) {
+          throw new Error(`n8n webhook failed with status ${response.status}`);
+        }
+
+        const emailError = null; // simulate success structure
 
         if (emailError) {
           console.error(`❌ Send failed for ${lead.email}:`, emailError);

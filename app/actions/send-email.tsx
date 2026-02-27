@@ -1,16 +1,15 @@
 'use server';
 
-import { Resend } from 'resend';
 import { EmailTemplate } from '@/components/email-template';
 import * as React from 'react';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
-const TO_EMAIL = 'verwaltung@topgun-security.de';
-
+import { render } from '@react-email/render';
 import { UserConfirmationTemplate } from '@/components/email-template-user';
 
+const N8N_WEBHOOK_URL = "http://87.106.190.120:5678/webhook/send-mail";
+const TO_EMAIL = 'info@topgun.gmbh';
 
-function getTypeSubject(type: string, data: any): string {
+
+function getTypeSubject(type: string, data: Record<string, unknown>): string {
   switch (type) {
     case 'contact': return 'Neue Kontaktanfrage über Webseite';
     case 'partner': return 'Partneranfrage erhalten';
@@ -23,7 +22,7 @@ function getTypeSubject(type: string, data: any): string {
 
 export async function sendEmail(formData: FormData) {
   const type = formData.get('type') as 'contact' | 'partner' | 'campaign' | 'funnel' | 'mandate';
-  const rawData: Record<string, any> = {};
+  const rawData: Record<string, unknown> = {};
 
   // Extract all data from formData
   formData.forEach((value, key) => {
@@ -36,24 +35,30 @@ export async function sendEmail(formData: FormData) {
   const name = rawData.name as string;
   const offerCode = "TOPGUN30"; // Static for now, or derive from logic
 
-  if (!process.env.RESEND_API_KEY) {
-    console.warn('RESEND_API_KEY is missing. Email would have contained:', rawData);
-    return { success: true, message: 'Simulated success (API Key missing)' };
-  }
+  // N8n webhook will handle the sending without an API key check here.
 
   try {
     // 1. Send Notification to Admin (Topgun)
-    const adminData = await resend.emails.send({
-      from: 'Topgun Security <verwaltung@topgun-security.de>',
-      to: [TO_EMAIL],
-      replyTo: email,
-      subject: getTypeSubject(type, rawData),
-      react: <EmailTemplate type={type} data={rawData} />,
+    const adminHtml = await render(
+        <EmailTemplate type={type} data={rawData} />
+    );
+
+    const adminResponse = await fetch(N8N_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            from_email: "info@topgun.gmbh",
+            from_name: "Topgun Security (System)",
+            to: TO_EMAIL,
+            reply_to: email,
+            subject: getTypeSubject(type, rawData),
+            html: adminHtml,
+            type: "system_notification"
+        })
     });
 
-    if (adminData.error) {
-        console.error('Admin email error:', adminData.error);
-        throw new Error(adminData.error.message);
+    if (!adminResponse.ok) {
+        throw new Error(`Admin email n8n webhook failed with status ${adminResponse.status}`);
     }
 
     // 2. Send Confirmation to User (Auto-Responder)
@@ -63,40 +68,37 @@ export async function sendEmail(formData: FormData) {
             ? `Ihr Sicherheits-Code: ${offerCode}` 
             : 'Eingangsbestätigung: Ihre Anfrage bei Topgun Security';
 
-        await resend.emails.send({
-            from: 'Topgun Security <verwaltung@topgun-security.de>',
-            to: [email],
-            subject: userSubject,
-            react: <UserConfirmationTemplate type={type} name={name} offerCode={offerCode} />,
-        });
-    }
+        const userHtml = await render(
+            <UserConfirmationTemplate type={type} name={name} offerCode={offerCode} />
+        );
 
-    // 3. Add to Resend Audience (Lead Capture)
-    if (process.env.RESEND_AUDIENCE_ID && email) {
-        try {
-            await resend.contacts.create({
-                email: email,
-                firstName: name,
-                audienceId: process.env.RESEND_AUDIENCE_ID,
-                // Map custom properties (must be registered in Resend first via script)
-                data: {
-                    company: rawData.company as string || 'Privat',
-                    industry: rawData.industry as string || 'General',
-                    service: rawData.service as string || 'Security',
-                    phone: rawData.phone as string || '',
-                    source_type: type,
-                },
-            } as any);
-        } catch (contactError) {
-            // Non-blocking error for contact creation
-            console.warn('Failed to add contact to audience:', contactError);
+        const userResponse = await fetch(N8N_WEBHOOK_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                from_email: "info@topgun.gmbh",
+                from_name: "Topgun Security",
+                to: email,
+                subject: userSubject,
+                html: userHtml,
+                type: "autoresponder"
+            })
+        });
+
+        if (!userResponse.ok) {
+            console.warn(`User confirmation n8n webhook failed with status ${userResponse.status}`);
         }
     }
 
-    return { success: true, data: adminData.data };
-  } catch (error: any) {
+    // 3. Add to Resend Audience (Lead Capture) -> Skip or send to n8n CRM trigger
+    // Since Resend is removed, we could send a separate webhook for lead capture,
+    // or we assume n8n handles it at the same endpoint based on the type.
+    
+    return { success: true, message: "Emails dispatched via n8n" };
+  } catch (error: unknown) {
     console.error('Server error during email sending:', error);
-    return { success: false, message: error.message || 'Internal server error' };
+    const msg = error instanceof Error ? error.message : String(error);
+    return { success: false, message: msg || 'Internal server error' };
   }
 }
 
