@@ -2,9 +2,10 @@
 import { getLeads, deleteLeadAction, updateLeadStatusAction } from './actions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Search, Trash2, Ban } from 'lucide-react';
+import { Search, Trash2, Ban, Info } from 'lucide-react';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
+import Link from 'next/link';
 
 export default async function LeadsPage({
     searchParams,
@@ -98,6 +99,9 @@ export default async function LeadsPage({
                                 </td>
                                 <td className="px-4 py-3 text-gray-400 text-xs">{lead.source}</td>
                                 <td className="px-4 py-3 text-right flex justify-end gap-2">
+                                    <Link href={`/admin/mailing/leads/${lead.id}`} title="View Details" className="text-gray-400 hover:text-primary">
+                                        <Info size={16} />
+                                    </Link>
                                     <form action={handleStatusUpdate}>
                                         <input type="hidden" name="id" value={lead.id} />
                                         <input type="hidden" name="status" value="unsubscribed" />

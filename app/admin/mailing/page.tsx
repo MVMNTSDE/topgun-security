@@ -1,5 +1,5 @@
 import { getMailingStats, getRecentLeads } from "./actions";
-import { Users, Ban, CheckCircle, BarChart as BarChartIcon } from "lucide-react";
+import { Users, Ban, CheckCircle, BarChart as BarChartIcon, Info } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import ImportLeadsButton from "./ImportLeadsButton";
@@ -8,6 +8,10 @@ import StartCampaignButton from "./StartCampaignButton";
 interface Lead {
   id: string;
   email: string;
+  first_name: string | null;
+  last_name: string | null;
+  company: string | null;
+  phone: string | null;
   status: string;
   source: string | null;
   created_at: string;
@@ -25,6 +29,9 @@ export default async function MailingDashboard() {
             <p className="text-gray-500">Manage cold acquisition leads and sending status.</p>
         </div>
         <div className="flex gap-3">
+            <Link href="/admin/mailing/templates">
+                <Button variant="outline">Coldmail Templates</Button>
+            </Link>
             <Link href="/admin/mailing/leads">
                 <Button variant="outline">Manage Leads</Button>
             </Link>
@@ -56,20 +63,31 @@ export default async function MailingDashboard() {
                 <thead className="text-xs text-gray-500 uppercase bg-gray-50">
                     <tr>
                         <th className="px-6 py-3">Email</th>
+                        <th className="px-6 py-3">Company</th>
+                        <th className="px-6 py-3">Name</th>
+                        <th className="px-6 py-3">Phone</th>
                         <th className="px-6 py-3">Status</th>
                         <th className="px-6 py-3">Source</th>
                         <th className="px-6 py-3">Created</th>
+                        <th className="px-6 py-3 text-right">Actions</th>
                     </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                     {recentLeads?.length === 0 ? (
                         <tr>
-                            <td colSpan={4} className="px-6 py-4 text-center text-gray-500">No leads found. Import some CSVs!</td>
+                            <td colSpan={8} className="px-6 py-4 text-center text-gray-500">No leads found. Import some CSVs!</td>
                         </tr>
                     ) : (
                         recentLeads?.map((lead: Lead) => (
                             <tr key={lead.id} className="bg-white hover:bg-gray-50 transition-colors">
                                 <td className="px-6 py-4 font-medium text-gray-900">{lead.email}</td>
+                                <td className="px-6 py-4 text-gray-600">{lead.company || '-'}</td>
+                                <td className="px-6 py-4 text-gray-600">
+                                    {(lead.first_name || lead.last_name) 
+                                        ? `${lead.first_name || ''} ${lead.last_name || ''}`.trim() 
+                                        : '-'}
+                                </td>
+                                <td className="px-6 py-4 text-gray-600">{lead.phone || '-'}</td>
                                 <td className="px-6 py-4">
                                     <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium 
                                         ${lead.status === 'new' ? 'bg-blue-100 text-blue-800' : 
@@ -80,6 +98,11 @@ export default async function MailingDashboard() {
                                 </td>
                                 <td className="px-6 py-4 text-gray-500">{lead.source || 'Manual'}</td>
                                 <td className="px-6 py-4 text-gray-500">{new Date(lead.created_at).toLocaleDateString()}</td>
+                                <td className="px-6 py-4 text-right">
+                                    <Link href={`/admin/mailing/leads/${lead.id}`} title="View Details" className="text-gray-400 hover:text-primary">
+                                        <Info size={16} className="inline" />
+                                    </Link>
+                                </td>
                             </tr>
                         ))
                     )}
