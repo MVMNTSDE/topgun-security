@@ -8,6 +8,15 @@ const supabase = createClient(
   process.env.SUPABASE_SERVICE_ROLE_KEY!,
 );
 
+export interface EmailTemplate {
+  id: string;
+  name: string;
+  subject: string;
+  content: string;
+  created_at?: string;
+  updated_at?: string;
+}
+
 export async function getTemplates() {
   const { data, error } = await supabase
     .from("email_templates")
@@ -19,6 +28,20 @@ export async function getTemplates() {
     return [];
   }
   return data || [];
+}
+
+export async function getTemplate(id: string) {
+  const { data, error } = await supabase
+    .from("email_templates")
+    .select("*")
+    .eq("id", id)
+    .single();
+
+  if (error) {
+    console.error("Error fetching template:", error);
+    return null;
+  }
+  return data;
 }
 
 export async function createTemplate(formData: FormData) {

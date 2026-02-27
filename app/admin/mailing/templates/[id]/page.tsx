@@ -1,11 +1,11 @@
 
-import { getTemplate, updateTemplateAction } from '../actions';
+import { getTemplate, updateTemplate } from '../actions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 
 export default async function EditTemplatePage({ params }: { params: { id: string } }) {
   const template = await getTemplate(params.id);
@@ -14,8 +14,11 @@ export default async function EditTemplatePage({ params }: { params: { id: strin
     notFound();
   }
 
-  // Bind ID to server action
-  const updateWithId = updateTemplateAction.bind(null, template.id);
+  const submitAction = async (formData: FormData) => {
+    "use server";
+    await updateTemplate(formData);
+    redirect('/admin/mailing/templates');
+  };
 
   return (
     <div className="max-w-3xl mx-auto p-8">
@@ -26,7 +29,8 @@ export default async function EditTemplatePage({ params }: { params: { id: strin
             <h1 className="text-3xl font-bold tracking-tight">Edit Template: {template.name}</h1>
         </div>
 
-        <form action={updateWithId} className="bg-white p-8 rounded-lg border space-y-6">
+        <form action={submitAction} className="bg-white p-8 rounded-lg border space-y-6">
+            <input type="hidden" name="id" value={template.id} />
             <div className="space-y-2">
                 <Label htmlFor="name">Template Name (Internal)</Label>
                 <Input id="name" name="name" defaultValue={template.name} required />

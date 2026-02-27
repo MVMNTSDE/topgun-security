@@ -1,7 +1,7 @@
 
 'use client';
 
-import { createTemplateAction } from '../actions';
+import { createTemplate } from '../actions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -18,7 +18,11 @@ export default function NewTemplatePage() {
             <h1 className="text-3xl font-bold tracking-tight">New Template</h1>
         </div>
 
-        <form action={createTemplateAction} className="bg-white p-8 rounded-lg border space-y-6">
+        <form action={async (formData) => { 
+            const res = await createTemplate(formData);
+            if (res.success) window.location.href = '/admin/mailing/templates';
+            else alert(res.message);
+        }} className="bg-white p-8 rounded-lg border space-y-6">
             <div className="space-y-2">
                 <Label htmlFor="name">Template Name (Internal)</Label>
                 <Input id="name" name="name" placeholder="e.g. Cold Outreach V1" required />
