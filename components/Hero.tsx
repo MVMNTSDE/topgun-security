@@ -1,11 +1,20 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMuted, setIsMuted] = useState(true);
+
+  // Sync video muted state with React state
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = isMuted;
+    }
+  }, [isMuted]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -35,17 +44,45 @@ export default function Hero() {
       {/* Heavy Corporate Backdrop */}
       <div className="absolute inset-0 z-0 bg-black">
         <video 
+          ref={videoRef}
           autoPlay 
-          muted 
+          muted={isMuted}
           loop 
           playsInline 
           poster="/images/hero-poster.jpg"
           className="absolute inset-0 w-full h-full object-cover opacity-75"
         >
-          <source src="/videos/security-bg.mp4" type="video/mp4" />
+          <source src="/videos/imagefilm.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
+
+      {/* Sound Toggle Button */}
+      <button 
+        onClick={() => setIsMuted(!isMuted)}
+        className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-30 bg-black/50 hover:bg-black/80 text-white p-3 md:px-5 md:py-3 rounded-full backdrop-blur-md transition-all flex items-center gap-3 border border-white/10 group cursor-pointer"
+        aria-label={isMuted ? "Ton einschalten" : "Ton ausschalten"}
+      >
+        {isMuted ? (
+          <>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white/70 group-hover:text-white transition-colors duration-300">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <line x1="23" y1="9" x2="17" y2="15"></line>
+              <line x1="17" y1="9" x2="23" y2="15"></line>
+            </svg>
+            <span className="text-sm font-medium tracking-wide text-white/70 group-hover:text-white transition-colors duration-300 hidden md:inline-block">Ton einschalten</span>
+          </>
+        ) : (
+          <>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+            </svg>
+            <span className="text-sm font-medium tracking-wide text-white hidden md:inline-block">Ton ausschalten</span>
+          </>
+        )}
+      </button>
 
       <div className="container-custom relative z-20">
         <div className="max-w-7xl">
