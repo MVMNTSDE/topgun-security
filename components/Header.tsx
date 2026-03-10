@@ -17,6 +17,8 @@ function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+const IS_TEMP_LOGO_ACTIVE = new Date() < new Date("2026-03-18T00:00:00Z");
+
 export function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -108,7 +110,7 @@ export function Header() {
            <div ref={logoIconRef} className="absolute inset-0 flex items-center">
               <div className="relative h-full w-full transition-transform origin-left">
                 <Image 
-                  src={isDarkHero ? "/images/assets/logo-text-white.png" : "/images/logo-text.png"}
+                  src={IS_TEMP_LOGO_ACTIVE ? "/images/temp-logo.jpeg" : (isDarkHero ? "/images/assets/logo-text-white.png" : "/images/logo-text.png")}
                   alt="Topgun Security" 
                   fill
                   className="object-contain object-left"
@@ -121,7 +123,7 @@ export function Header() {
            <div className="logo-full absolute inset-0 flex items-center opacity-0 translate-y-4">
               <div className="relative h-full w-full">
                 <Image 
-                  src="/images/logo-full.png" 
+                  src={IS_TEMP_LOGO_ACTIVE ? "/images/temp-logo.jpeg" : "/images/logo-full.png"} 
                   alt="Topgun Security" 
                   fill
                   className="object-contain object-left"

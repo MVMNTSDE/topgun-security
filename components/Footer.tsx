@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 
+const IS_TEMP_LOGO_ACTIVE = new Date() < new Date("2026-03-18T00:00:00Z");
+
 export function Footer() {
   return (
     <footer className="bg-primary py-48 text-white">
@@ -10,7 +12,7 @@ export function Footer() {
             <Link href="/" className="block mb-12">
                <div className="relative h-24 w-64">
                  <Image 
-                   src="/images/assets/logo-full-white.png" 
+                   src={IS_TEMP_LOGO_ACTIVE ? "/images/temp-logo.jpeg" : "/images/assets/logo-full-white.png"} 
                    alt="Topgun Security" 
                    fill
                    className="object-contain object-left"
