@@ -12,7 +12,7 @@ export const metadata = {
 export default function PartnerPage() {
   return (
     <ServicePageLayout
-      heroTitle="NETZWERK FÜR ERRICHTER & VERWALTER"
+      heroTitle="Netzwerk für Errichter und Immobilienverwalter"
       heroSubtitle="Sie liefern die Technik oder Immobilie, wir die Intervention. Eine Partnerschaft auf Augenhöhe – ohne Knebelverträge."
       heroImage="/images/hero-partner-new.png"
       parentLink={{ href: "/", label: "Zurück zur Startseite" }}

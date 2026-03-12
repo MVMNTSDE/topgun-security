@@ -57,7 +57,7 @@ const servicesList = [
 export default function LeistungenOverviewPage() {
   return (
     <ServicePageLayout
-      heroTitle="SICHERHEITSDIENST NACH DIN-STANDARD"
+      heroTitle="Sicherheitsdienst nach DIN 77200 und ISO 9001 Standard"
       heroSubtitle="Von der Baustellenbewachung bis zum Werkschutz: Wir arbeiten strikt nach Dienstanweisung und Gefährdungsanalyse."
       heroImage="/images/services/retail-security-cinematic.png"
       parentLink={{ href: "/", label: "Zurück zur Startseite" }}

@@ -10,8 +10,8 @@ export const metadata = {
 export default function UnternehmenPage() {
   return (
     <ServicePageLayout
-      heroTitle="QUALITÄTSFÜHRER DURCH RECHTSSICHERHEIT"
-      heroSubtitle="Sicherheit ist kein Produkt, sondern eine Leistung von Menschen. Deshalb garantieren wir höchste Standards und Rechtssicherheit für unsere Mandanten."
+      heroTitle="Qualität und Rechtssicherheit im Sicherheitsdienst"
+      heroSubtitle="Sicherheit ist kein Produkt, sondern eine Leistung von Menschen. Für Einkaufsabteilungen und Sicherheitsverantwortliche garantieren wir volle Audit-Readiness."
       heroImage="/images/services/portrait-professional.png"
       parentLink={{ href: "/", label: "Zurück zur Startseite" }}
       bottomSection={<OperationalLogics />}

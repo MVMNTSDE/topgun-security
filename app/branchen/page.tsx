@@ -58,7 +58,7 @@ const industriesList = [
 export default function BranchenOverviewPage() {
   return (
     <ServicePageLayout
-      heroTitle="SPEZIALISIERT AUF INDUSTRIE & HANDEL"
+      heroTitle="Spezialisiert auf Industrie, Logistik und Handel"
       heroSubtitle="Keine &quot;Mädchen für alles&quot;. Wir haben spezialisierte Teams für Logistik, Retail und Corporate Security."
       heroImage="/images/services/gate-service-cinematic.png"
       parentLink={{ href: "/", label: "Zurück zur Startseite" }}

@@ -96,11 +96,11 @@ export default function Hero() {
           <h1 className="hero-text text-white mb-10 leading-[0.9] text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tighter uppercase font-black">
             ZERTIFIZIERTER<br />
             <span className="text-accent underline decoration-8 underline-offset-8">WERKSCHUTZ</span> & OBJEKTSCHUTZ<br />
-            <span className="text-white/40 text-2xl sm:text-3xl md:text-4xl lg:text-5xl block mt-4 font-bold tracking-widest">| KÖLN & NRW</span>
+            <span className="text-white/40 text-2xl sm:text-3xl md:text-4xl lg:text-5xl block mt-4 font-bold tracking-widest">NACH DIN 77200 UND ISO 9001</span>
           </h1>
           
           <p className="hero-text text-white/70 text-xl md:text-2xl mb-16 max-w-3xl font-medium leading-relaxed">
-            DIN 77200 Konform. IHK-geprüftes Personal. Wir sichern Industrie und Gewerbe in Köln & NRW gegen Ausfall und Kriminalität.
+            Die Topgun Security GmbH ist nach den akkreditierten Standards DIN 77200 und ISO 9001 zertifiziert. Qualifiziertes und im Bewacherregister registriertes Personal sowie erfahrene Mitarbeiter mit Sachkunde gemäß §34a GewO ermöglichen eine flexible und zuverlässige Einsatzplanung.
           </p>
 
           <div className="hero-text flex flex-col sm:flex-row gap-6">
