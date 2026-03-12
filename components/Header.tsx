@@ -17,7 +17,7 @@ function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-const IS_TEMP_LOGO_ACTIVE = false;
+const IS_TEMP_LOGO_ACTIVE = new Date() < new Date("2026-04-01T00:00:00Z");
 
 export function Header() {
   const pathname = usePathname();
