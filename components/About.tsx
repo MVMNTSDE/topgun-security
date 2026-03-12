@@ -210,26 +210,25 @@ export function About() {
              <div className="corp-reveal">
                 <div className="div-line" />
                 <h2 className="text-primary uppercase tracking-tighter">Zertifizierte<br /><span className="text-accent italic">Compliance</span></h2>
-                 <p className="text-corporate-body text-primary! mt-12 mb-16 leading-relaxed max-w-xl">
-                   Für Einkaufsabteilungen und Sicherheitsverantwortliche garantieren wir volle Audit-Readiness. Die Topgun Security GmbH ist nach den akkreditierten Standards
-                   {" "}
+                 <p className="text-corporate-body text-primary! mt-12 mb-8 leading-relaxed max-w-xl">
+                   Für Einkaufsabteilungen und Sicherheitsverantwortliche garantieren wir volle Audit-Readiness.
+                 </p>
+                 <p className="text-corporate-body text-primary! mb-16 leading-relaxed max-w-xl">
+                   Die Topgun Security GmbH ist nach den akkreditierten Standards{" "}
                    <button 
-                     className="font-bold underline decoration-accent underline-offset-4 cursor-pointer hover:text-accent transition-colors ml-1 inline-block" 
+                     className="font-bold underline decoration-accent underline-offset-4 cursor-pointer hover:text-accent transition-colors inline-block" 
                      onClick={() => setActiveCert('din')}
                    >
                      DIN 77200
                    </button>
-                   {" "}
-                   und
-                   {" "}
+                   {" "}und{" "}
                    <button 
-                     className="font-bold underline decoration-accent underline-offset-4 cursor-pointer hover:text-accent transition-colors ml-1 inline-block" 
+                     className="font-bold underline decoration-accent underline-offset-4 cursor-pointer hover:text-accent transition-colors inline-block" 
                      onClick={() => setActiveCert('iso')}
                    >
                      ISO 9001
                    </button>
-                   {" "}
-                   zertifiziert.
+                   {" "}zertifiziert.
                  </p>
                 <div className="flex flex-col gap-6">
                    <div className="bg-muted p-8 border-l-4 border-accent">
