@@ -4,10 +4,10 @@ import { Building2, Key, Video, Eye, Briefcase, BadgeCheck } from "lucide-react"
 import Link from "next/link";
 
 export const metadata = {
-  title: "Objektschutz & Immobilien-Sicherheit | Topgun Security",
+  title: "Objektschutz & Immobilien-Sicherheit | Topgun Security GmbH",
   description: "Sicherheit für Immobilien & Facility Management. Objektschutz, Leerstandsüberwachung & Doorman-Service in NRW.",
   openGraph: {
-    title: "Objektschutz & Immobilien-Sicherheit | Topgun Security",
+    title: "Objektschutz & Immobilien-Sicherheit | Topgun Security GmbH",
     description: "Sicherheit für Immobilien & Facility Management. Objektschutz, Leerstandsüberwachung & Doorman-Service in NRW.",
     images: [{ url: '/images/services/portrait-professional.png', width: 1200, height: 630 }],
   },
@@ -30,7 +30,7 @@ export default function ImmobilienPage() {
           „Für Immobilienverwalter und Eigentümer ist Sicherheit mehr als Schutz – sie ist ein entscheidender Faktor für die Attraktivität und den Werterhalt des Portfolios.“
         </p>
         <p className="text-lg leading-relaxed text-gray-700">
-          Ob Gewerbeimmobilie, Wohnquartier oder Baustelle im Bestand: Topgun Security versteht die spezifischen Anforderungen der Immobilienwirtschaft. Wir entlasten Facility Manager durch proaktive Sicherheitsdienste, die Vandalismus verhindern, das Sicherheitsgefühl der Mieter stärken und Leerstände effektiv absichern.
+          Ob Gewerbeimmobilie, Wohnquartier oder Baustelle im Bestand: Topgun Security GmbH versteht die spezifischen Anforderungen der Immobilienwirtschaft. Wir entlasten Facility Manager durch proaktive Sicherheitsdienste, die Vandalismus verhindern, das Sicherheitsgefühl der Mieter stärken und Leerstände effektiv absichern.
         </p>
       </div>
 
@@ -82,7 +82,7 @@ export default function ImmobilienPage() {
          <div className="relative z-10">
             <h3 className="text-2xl font-bold mb-4">Spezialfall: Leerstandssicherung</h3>
             <p className="text-white/80 max-w-3xl mb-6">
-              Leerstehende Immobilien sind besonders gefährdet durch Vandalismus, Hausbesetzungen und Materialdiebstahl (Kupfer/Kabel). Topgun Security bietet flexible Konzepte zur temporären Absicherung:
+              Leerstehende Immobilien sind besonders gefährdet durch Vandalismus, Hausbesetzungen und Materialdiebstahl (Kupfer/Kabel). Topgun Security GmbH bietet flexible Konzepte zur temporären Absicherung:
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="bg-white/10 p-4 rounded backdrop-blur-sm">

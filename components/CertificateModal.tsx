@@ -71,7 +71,7 @@ export function CertificateModal({ isOpen, onClose, imageUrl, title, description
           <div className="mt-auto pt-8 border-t border-primary/5">
             <span className="text-[10px] font-black tracking-widest uppercase text-primary/30 mb-4 block">Gültigkeitsbereich</span>
             <p className="text-primary font-bold text-sm">
-              {validityArea || "Topgun Security & Service GmbH Leverkusen"}
+              {validityArea || "Topgun Security GmbH & Service GmbH Leverkusen"}
             </p>
           </div>
           

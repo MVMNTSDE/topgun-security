@@ -255,7 +255,7 @@ export async function sendCampaignBatchAction(
           },
           body: JSON.stringify({
             from_email: "info@topgun.gmbh",
-            from_name: "Topgun Security",
+            from_name: "Topgun Security GmbH",
             to: recipient,
             subject: subject,
             html: htmlBody,

@@ -91,7 +91,7 @@ export const EmailTemplate: React.FC<EmailTemplateProps> = ({
       <div style={{ borderBottom: '2px solid #F59E0B', paddingBottom: '20px', marginBottom: '30px' }}>
         <img 
             src="https://topgun-security.de/images/logo-full.png" 
-            alt="Topgun Security" 
+            alt="Topgun Security GmbH" 
             style={{ height: 'auto', width: '200px', marginBottom: '20px', display: 'block' }} 
         />
         <h1 style={{ color: '#111', margin: '0', fontSize: '24px', letterSpacing: '-0.5px' }}>{titleMap[type]}</h1>

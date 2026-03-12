@@ -47,7 +47,7 @@ export default function PrivacyPage() {
               <h3 className="text-md font-black text-accent mb-4 uppercase tracking-[0.1em]">Hinweis zur verantwortlichen Stelle</h3>
               <p className="mb-4">
                 Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:<br /><br />
-                <strong>Topgun Security-Sicherheit & Service GmbH</strong><br />
+                <strong>Topgun Security GmbH</strong><br />
                 Heinrich-Heine-Straße 7<br />
                 40699 Erkrath<br /><br />
                 Telefon: 0178 7703738<br />

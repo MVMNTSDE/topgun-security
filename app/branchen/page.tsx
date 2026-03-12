@@ -4,7 +4,7 @@ import { ServicePageLayout } from "@/components/ServicePageLayout";
 import { Building2, ShoppingBag, Truck, Construction, Briefcase, Factory } from "lucide-react";
 
 export const metadata = {
-  title: "Branchenlösungen | Topgun Security",
+  title: "Branchenlösungen | Topgun Security GmbH",
   description: "Sicherheit für Ihre Branche. Immobilien, Logistik, Bau, Retail und mehr. Wir kennen die spezifischen Risiken Ihres Sektors.",
 };
 
@@ -69,7 +69,7 @@ export default function BranchenOverviewPage() {
         </h2>
         <p className="text-lg text-gray-700 leading-relaxed max-w-4xl">
            Ein Baustelle hat andere Risiken als ein Juwelier. Ein Logistikzentrum braucht andere Konzepte als ein Bürogebäude. 
-           Topgun Security bietet Ihnen Expertenwissen für Ihren Sektor.
+           Topgun Security GmbH bietet Ihnen Expertenwissen für Ihren Sektor.
         </p>
       </div>
 

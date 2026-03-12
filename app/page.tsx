@@ -35,8 +35,8 @@ export default function Home() {
             "logo": "https://topgun-security.de/images/logo-full.png",
             "image": "https://topgun-security.de/images/og-image.jpg",
             "description": "Exzellenz im Objektschutz und professionelle Sicherheitsdienstleistungen in Köln, Bonn, Düsseldorf und ganz NRW. DIN 77200 zertifiziert.",
-            "telephone": "+491787703738",
-            "email": "verwaltung@topgun-security.de",
+            "telephone": "+49 2104 301266",
+            "email": "info@topgunsecurity.de",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Heinrich-Heine-Straße 7",

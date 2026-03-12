@@ -19,7 +19,7 @@ export const UserConfirmationTemplate: React.FC<UserConfirmationTemplateProps> =
       <div style={{ borderBottom: '4px solid #F59E0B', paddingBottom: '30px', marginBottom: '30px' }}>
         <img 
             src="https://topgun-security.de/images/logo-full.png" 
-            alt="Topgun Security" 
+            alt="Topgun Security GmbH" 
             style={{ height: 'auto', width: '200px', marginBottom: '20px', display: 'block' }} 
         />
         <h1 style={{ color: '#111', margin: '0', fontSize: '24px', letterSpacing: '-0.5px' }}>
@@ -49,7 +49,7 @@ export const UserConfirmationTemplate: React.FC<UserConfirmationTemplateProps> =
         
         <p style={{ marginTop: '40px', color: '#6B7280', fontSize: '14px' }}>
           Mit freundlichen Grüßen,<br />
-          <strong>Ihr Topgun Security Team</strong>
+          <strong>Ihr Topgun Security GmbH Team</strong>
         </p>
       </div>
       

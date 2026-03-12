@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Objektschutz & Werkschutz | Topgun Security",
+  title: "Objektschutz & Werkschutz | Topgun Security GmbH",
   description: "Professioneller Objektschutz für Unternehmen, Industrie und Immobilien. IHK-geprüftes Personal, 24/7 Leitstelle und modernste Sicherheitstechnik.",
 };
 
@@ -26,7 +26,7 @@ export default function ObjektschutzPage() {
           „Unser Ziel im Objektschutz ist nicht nur die Reaktion auf Gefahren, sondern deren präventive Vermeidung durch intelligente Konzepte und sichtbare Präsenz.“
         </p>
         <p className="text-lg leading-relaxed text-gray-700">
-          Der professionelle Objektschutz bildet das Fundament betrieblicher Sicherheit. Er umfasst weit mehr als reine Bewachung: Es geht um die lückenlose Integration von personellen, technischen und organisatorischen Maßnahmen zur Abwehr von Gefahren. Topgun Security bietet Ihnen maßgeschneiderte Schutzkonzepte, die sich nahtlos in Ihre Betriebsabläufe einfügen, ohne diese zu stören.
+          Der professionelle Objektschutz bildet das Fundament betrieblicher Sicherheit. Er umfasst weit mehr als reine Bewachung: Es geht um die lückenlose Integration von personellen, technischen und organisatorischen Maßnahmen zur Abwehr von Gefahren. Topgun Security GmbH bietet Ihnen maßgeschneiderte Schutzkonzepte, die sich nahtlos in Ihre Betriebsabläufe einfügen, ohne diese zu stören.
         </p>
       </div>
 

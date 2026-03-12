@@ -4,7 +4,7 @@ import { Car, Siren, Radio, QrCode } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Revierdienst & Mobile Sicherheit | Topgun Security",
+  title: "Revierdienst & Mobile Sicherheit | Topgun Security GmbH",
   description: "Mobiler Objektschutz und Alarmverfolgung in Köln & NRW. Kosteneffiziente Sicherheit durch Patrouillenfahrten und Interventionsdienst.",
 };
 
@@ -27,7 +27,7 @@ export default function RevierdienstPage() {
             </p>
         </div>
         <p className="text-lg leading-relaxed text-gray-700 mb-6">
-          Unser mobiler Dienst ist die schnelle Eingreiftruppe von Topgun Security. Unsere Revierfahrer kontrollieren mehrere Objekte in einer Nacht – unvorhersehbar, dokumentiert und effektiv. Durch die geteilten Kosten erhalten Sie professionellen Schutz zu einem Bruchteil des Preises einer permanenten Bewachung.
+          Unser mobiler Dienst ist die schnelle Eingreiftruppe von Topgun Security GmbH. Unsere Revierfahrer kontrollieren mehrere Objekte in einer Nacht – unvorhersehbar, dokumentiert und effektiv. Durch die geteilten Kosten erhalten Sie professionellen Schutz zu einem Bruchteil des Preises einer permanenten Bewachung.
         </p>
       </div>
 

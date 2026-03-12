@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Sicherheitsdienst für Logistik & Transport | Topgun Security",
+  title: "Sicherheitsdienst für Logistik & Transport | Topgun Security GmbH",
   description: "TAPA-konforme Sicherheitslösungen für Logistikzentren. Frachtschutz, Torkontrolle und Lagerüberwachung in Köln & ganz NRW.",
 };
 
@@ -28,7 +28,7 @@ export default function LogistikPage() {
             </p>
         </div>
         <p className="text-lg leading-relaxed text-gray-700 mb-6">
-          Logistikzentren sind Hochrisikozonen. Hohe Warenwerte, ständiger Personenverkehr (Fremdfahrer, Leiharbeiter, Besucher) und offene Tore laden Kriminelle regelrecht ein. Topgun Security bietet spezialisierte Konzepte für Transport und Lagerlogistik, die über den einfachen Pförtnerdienst weit hinausgehen. Wir verstehen TAPA-Standards und integrieren uns nahtlos in Ihre Warehouse-Prozesse.
+          Logistikzentren sind Hochrisikozonen. Hohe Warenwerte, ständiger Personenverkehr (Fremdfahrer, Leiharbeiter, Besucher) und offene Tore laden Kriminelle regelrecht ein. Topgun Security GmbH bietet spezialisierte Konzepte für Transport und Lagerlogistik, die über den einfachen Pförtnerdienst weit hinausgehen. Wir verstehen TAPA-Standards und integrieren uns nahtlos in Ihre Warehouse-Prozesse.
         </p>
       </div>
 
@@ -122,7 +122,7 @@ export default function LogistikPage() {
                     Ein Logistikzentrum ohne effektiven Schutz blutet aus. Die Kosten für verlorene Ware, gestörte Kundenbeziehungen und Versicherungsregresse übersteigen die Kosten für Sicherheitspersonal um ein Vielfaches.
                  </p>
                  <p className="text-gray-700 font-bold">
-                    Topgun Security sorgt dafür, dass Ihre Bestände im System mit den Beständen im Lager übereinstimmen.
+                    Topgun Security GmbH sorgt dafür, dass Ihre Bestände im System mit den Beständen im Lager übereinstimmen.
                  </p>
             </div>
         </div>

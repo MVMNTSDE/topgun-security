@@ -4,7 +4,7 @@ import { Factory, Truck, ClipboardCheck, FireExtinguisher, Users } from "lucide-
 import Link from "next/link";
 
 export const metadata = {
-  title: "Werkschutz & Industriesicherheit Köln | Topgun Security",
+  title: "Werkschutz & Industriesicherheit Köln | Topgun Security GmbH",
   description: "Umfassender Werkschutz für Industrie und Produktion. Torkontrolle, Brandschutz und Werksgaste in Köln & NRW. ISO-konforme Prozesse.",
 };
 
@@ -27,7 +27,7 @@ export default function WerkschutzPage() {
             </p>
         </div>
         <p className="text-lg leading-relaxed text-gray-700 mb-6">
-          Topgun Security versteht Werkschutz nicht als isolierte Bewachungsaufgabe, sondern als integralen Bestandteil Ihrer Facility-Management-Prozesse. In Köln und NRW betreuen wir Produktionsstätten, Logistikzentren und Chemieparks mit einem Ansatz, der Disziplin mit Serviceorientierung verbindet. Unsere Mitarbeiter sind nicht nur Wächter, sondern oft der erste Ansprechpartner für Ihre Lieferanten, Kunden und Mitarbeiter.
+          Topgun Security GmbH versteht Werkschutz nicht als isolierte Bewachungsaufgabe, sondern als integralen Bestandteil Ihrer Facility-Management-Prozesse. In Köln und NRW betreuen wir Produktionsstätten, Logistikzentren und Chemieparks mit einem Ansatz, der Disziplin mit Serviceorientierung verbindet. Unsere Mitarbeiter sind nicht nur Wächter, sondern oft der erste Ansprechpartner für Ihre Lieferanten, Kunden und Mitarbeiter.
         </p>
       </div>
 
@@ -51,7 +51,7 @@ export default function WerkschutzPage() {
           Es geht nicht primär um das &quot;Bewachen einer leeren Hülle&quot; bei Nacht, sondern um das Management von Strömen: Warenströme, Personenströme und Informationsströme. Ein qualifizierter Werkschutzmitarbeiter muss in der Lage sein, eine Gefahrenmeldeanlage (BMA/EMA) genauso sicher zu bedienen wie ein LKW-Leitsystem oder ein elektronisches Schlüsseldepot.
         </p>
         <p className="text-gray-700">
-           Bei Topgun Security setzen wir auf eine strikte Trennung von Außenhautsicherung (Perimeter) und innerbetrieblicher Prozesssüberwachung. Dies garantiert, dass unbefugte Dritte das Gelände gar nicht erst betreten, während der operative Betrieb im Inneren reibungsfrei weiterläuft.
+           Bei Topgun Security GmbH setzen wir auf eine strikte Trennung von Außenhautsicherung (Perimeter) und innerbetrieblicher Prozesssüberwachung. Dies garantiert, dass unbefugte Dritte das Gelände gar nicht erst betreten, während der operative Betrieb im Inneren reibungsfrei weiterläuft.
         </p>
       </div>
 
@@ -137,7 +137,7 @@ export default function WerkschutzPage() {
             <div className="md:w-2/3">
                <h2 className="text-2xl font-bold text-primary mb-6">Werkschutzfachkraft statt Aushilfe</h2>
                <p className="text-gray-700 mb-6">
-                 Der Einsatz in Industrieanlagen erfordert mehr als Basiswissen. Topgun Security setzt im Werkschutz gezielt Personal mit Zusatzqualifikationen ein.
+                 Der Einsatz in Industrieanlagen erfordert mehr als Basiswissen. Topgun Security GmbH setzt im Werkschutz gezielt Personal mit Zusatzqualifikationen ein.
                </p>
                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex gap-3 items-center">

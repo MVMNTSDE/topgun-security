@@ -24,7 +24,7 @@ export const CampaignEmailTemplate: React.FC<CampaignEmailTemplateProps> = ({
       <div style={{ borderBottom: '4px solid #F59E0B', paddingBottom: '30px', marginBottom: '30px' }}>
         <img 
             src="https://topgun-security.de/images/logo-full.png" 
-            alt="Topgun Security" 
+            alt="Topgun Security GmbH" 
             style={{ height: 'auto', width: '200px', marginBottom: '20px', display: 'block' }} 
         />
         <h1 style={{ color: '#111', margin: '0', fontSize: '24px', letterSpacing: '-0.5px' }}>
@@ -47,7 +47,7 @@ export const CampaignEmailTemplate: React.FC<CampaignEmailTemplateProps> = ({
                 </p>
                 
                 <p>
-                    Topgun Security ist Ihr lokaler Partner für effektiven Objektschutz, Veranstaltungsdienste und Doorman-Services – diskret, professionell und zuverlässig. 
+                    Topgun Security GmbH ist Ihr lokaler Partner für effektiven Objektschutz, Veranstaltungsdienste und Doorman-Services – diskret, professionell und zuverlässig. 
                     Wir stellen sicher, dass Ihre Abläufe reibungslos und verlustfrei funktionieren.
                 </p>
 
@@ -62,7 +62,7 @@ export const CampaignEmailTemplate: React.FC<CampaignEmailTemplateProps> = ({
         <p style={{ marginTop: '40px', color: '#6B7280', fontSize: '14px' }}>
           Mit freundlichen Grüßen,<br />
           <strong>Hüseyin Simsek</strong><br />
-          Betriebsleiter, Topgun Security
+          Betriebsleiter, Topgun Security GmbH
         </p>
       </div>
       

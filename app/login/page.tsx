@@ -13,7 +13,7 @@ export default function LoginPage() {
                 <div className="relative h-12 mb-4 mx-auto w-48">
                     <Image 
                         src="/images/logo-full.png" 
-                        alt="Topgun Security" 
+                        alt="Topgun Security GmbH" 
                         fill
                         className="object-contain"
                         priority

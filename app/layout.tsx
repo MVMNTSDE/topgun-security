@@ -20,8 +20,8 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL("https://topgun-security.de"),
   title: {
-    default: "Topgun Security | Premium Sicherheitsdienst NRW",
-    template: "%s | Topgun Security"
+    default: "Topgun Security GmbH | Premium Sicherheitsdienst NRW",
+    template: "%s | Topgun Security GmbH"
   },
   description: "Exzellenz im Objektschutz und professionelle Sicherheitsdienstleistungen in Köln, Bonn, Düsseldorf und ganz NRW. DIN 77200 zertifiziert.",
   keywords: ["Sicherheitsdienst", "Objektschutz", "Werkschutz", "NRW", "Köln", "Security", "Baustellenbewachung", "Veranstaltungsschutz", "Revierdienst"],
@@ -43,10 +43,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Topgun Security | Premium Sicherheitsdienst NRW",
+    title: "Topgun Security GmbH | Premium Sicherheitsdienst NRW",
     description: "Ihr Partner für exzellenten Objektschutz, Werkschutz und Sicherheitslösungen in NRW. DIN 77200 konform.",
     url: "https://topgun-security.de",
-    siteName: "Topgun Security",
+    siteName: "Topgun Security GmbH",
     locale: "de_DE",
     type: "website",
     images: [
@@ -54,13 +54,13 @@ export const metadata: Metadata = {
         url: "/images/og-image.jpg", // Make sure this exists or use a fallback
         width: 1200,
         height: 630,
-        alt: "Topgun Security - Sicherheit & Service",
+        alt: "Topgun Security GmbH - Sicherheit & Service",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Topgun Security | Premium Sicherheitsdienst NRW",
+    title: "Topgun Security GmbH | Premium Sicherheitsdienst NRW",
     description: "Exzellenz im Objektschutz und professionelle Sicherheitsdienstleistungen in NRW.",
     images: ["/images/og-image.jpg"],
   },

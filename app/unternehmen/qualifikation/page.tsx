@@ -3,7 +3,7 @@ import { ServicePageLayout } from "@/components/ServicePageLayout";
 import { BookOpen, GraduationCap, FileCheck, Shield } from "lucide-react";
 
 export const metadata = {
-  title: "Qualifikation & Zertifikate | Topgun Security",
+  title: "Qualifikation & Zertifikate | Topgun Security GmbH",
   description: "Unsere Standards. Mitarbeiterqualifikation nach §34a GewO, VdS-Interventionskraft und interne Schulungen.",
 };
 
@@ -11,7 +11,7 @@ export default function QualifikationPage() {
   return (
     <ServicePageLayout
       heroTitle="Qualifikation & Standards"
-      heroSubtitle="Sicherheit ist eine Frage der Kompetenz. Wir investieren konsequent in die Ausbildung unserer Teams."
+      heroSubtitle="Sicherheit ist eine Frage der Kompetenz. Wir investieren konsequent in unsere Teams."
       heroImage="/images/services/portrait-professional.png"
       parentLink={{ href: "/unternehmen", label: "Zurück zum Unternehmen" }}
     >
@@ -46,7 +46,7 @@ export default function QualifikationPage() {
                <div>
                    <h3 className="text-xl font-bold text-primary mb-2">VdS-Interventionskraft</h3>
                    <p className="text-gray-600 text-sm">
-                       Für die Alarmverfolgung setzen wir speziell geschulte Mitarbeiter ein. Diese Ausbildung garantiert rechtssicheres Handeln in Stresssituationen (Notwehr, Nothilfe, Festnahme).
+                       Für die Alarmverfolgung setzen wir fachkundige Mitarbeiter ein. Dies garantiert rechtssicheres Handeln in Stresssituationen (Notwehr, Nothilfe, Festnahme).
                    </p>
                </div>
           </div>
@@ -68,9 +68,9 @@ export default function QualifikationPage() {
                    <GraduationCap size={32} />
                </div>
                <div>
-                   <h3 className="text-xl font-bold text-primary mb-2">Interne Akademie</h3>
+                   <h3 className="text-xl font-bold text-primary mb-2">Qualitätssicherung</h3>
                    <p className="text-gray-600 text-sm">
-                       Deeskalationstraining, Erste Hilfe (Ersthelfer), Brandschutzhelfer-Schulung. Wir ruhen uns nicht auf Papier-Zertifikaten aus, sondern trainieren für die Praxis.
+                       Kontinuierliches Qualitätsmanagement und praxisnahe Vorbereitung unserer Mitarbeiter auf komplexe Einsatzszenarien für ein Höchstmaß an Sicherheit.
                    </p>
                </div>
           </div>

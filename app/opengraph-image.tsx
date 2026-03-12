@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
  
 export const runtime = 'edge';
  
-export const alt = 'Topgun Security - Premium Sicherheitsdienst NRW';
+export const alt = 'Topgun Security GmbH - Premium Sicherheitsdienst NRW';
 export const size = {
   width: 1200,
   height: 630,
@@ -53,7 +53,7 @@ export default async function Image() {
             textTransform: 'uppercase',
           }}
         >
-          Topgun Security
+          Topgun Security GmbH
         </div>
         <div
           style={{

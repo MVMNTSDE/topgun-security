@@ -60,13 +60,13 @@ export default function NewCustomerCTA() {
               </button>
 
               {/* Option 3: Mail */}
-              <a href="mailto:verwaltung@topgun-security.de?subject=Anfrage%20Neukunde" className="group bg-white/5 hover:bg-white/10 border border-white/10 p-8 rounded-xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center">
+              <a href="mailto:info@topgunsecurity.de?subject=Anfrage%20Neukunde" className="group bg-white/5 hover:bg-white/10 border border-white/10 p-8 rounded-xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center">
                  <div className="bg-primary w-14 h-14 rounded-full flex items-center justify-center text-accent mb-4 group-hover:scale-110 transition-transform border border-white/5 shadow-inner">
                    <Mail size={24} />
                  </div>
                  <h3 className="text-white font-bold mb-2">E-Mail schreiben</h3>
                  <p className="text-white/40 text-sm mb-4">Schriftliches Angebot anfordern</p>
-                 <span className="text-white font-medium text-sm underline decoration-accent decoration-2 underline-offset-4 break-all">verwaltung@topgun-security.de</span>
+                 <span className="text-white font-medium text-sm underline decoration-accent decoration-2 underline-offset-4 break-all">info@topgunsecurity.de</span>
               </a>
 
             </div>
@@ -75,8 +75,6 @@ export default function NewCustomerCTA() {
               <span>• Rückruf innerhalb 60 Min</span>
               <span className="hidden md:inline">•</span>
               <span>• Angebot in 24h</span>
-              <span className="hidden md:inline">•</span>
-              <span>• TÜV-Zertifiziert</span>
             </div>
 
           </div>

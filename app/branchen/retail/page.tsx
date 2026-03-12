@@ -4,10 +4,10 @@ import { ShoppingBag, Eye, UserCheck, BadgeEuro, CreditCard } from "lucide-react
 import GenericFunnel from "@/components/Funnel/GenericFunnel";
 
 export const metadata = {
-  title: "Einzelhandelssicherheit & Doorman Service | Topgun Security",
+  title: "Einzelhandelssicherheit & Doorman Service | Topgun Security GmbH",
   description: "Sicherheit für High-End Retail. Doorman, Ladendetektive & Inventurschutz für den Einzelhandel in Köln & Düsseldorf.",
   openGraph: {
-    title: "Einzelhandelssicherheit & Doorman Service | Topgun Security",
+    title: "Einzelhandelssicherheit & Doorman Service | Topgun Security GmbH",
     description: "Sicherheit für High-End Retail. Doorman, Ladendetektive & Inventurschutz für den Einzelhandel in Köln & Düsseldorf.",
     images: [{ url: '/images/services/doorman-mall.png', width: 1200, height: 630 }],
   },
@@ -32,7 +32,7 @@ export default function RetailPage() {
             </p>
         </div>
         <p className="text-lg leading-relaxed text-gray-700 mb-6">
-          Topgun Security bietet maßgeschneiderte Lösungen für den Einzelhandel – vom Luxus-Store auf der Kölner Schildergasse bis zum Einkaufszentrum auf der grünen Wiese. Wir verstehen Retail nicht als Wachdienst, sondern als Teil des Customer Service.
+          Topgun Security GmbH bietet maßgeschneiderte Lösungen für den Einzelhandel – vom Luxus-Store auf der Kölner Schildergasse bis zum Einkaufszentrum auf der grünen Wiese. Wir verstehen Retail nicht als Wachdienst, sondern als Teil des Customer Service.
         </p>
       </div>
 
@@ -105,7 +105,7 @@ export default function RetailPage() {
                     Rechenbeispiel: Bei 5 Mio. € Jahresumsatz sind das 50.000 € - 100.000 € Verlust. 
                  </p>
                  <p className="text-accent font-bold">
-                     Eine Sicherheitslösung von Topgun Security kostet oft weniger als der Schaden, den sie verhindert.
+                     Eine Sicherheitslösung von Topgun Security GmbH kostet oft weniger als der Schaden, den sie verhindert.
                  </p>
             </div>
              <div className="relative h-64 w-full md:w-1/3 rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">

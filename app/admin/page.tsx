@@ -34,7 +34,7 @@ export default async function AdminDashboard() {
   return (
     <div className="max-w-6xl mx-auto">
       <h1 className="text-3xl font-bold text-gray-900 mb-2">Company OS Overview</h1>
-      <p className="text-gray-500 mb-8">Welcome to the Topgun Security Command Center.</p>
+      <p className="text-gray-500 mb-8">Welcome to the Topgun Security GmbH Command Center.</p>
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">

@@ -5,7 +5,7 @@ import Image from "next/image";
 import PartnerContactForm from "@/components/PartnerContactForm";
 
 export const metadata = {
-  title: "Partner werden | Topgun Security Netzwerk",
+  title: "Partner werden | Topgun Security GmbH Netzwerk",
   description: "Werden Sie Teil unseres Sicherheitsnetzwerks. Wir suchen Kooperationen mit Hausverwaltungen, Errichtern und Facility Managern in Köln & NRW.",
 };
 
@@ -23,7 +23,7 @@ export default function PartnerPage() {
            Gemeinsam stärker.
         </h2>
         <p className="text-lg text-gray-700 leading-relaxed max-w-4xl mb-6">
-           Topgun Security versteht sich nicht als Einzelkämpfer, sondern als Teil eines funktionierenden Ökosystems. 
+           Topgun Security GmbH versteht sich nicht als Einzelkämpfer, sondern als Teil eines funktionierenden Ökosystems. 
            Wir arbeiten eng mit Spezialisten aus angrenzenden Gewerken zusammen, um unseren Kunden ganzheitliche Lösungen zu bieten.
         </p>
         <p className="text-gray-700 max-w-4xl">
@@ -119,8 +119,8 @@ export default function PartnerPage() {
             </div>
             <div className="md:w-1/2 relative h-64 md:h-80 w-full rounded-lg overflow-hidden shadow-lg">
                  <Image 
-                   src="/images/company/partners-handshake.png" 
-                   alt="Handschlag Business" 
+                   src="/images/gallery/img-2.png" 
+                   alt="Topgun Security Objekt" 
                    fill
                    className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
                  />

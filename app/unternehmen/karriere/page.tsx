@@ -2,7 +2,7 @@ import { ServicePageLayout } from "@/components/ServicePageLayout";
 import { Heart, GraduationCap, Clock, BadgeEuro } from "lucide-react";
 
 export const metadata = {
-  title: "Karriere & Jobs | Topgun Security",
+  title: "Karriere & Jobs | Topgun Security GmbH",
   description: "Werden Sie Teil unseres Teams. Wir bieten faire Bezahlung, Weiterbildung und echte Perspektiven im Sicherheitsgewerbe.",
 };
 
@@ -17,7 +17,7 @@ export default function KarrierePage() {
       {/* 1. Intro / Employer Branding */}
       <div className="mb-16">
         <h2 className="text-3xl md:text-5xl font-black text-primary mb-8">
-           Arbeiten bei <br/><span className="text-accent">Topgun Security.</span>
+           Arbeiten bei <br/><span className="text-accent">Topgun Security GmbH.</span>
         </h2>
         <div className="flex flex-col lg:flex-row gap-12 items-center">
              <div className="lg:w-1/2">

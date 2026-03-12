@@ -48,7 +48,7 @@ export async function sendEmail(formData: FormData) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
             from_email: "info@topgun.gmbh",
-            from_name: "Topgun Security (System)",
+            from_name: "Topgun Security GmbH (System)",
             to: TO_EMAIL,
             reply_to: email,
             subject: getTypeSubject(type, rawData),
@@ -66,7 +66,7 @@ export async function sendEmail(formData: FormData) {
     if (email) {
         const userSubject = type === 'campaign' || type === 'funnel' 
             ? `Ihr Sicherheits-Code: ${offerCode}` 
-            : 'Eingangsbestätigung: Ihre Anfrage bei Topgun Security';
+            : 'Eingangsbestätigung: Ihre Anfrage bei Topgun Security GmbH';
 
         const userHtml = await render(
             <UserConfirmationTemplate type={type} name={name} offerCode={offerCode} />
@@ -77,7 +77,7 @@ export async function sendEmail(formData: FormData) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 from_email: "info@topgun.gmbh",
-                from_name: "Topgun Security",
+                from_name: "Topgun Security GmbH",
                 to: email,
                 subject: userSubject,
                 html: userHtml,

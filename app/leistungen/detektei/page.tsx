@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Kaufhausdetektive & Ermittlungen | Topgun Security",
+  title: "Kaufhausdetektive & Ermittlungen | Topgun Security GmbH",
   description: "Diskrete Ladendetektive und Ermittler gegen Inventurdifferenzen. Rechtssichere Aufklärung von Diebstahl und Betrug in NRW.",
 };
 

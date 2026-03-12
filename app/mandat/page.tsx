@@ -4,7 +4,7 @@ import { Shield } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Mandatsanfrage | Topgun Security',
+  title: 'Mandatsanfrage | Topgun Security GmbH',
   description: 'Offizielle Mandatsanfrage für Sicherheitsdienstleistungen. Priorisierte Bearbeitung für Unternehmen und Institutionen.',
 };
 

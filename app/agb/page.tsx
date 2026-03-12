@@ -24,7 +24,7 @@ export default function AgbPage() {
             <div className="corp-card">
               <h2 className="text-xl font-black text-primary mb-6 uppercase tracking-tight">§ 1 Geltungsbereich und Allgemeines</h2>
               <p className="mb-4">
-                (1) Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge, Lieferungen und sonstigen Leistungen der <strong>Topgun Security-Sicherheit & Service GmbH</strong> (nachfolgend „Auftragnehmer“), gegenüber ihren Kunden (nachfolgend „Auftraggeber“).
+                (1) Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge, Lieferungen und sonstigen Leistungen der <strong>Topgun Security GmbH</strong> (nachfolgend „Auftragnehmer“), gegenüber ihren Kunden (nachfolgend „Auftraggeber“).
               </p>
               <p className="mb-4">
                 (2) Abweichende, entgegenstehende oder ergänzende Allgemeine Geschäftsbedingungen des Auftraggebers werden, selbst bei Kenntnis, nicht Vertragsbestandteil, es sei denn, ihrer Geltung wird ausdrücklich schriftlich zugestimmt.

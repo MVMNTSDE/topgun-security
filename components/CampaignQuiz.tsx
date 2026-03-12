@@ -187,7 +187,7 @@ export default function CampaignQuiz() {
                      </button>
                    </div>
                    <p className="text-[10px] text-primary/40 mt-4">
-                     Mit dem Absenden stimmen Sie zu, dass Topgun Security Sie kontaktieren darf. Ihre Daten sind sicher.
+                     Mit dem Absenden stimmen Sie zu, dass Topgun Security GmbH Sie kontaktieren darf. Ihre Daten sind sicher.
                    </p>
                 </form>
               </div>

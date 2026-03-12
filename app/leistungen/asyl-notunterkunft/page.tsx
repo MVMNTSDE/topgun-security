@@ -4,7 +4,7 @@ import { Shield, Home, HeartHandshake, Eye, FileCheck } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Asyl- & Notunterkunftbetreuung | Topgun Security",
+  title: "Asyl- & Notunterkunftbetreuung | Topgun Security GmbH",
   description: "Sensible Sicherheitsdienstleistungen für Flüchtlingsunterkünfte und Notunterkünfte. Sozialkompetenz, Deeskalation und 24/7 Schutz.",
 };
 
@@ -27,7 +27,7 @@ export default function AsylPage() {
             </p>
         </div>
         <p className="text-lg leading-relaxed text-gray-700 mb-6">
-          Die Betreuung von Asyl- und Notunterkünften stellt höchste Anforderungen an die soziale Kompetenz des Sicherheitspersonals. Es gilt, kulturelle Unterschiede zu respektieren, Konflikte präventiv zu lösen und gleichzeitig die Hausordnung konsequent durchzusetzen. Topgun Security setzt hierbei auf speziell geschulte Teams, die interkulturelle Kompetenz mit professioneller Sicherheitsarbeit verbinden.
+          Die Betreuung von Asyl- und Notunterkünften stellt höchste Anforderungen an die soziale Kompetenz des Sicherheitspersonals. Es gilt, kulturelle Unterschiede zu respektieren, Konflikte präventiv zu lösen und gleichzeitig die Hausordnung konsequent durchzusetzen. Topgun Security GmbH setzt hierbei auf speziell geschulte Teams, die interkulturelle Kompetenz mit professioneller Sicherheitsarbeit verbinden.
         </p>
       </div>
 

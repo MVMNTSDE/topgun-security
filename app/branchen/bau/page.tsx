@@ -4,10 +4,10 @@ import { HardHat, Eye, Siren, FileCheck } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Baustellenbewachung & Sicherheit NRW | Topgun Security",
+  title: "Baustellenbewachung & Sicherheit NRW | Topgun Security GmbH",
   description: "Professioneller Baustellenschutz in NRW. 24/7 Überwachung, Zutrittskontrolle & Diebstahlschutz für Bauprojekte.",
   openGraph: {
-    title: "Baustellenbewachung & Sicherheit NRW | Topgun Security",
+    title: "Baustellenbewachung & Sicherheit NRW | Topgun Security GmbH",
     description: "Professioneller Baustellenschutz in NRW. 24/7 Überwachung, Zutrittskontrolle & Diebstahlschutz für Bauprojekte.",
     images: [{ url: '/images/services/revierdienst-car.png', width: 1200, height: 630 }],
   },
@@ -32,7 +32,7 @@ export default function BauPage() {
             </p>
         </div>
         <p className="text-lg leading-relaxed text-gray-700 mb-6">
-          Topgun Security bietet baustellenspezifische Sicherheitskonzepte für Hochbau, Tiefbau und Infrastrukturprojekte. Wir verstehen die rauen Bedingungen einer Baustelle und arbeiten streng nach den Vorschriften der <a href="https://www.bgbau.de/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-bold">BG BAU</a> – von der &quot;Grünen Wiese&quot; bis zur Schlüsselübergabe.
+          Topgun Security GmbH bietet baustellenspezifische Sicherheitskonzepte für Hochbau, Tiefbau und Infrastrukturprojekte. Wir verstehen die rauen Bedingungen einer Baustelle und arbeiten streng nach den Vorschriften der <a href="https://www.bgbau.de/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-bold">BG BAU</a> – von der &quot;Grünen Wiese&quot; bis zur Schlüsselübergabe.
         </p>
       </div>
 

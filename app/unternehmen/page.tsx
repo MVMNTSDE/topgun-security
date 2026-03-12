@@ -1,17 +1,17 @@
 import { ServicePageLayout } from "@/components/ServicePageLayout";
-import { ShieldCheck, Award, HeartHandshake, Users, Target, Scale } from "lucide-react";
+import { ShieldCheck, HeartHandshake, Users, Target, Scale } from "lucide-react";
 import { OperationalLogics } from "@/components/OperationalLogics";
 
 export const metadata = {
-  title: "Über Topgun Security | Verantwortung & Werte",
+  title: "Über Topgun Security GmbH | Verantwortung & Werte",
   description: "Erfahren Sie mehr über Topgun Security GmbH. Unsere Haltung, unser Anspruch und warum wir Sicherheit als Dienstleistung neu definieren.",
 };
 
 export default function UnternehmenPage() {
   return (
     <ServicePageLayout
-      heroTitle="QUALITÄTSFÜHRER DURCH AUSBILDUNG"
-      heroSubtitle="Sicherheit ist kein Produkt, sondern eine Leistung von Menschen. Deshalb zahlen wir über Tarif und fordern IHK-Abschlüsse."
+      heroTitle="QUALITÄTSFÜHRER DURCH RECHTSSICHERHEIT"
+      heroSubtitle="Sicherheit ist kein Produkt, sondern eine Leistung von Menschen. Deshalb garantieren wir höchste Standards und Rechtssicherheit für unsere Mandanten."
       heroImage="/images/services/portrait-professional.png"
       parentLink={{ href: "/", label: "Zurück zur Startseite" }}
       bottomSection={<OperationalLogics />}
@@ -24,10 +24,10 @@ export default function UnternehmenPage() {
         <div className="flex flex-col lg:flex-row gap-12 items-start">
              <div className="lg:w-1/2">
                 <p className="text-xl font-medium text-primary mb-6">
-                    Topgun Security wurde mit einem klaren Ziel gegründet: Den Sicherheitsmarkt in NRW nicht nur zu bedienen, sondern qualitativ anzuheben.
+                    Topgun Security GmbH wurde mit einem klaren Ziel gegründet: Den Sicherheitsmarkt in NRW nicht nur zu bedienen, sondern qualitativ anzuheben.
                 </p>
                 <p className="text-gray-700 leading-relaxed mb-6">
-                    In einer Branche, die oft von Preiskampf und hoher Fluktuation geprägt ist, setzen wir bewusst auf Gegenpole: Verbindlichkeit, Ausbildung und faire Bezahlung. Wir glauben, dass wahre Sicherheit nur entstehen kann, wenn die Menschen, die sie gewährleisten, wertgeschätzt und professionell geführt werden.
+                    In einer Branche, die oft von Preiskampf und hoher Fluktuation geprägt ist, setzen wir bewusst auf Gegenpole: Verbindlichkeit, Rechtssicherheit und faire Bezahlung. Wir glauben, dass wahre Sicherheit nur entstehen kann, wenn die Menschen, die sie gewährleisten, wertgeschätzt und professionell geführt werden.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
                     Wir sind kein anonymer Großkonzern, bei dem Sie eine Nummer sind. Und wir sind kein Sub-Sub-Unternehmer ohne Struktur. Wir sind der starke Mittelstand für den Mittelstand.
@@ -108,15 +108,6 @@ export default function UnternehmenPage() {
                          <div>
                              <strong className="block font-bold">Rechtssicherheit</strong>
                              <span className="text-sm text-white/50">Haftpflichtversicherung & Unbedenklichkeit</span>
-                         </div>
-                     </li>
-                      <li className="flex gap-4 items-center">
-                         <div className="w-12 h-12 flex items-center justify-center bg-white/10 rounded">
-                             <Award size={24} />
-                         </div>
-                         <div>
-                             <strong className="block font-bold">Ausbildung</strong>
-                             <span className="text-sm text-white/50">Regelmäßige Schulungen & IHK-Prüfungen</span>
                          </div>
                      </li>
                  </ul>

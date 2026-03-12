@@ -4,7 +4,7 @@ import { UserCheck, Shield, Phone, Coffee, Users } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Empfangsdienst & Pfortendienst Köln | Topgun Security",
+  title: "Empfangsdienst & Pfortendienst Köln | Topgun Security GmbH",
   description: "Professioneller Empfangsdienst für Unternehmen. Doorman, Telefonzentrale und Besuchermanagement. Sicherheit mit Lächeln.",
 };
 
@@ -27,7 +27,7 @@ export default function EmpfangsdienstPage() {
             </p>
         </div>
         <p className="text-lg leading-relaxed text-gray-700 mb-6">
-          Empfangsdienst ist mehr als nur &quot;Hallo&quot; sagen. Es geht um die intelligente Steuerung von Besucherströmen, die diskrete Überprüfung von Zugangsberechtigungen und das Management in Notfallsituationen. Topgun Security stellt Ihnen Personal zur Verfügung, das sich nahtlos in Ihre Corporate Identity einfügt – mehrsprachig, eloquent und bestens geschult.
+          Empfangsdienst ist mehr als nur &quot;Hallo&quot; sagen. Es geht um die intelligente Steuerung von Besucherströmen, die diskrete Überprüfung von Zugangsberechtigungen und das Management in Notfallsituationen. Topgun Security GmbH stellt Ihnen Personal zur Verfügung, das sich nahtlos in Ihre Corporate Identity einfügt – mehrsprachig, eloquent und bestens geschult.
         </p>
       </div>
 

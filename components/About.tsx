@@ -117,7 +117,7 @@ const certData = {
   },
   din: {
     title: "DIN 77200-1:2022",
-    description: "Die DIN 77200 ist der spezifische Qualitätsstandard für Sicherheitsdienstleistungen. Sie definiert strenge Anforderungen an Organisation, Personalauswahl, Ausbildung und die Durchführung von Sicherheitsleistungen. Als zertifiziertes Unternehmen garantieren wir die Einhaltung höchster Branchenstandards und rechtlicher Rahmenbedingungen.",
+    description: "Die DIN 77200 ist der spezifische Qualitätsstandard für Sicherheitsdienstleistungen. Sie definiert strenge Anforderungen an Organisation, Personalauswahl und die Durchführung von Sicherheitsleistungen. Als zertifiziertes Unternehmen garantieren wir die Einhaltung höchster Branchenstandards und gewähren Rechtssicherheit.",
     imageUrl: "/certificates/din77200_full.png"
   }
 };
@@ -211,7 +211,7 @@ export function About() {
                 <div className="div-line" />
                 <h2 className="text-primary uppercase tracking-tighter">Zertifizierte<br /><span className="text-accent italic">Compliance</span></h2>
                 <p className="text-corporate-body text-primary! mt-12 mb-16 leading-relaxed max-w-xl">
-                  Für Einkaufabteilungen und Sicherheitsverantwortliche garantieren wir volle Audit-Readiness. Die Topgun Security ist seit Anfang des Jahres nach 
+                  Für Einkaufabteilungen und Sicherheitsverantwortliche garantieren wir volle Audit-Readiness. Die Topgun Security GmbH ist seit Anfang des Jahres nach 
                   {" "}
                   <button 
                     className="font-bold underline decoration-accent underline-offset-4 cursor-pointer hover:text-accent transition-colors ml-1 inline-block" 

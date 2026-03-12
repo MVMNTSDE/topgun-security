@@ -14,12 +14,8 @@ export function Contact() {
             
             <div className="space-y-16">
               <div>
-                 <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary/20 mb-4 block">Zentrale / Security Desk</span>
-                 <a href="tel:022195285529" className="text-4xl font-black text-primary hover:text-accent transition-all duration-500 block">0221 95285529</a>
-              </div>
-              <div>
                  <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary/20 mb-4 block">Digital Protocol</span>
-                 <a href="mailto:verwaltung@topgun-security.de" className="text-xl font-bold text-primary hover:text-accent transition-all duration-500 underline decoration-2 underline-offset-8">verwaltung@topgun-security.de</a>
+                 <a href="mailto:info@topgunsecurity.de" className="text-xl font-bold text-primary hover:text-accent transition-all duration-500 underline decoration-2 underline-offset-8">info@topgunsecurity.de</a>
               </div>
               <div>
                  <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary/20 mb-4 block">Geschäftsleitung</span>

@@ -3,7 +3,7 @@ import { Shield, Eye, Heart,  Users } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Kinder- & Jugendschutz | Topgun Security",
+  title: "Kinder- & Jugendschutz | Topgun Security GmbH",
   description: "Sensible Sicherheitskonzepte für Schulen, Kitas und Jugendeinrichtungen. Prävention, Schutz und Deeskalation.",
 };
 
@@ -24,7 +24,7 @@ export default function JugendschutzPage() {
           Der Schutz von Kindern und Jugendlichen erfordert weit mehr als nur körperliche Anwesenheit. Er verlangt nach pädagogischem Fingerspitzengefühl, geschultem Personal und einem präventiven Ansatz, der Sicherheit schafft, ohne Angst zu verbreiten.
         </p>
         <p className="text-corporate-body">
-          Topgun Security bietet spezialisierte Konzepte für Bildungseinrichtungen, Jugendheime und öffentliche Veranstaltungen. Unsere Mitarbeiter in diesem Bereich durchlaufen erweiterte Sicherheitsüberprüfungen und Schulungen im Umgang mit Minderjährigen.
+          Topgun Security GmbH bietet spezialisierte Konzepte für Bildungseinrichtungen, Jugendheime und öffentliche Veranstaltungen. Unsere Mitarbeiter in diesem Bereich durchlaufen erweiterte Sicherheitsüberprüfungen und Schulungen im Umgang mit Minderjährigen.
         </p>
       </div>
 

@@ -13,7 +13,7 @@ export function Footer() {
                <div className="relative h-24 w-64">
                  <Image 
                    src={IS_TEMP_LOGO_ACTIVE ? "/images/temp-logo.png" : "/images/assets/logo-full-white.png"} 
-                   alt="Topgun Security" 
+                   alt="Topgun Security GmbH" 
                    fill
                    className="object-contain object-left"
                  />

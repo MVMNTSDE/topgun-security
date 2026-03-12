@@ -4,7 +4,7 @@ import { Shield, Users, Radio, CheckCircle, Ticket } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Veranstaltungsschutz & Event Security Köln | Topgun Security",
+  title: "Veranstaltungsschutz & Event Security Köln | Topgun Security GmbH",
   description: "Professioneller Veranstaltungsschutz für Events, Messen und Konzerte in NRW. Einlasskontrollen, VIP-Betreuung und crowd management.",
 };
 

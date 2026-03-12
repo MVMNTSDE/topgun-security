@@ -5,7 +5,7 @@ import { ServicePageLayout } from "@/components/ServicePageLayout";
 import { Shield, Factory, Building2, Hammer, Users, Truck } from "lucide-react";
 
 export const metadata = {
-  title: "Sicherheitsdienstleistungen im Überblick | Topgun Security",
+  title: "Sicherheitsdienstleistungen im Überblick | Topgun Security GmbH",
   description: "Unser Leistungsportfolio für Köln und NRW. Objektschutz, Werkschutz, Baubewachung und mehr. Maßgeschneiderte Sicherheitskonzepte.",
 };
 

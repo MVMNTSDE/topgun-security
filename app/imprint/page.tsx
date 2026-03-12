@@ -5,7 +5,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Impressum",
-  description: "Rechtliche Angaben, Anbieterkennzeichnung und Kontaktinformationen der Topgun Security-Sicherheit & Service GmbH.",
+  description: "Rechtliche Angaben, Anbieterkennzeichnung und Kontaktinformationen der Topgun Security GmbH.",
 };
 
 export default function ImprintPage() {
@@ -21,7 +21,7 @@ export default function ImprintPage() {
             <div className="corp-card">
               <h2 className="text-xl font-black text-primary mb-6 uppercase tracking-tight">Angaben gemäß § 5 TMG</h2>
               <p className="font-medium">
-                Topgun Security-Sicherheit & Service GmbH<br />
+                Topgun Security GmbH<br />
                 Heinrich-Heine-Straße 7<br />
                 40699 Erkrath
               </p>
@@ -56,10 +56,10 @@ export default function ImprintPage() {
                   <div className="flex-1">
                      <p className="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-2">Verwaltung & Notfall</p>
                       <p className="text-primary font-bold mb-1">
-                       Fax: 04209 6852312
+                       Fax: +49 2104 301266
                      </p>
                      <p className="text-primary font-bold">
-                       <a href="mailto:verwaltung@topgun-security.de" className="hover:text-accent transition-colors">verwaltung@topgun-security.de</a>
+                       <a href="mailto:info@topgunsecurity.de" className="hover:text-accent transition-colors">info@topgunsecurity.de</a>
                      </p>
                   </div>
 
@@ -77,10 +77,12 @@ export default function ImprintPage() {
             </div>
 
             <div className="corp-card">
-              <h2 className="text-xl font-black text-primary mb-6 uppercase tracking-tight">Umsatzsteuer-ID</h2>
+              <h2 className="text-xl font-black text-primary mb-6 uppercase tracking-tight">Steuernummer & USt-IdNr.</h2>
               <p>
                 Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-                DE 123 456 789
+                DE321370266<br /><br />
+                Steuernummer:<br />
+                147/5063/2931
               </p>
             </div>
 
