@@ -210,33 +210,33 @@ export function About() {
              <div className="corp-reveal">
                 <div className="div-line" />
                 <h2 className="text-primary uppercase tracking-tighter">Zertifizierte<br /><span className="text-accent italic">Compliance</span></h2>
-                <p className="text-corporate-body text-primary! mt-12 mb-16 leading-relaxed max-w-xl">
-                  Für Einkaufabteilungen und Sicherheitsverantwortliche garantieren wir volle Audit-Readiness. Die Topgun Security GmbH ist seit Anfang des Jahres nach 
-                  {" "}
-                  <button 
-                    className="font-bold underline decoration-accent underline-offset-4 cursor-pointer hover:text-accent transition-colors ml-1 inline-block" 
-                    onClick={() => setActiveCert('din')}
-                  >
-                    DIN 77200
-                  </button>
-                  {" "}
-                  und
-                  {" "}
-                  <button 
-                    className="font-bold underline decoration-accent underline-offset-4 cursor-pointer hover:text-accent transition-colors ml-1 inline-block" 
-                    onClick={() => setActiveCert('iso')}
-                  >
-                    ISO 9001
-                  </button>
-                  {" "}
-                  zertifiziert.
-                </p>
+                 <p className="text-corporate-body text-primary! mt-12 mb-16 leading-relaxed max-w-xl">
+                   Für Einkaufsabteilungen und Sicherheitsverantwortliche garantieren wir volle Audit-Readiness. Die Topgun Security GmbH ist nach den akkreditierten Standards
+                   {" "}
+                   <button 
+                     className="font-bold underline decoration-accent underline-offset-4 cursor-pointer hover:text-accent transition-colors ml-1 inline-block" 
+                     onClick={() => setActiveCert('din')}
+                   >
+                     DIN 77200
+                   </button>
+                   {" "}
+                   und
+                   {" "}
+                   <button 
+                     className="font-bold underline decoration-accent underline-offset-4 cursor-pointer hover:text-accent transition-colors ml-1 inline-block" 
+                     onClick={() => setActiveCert('iso')}
+                   >
+                     ISO 9001
+                   </button>
+                   {" "}
+                   zertifiziert.
+                 </p>
                 <div className="flex flex-col gap-6">
                    <div className="bg-muted p-8 border-l-4 border-accent">
                       <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary/30 mb-2 block">Operative Kapazitäten</span>
-                      <p className="text-primary font-bold text-lg">
-                        Qualifiziertes Personal im Bewacherregister sowie erfahrene Sachkunde-Experten (§34a GewO) für flexible Skalierung.
-                      </p>
+                       <p className="text-primary font-bold text-lg">
+                         Qualifiziertes und im Bewacherregister registriertes Personal sowie erfahrene Mitarbeiter mit Sachkunde gemäß §34a GewO ermöglichen eine flexible und zuverlässige Einsatzplanung.
+                       </p>
                    </div>
                 </div>
              </div>
