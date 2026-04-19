@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const IS_TEMP_LOGO_ACTIVE = new Date() < new Date("2026-03-18T00:00:00Z");
+const IS_TEMP_LOGO_ACTIVE = new Date() < new Date("2026-06-19T00:00:00Z");
 
 export function Footer() {
   return (

@@ -30,8 +30,8 @@ export default function ImprintPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="border-l-4 border-accent p-8 bg-muted">
                 <h2 className="text-sm font-black text-primary mb-4 uppercase tracking-[0.3em]">Vertreten durch</h2>
-                <p className="text-primary font-bold mb-2">Fahrhad Dilmangahni (Geschäftsführer)</p>
-                <p className="text-primary font-bold">Hüseyin Simsek (Operative Leitung)</p>
+                <p className="text-primary font-bold mb-2">Zarah Farnejad (Inhaberin)</p>
+                <p className="text-primary font-bold">Farhad Dilmangahni (Geschäftsführer)</p>
               </div>
 
               <div className="border-l-4 border-primary p-8 bg-muted md:col-span-2 lg:col-span-1">
