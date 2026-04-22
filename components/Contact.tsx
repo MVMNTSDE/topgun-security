@@ -18,8 +18,10 @@ export function Contact() {
                  <a href="mailto:info@topgunsecurity.de" className="text-xl font-bold text-primary hover:text-accent transition-all duration-500 underline decoration-2 underline-offset-8">info@topgunsecurity.de</a>
               </div>
               <div>
+                 <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary/20 mb-4 block">Inhaberin</span>
+                 <p className="text-xl font-bold text-primary mb-1">Zarah Farnejad</p>
                  <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary/20 mb-4 block">Geschäftsleitung</span>
-                 <p className="text-xl font-bold text-primary mb-1">Fahrhad Dilmangahni</p>
+                 <p className="text-xl font-bold text-primary mb-1">Farhad Dilmangahni</p>
                  <a href="tel:+491787703738" className="text-sm font-bold text-primary/60 hover:text-accent transition-colors block mb-2">+49 178 7703738</a>
                  <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary/20 mb-4 block mt-8">Operative Leitung</span>
                  <p className="text-xl font-bold text-primary mb-1">Hüseyin Simsek</p>

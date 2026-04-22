@@ -286,7 +286,7 @@ export function About() {
                       </p>
                       <div className="flex items-center gap-3">
                          <div className="h-px w-8 bg-accent" />
-                         <span className="text-[10px] font-black uppercase tracking-widest text-primary">Fahrhad Dilmangahni, Geschäftsführung</span>
+                         <span className="text-[10px] font-black uppercase tracking-widest text-primary">Farhad Dilmangahni, Geschäftsführung</span>
                       </div>
                    </div>
 
